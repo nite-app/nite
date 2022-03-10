@@ -8,17 +8,23 @@
 }
 
 .sidebar {
-  width: 20vw;
-  height: 95vh;
+  width: 21vw;
+  height: 96.5vh;
   background-color: #263859;
   border-radius: 25px;
   margin-left: 1vw;
 }
 
 .maincontainer {
-  width: 80vw;
-  height: 95vh;
+  width: 81vw;
+  height: 96.5vh;
   background-color: #263859;
   border-radius: 25px;
   margin: 1vw;
+}
+
+.AuthHeader {
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
 }
