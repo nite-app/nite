@@ -58,6 +58,7 @@
   border-radius: 2.5px;
   margin: auto;
   margin-bottom: 0.7vh;
+  color: #263859;
 }
 
 .sidecontent {
@@ -94,11 +95,14 @@
   width: 18vw;
   margin: auto;
   margin-top: 15px;
+  justify-content: center;
+  height: 8vh;
 }
 
 .menuitem {
   display: flex;
   margin: 10px;
+  margin-bottom: 5px;
   margin-top: 2.5px;
   align-items: center;
 }
