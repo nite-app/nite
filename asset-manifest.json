@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nite/static/css/main.a09b5213.css",
+    "main.js": "/nite/static/js/main.a25651df.js",
+    "static/js/787.1185226e.chunk.js": "/nite/static/js/787.1185226e.chunk.js",
+    "index.html": "/nite/index.html",
+    "main.a09b5213.css.map": "/nite/static/css/main.a09b5213.css.map",
+    "main.a25651df.js.map": "/nite/static/js/main.a25651df.js.map",
+    "787.1185226e.chunk.js.map": "/nite/static/js/787.1185226e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a09b5213.css",
+    "static/js/main.a25651df.js"
+  ]
+}
