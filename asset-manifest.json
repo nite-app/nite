@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nite/static/css/main.a09b5213.css",
-    "main.js": "/nite/static/js/main.a25651df.js",
-    "static/js/787.1185226e.chunk.js": "/nite/static/js/787.1185226e.chunk.js",
-    "index.html": "/nite/index.html",
-    "main.a09b5213.css.map": "/nite/static/css/main.a09b5213.css.map",
-    "main.a25651df.js.map": "/nite/static/js/main.a25651df.js.map",
-    "787.1185226e.chunk.js.map": "/nite/static/js/787.1185226e.chunk.js.map"
+    "main.css": "/static/css/main.a09b5213.css",
+    "main.js": "/static/js/main.0824505f.js",
+    "static/js/787.1185226e.chunk.js": "/static/js/787.1185226e.chunk.js",
+    "index.html": "/index.html",
+    "main.a09b5213.css.map": "/static/css/main.a09b5213.css.map",
+    "main.0824505f.js.map": "/static/js/main.0824505f.js.map",
+    "787.1185226e.chunk.js.map": "/static/js/787.1185226e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a09b5213.css",
-    "static/js/main.a25651df.js"
+    "static/js/main.0824505f.js"
   ]
 }
