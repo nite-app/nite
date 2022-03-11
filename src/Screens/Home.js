@@ -46,7 +46,10 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="maincontainer"></div>
+        <div className="maincontainer">
+          <h1 className="containerheader">Good morning, Katie</h1>
+          <div className="mainpanel1">.</div>
+        </div>
       </div>
       <Outlet />
     </>

@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./Screens/Home";
-import Register from "./Screens/Auth/Register";
-import Login from "./Screens/Auth/Login";
+import Home from "./screens/Home";
+import Register from "./screens/auth/Register";
+import Login from "./screens/auth/Login";
 
 function App() {
   return (

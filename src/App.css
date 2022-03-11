@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Articulat CF Regular";
+  src: url("./fonts/ArticulatCF-Regular.otf"), format(otf);
+}
+
 .App {
   text-align: center;
   width: 100vw;
@@ -5,6 +10,7 @@
   background-color: #17223b;
   display: flex;
   align-items: center;
+  font-family: "Articulat CF Regular";
 }
 
 .sidebar {
@@ -16,11 +22,14 @@
 }
 
 .maincontainer {
+  display: flex;
+  flex-direction: column;
   width: 81vw;
   height: 96.5vh;
   background-color: #263859;
   border-radius: 25px;
   margin: 1vw;
+  align-items: flex-start;
 }
 
 .AuthHeader {
@@ -125,4 +134,22 @@
   margin: 0;
   padding-left: 30px;
   margin-bottom: 5px;
+}
+
+.containerheader {
+  font-size: 64px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  margin-left: 60px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+.mainpanel1 {
+  margin: 20px;
+  width: 75vw;
+  height: 40vh;
+  background-color: #576c96;
+  border-radius: 25px;
 }
