@@ -23,15 +23,15 @@ function Home() {
             </div>
             <div className="panel">
               <h1 className="panelheader">Your Sleep</h1>
-              <p className="panelitem"></p>
-              <p className="panelitem"></p>
-              <p className="panelitem"></p>
+              <p className="panelitem">Add Sleep Insights</p>
+              <p className="panelitem">Weekly Report</p>
+              <p className="panelitem">Your Notes</p>
             </div>
             <div className="panel">
               <h1 className="panelheader">Your Habits</h1>
-              <p className="panelitem"></p>
-              <p className="panelitem"></p>
-              <p className="panelitem"></p>
+              <p className="panelitem">View Habits</p>
+              <p className="panelitem">Edit Habits</p>
+              <p className="panelitem">Weekly Report</p>
             </div>
           </div>
           <div className="break">.</div>

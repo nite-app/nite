@@ -57,7 +57,7 @@
   background-color: white;
   border-radius: 2.5px;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0.7vh;
 }
 
 .sidecontent {
@@ -65,7 +65,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 3vh;
 }
 
 .panel {
@@ -84,7 +84,8 @@
   font-weight: 600;
   font-size: 32px;
   text-align: left;
-  padding: 5px 0 20px 30px;
+  padding: 5px 0 15px 30px;
+  margin-bottom: 0;
 }
 
 .sidemenu {
@@ -118,4 +119,6 @@
   font-size: 14px;
   font-weight: 300;
   margin: 0;
+  padding-left: 30px;
+  margin-bottom: 5px;
 }
