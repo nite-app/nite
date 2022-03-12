@@ -3,6 +3,10 @@
   src: url("./fonts/ArticulatCF-Regular.otf"), format(otf);
 }
 
+* {
+  font-family: Articulat CF;
+}
+
 .App {
   text-align: center;
   width: 100vw;
@@ -152,4 +156,31 @@
   height: 40vh;
   background-color: #576c96;
   border-radius: 25px;
+}
+
+.mainpanelscont {
+  display: flex;
+}
+
+.bottompanel {
+  width: 37vw;
+  height: 40vh;
+  background-color: #576c96;
+  border-radius: 25px;
+  margin: 20px;
+  margin-top: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bottomh {
+  font-size: 32px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  margin-left: 50px;
+  margin-top: 35px;
+  letter-spacing: 0.5px;
 }

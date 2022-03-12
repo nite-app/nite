@@ -49,6 +49,14 @@ function Home() {
         <div className="maincontainer">
           <h1 className="containerheader">Good morning, Katie</h1>
           <div className="mainpanel1">.</div>
+          <div className="mainpanelscont">
+            <div className="bottompanel">
+              <h1 className="bottomh">Which Habits have you respected?</h1>
+            </div>
+            <div className="bottompanel">
+              <h1 className="bottomh">Today's Goals</h1>
+            </div>
+          </div>
         </div>
       </div>
       <Outlet />
