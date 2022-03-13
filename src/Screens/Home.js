@@ -8,8 +8,7 @@ function Home() {
   return (
     <>
       <div className="App" id="Home">
-        <div className="sidebar">
-          {/* <Link to="register">register</Link> */}
+        <div className="sidebar">          
           <div className="account">
             <img src={temp} alt="" id="accImg" />
             <h1 className="accountheader">Katie McLeen</h1>
