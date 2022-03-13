@@ -16,3 +16,5 @@ const app = firebase.initializeApp({
 
 export default app;
 export const auth = app.auth;
+
+// ciao
