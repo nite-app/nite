@@ -74,7 +74,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Read 10 pages</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -87,7 +87,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Meditate</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -100,7 +100,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Train yourself</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -116,7 +116,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Run 5Km</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -129,7 +129,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">No games</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -142,7 +142,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Listen to podcast</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
@@ -155,7 +155,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">No alcool</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
