@@ -59,108 +59,107 @@ function Home() {
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgl"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsl">Eat Healthy</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconl"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgl"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsl">Read 10 Pages</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconl"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgl"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsl">Meditate</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconl"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgl"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsl">Train Yourself</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconl"
+                      className="radioicon"
                     />
                   </div>
                 </div>
-
                 {/* INSERIRE BARRA VERTICALE SEPARATRICE */}
                 <div className="right">
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgr"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsr">Run 5 km</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconr"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgr"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsr">No games</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconr"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgr"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsr">Listen to podcast</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconr"
+                      className="radioicon"
                     />
                   </div>
                   <div className="inlinewords">
                     <img
                       src={require("../img/images.jpg")}
                       alt=""
-                      className="bottomimgr"
+                      className="bottomimg"
                     />
-                    <h4 className="bottomwordsr">Don't drink alcool</h4>
+                    <h4 className="bottomword">Eat Healthy</h4>
                     <img
                       src={require("../img/radio-on-button.png")}
                       alt=""
-                      className="radioiconr"
+                      className="radioicon"
                     />
                   </div>
                 </div>
