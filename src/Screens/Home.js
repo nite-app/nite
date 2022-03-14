@@ -4,6 +4,7 @@ import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 
+
 function Home() {
   return (
     <>
@@ -53,6 +54,7 @@ function Home() {
           <div className="mainpanelscont">
             <div className="bottompanel">
               <h1 className="bottomh">Which Habits have you respected?</h1>
+              <img src="../img/images.jpg" alt="" className="bottomimg"/>
             </div>
             <div className="bottompanel">
               <h1 className="bottomh">Today's Goals</h1>
