@@ -9,11 +9,12 @@ function Home() {
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          {/* <Link to="register">register</Link> */}
-          <div className="account">
-            <img src={temp} alt="" id="accImg" />
-            <h1 className="accountheader">Katie McLeen</h1>
-          </div>
+          <Link to="register">
+            <div className="account">
+              <img src={temp} alt="" id="accImg" />
+              <h1 className="accountheader">Katie McLeen</h1>
+            </div>
+          </Link>
           <div className="break">.</div>
           <div className="sidecontent">
             <div className="panel">
