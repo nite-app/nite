@@ -1,28 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Link, Outlet } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Register() {
+  const emailref = useRef();
+  const pswref = useRef();
+  const repeatref = useRef();
+
   return (
     <>
       <div className="fullpage">
         <div className="formcontainer">
-          <div class="acont">
-            <div class="back">
-              <a href="../../index.html">
+          <div className="acont">
+            <div className="back">
+              <Link to="home">
                 <img
-                  src="../../img/chevron-left-solid.svg"
-                  alt=""
+                  src={require("../../img/chevron-left-solid.png")}
                   width="25px"
+                  alt=""
                 />
-              </a>
+              </Link>
             </div>
-            <div class="ctsplit">
-              <div class="formcontainer">
-                <h1 class="formttl">Create your account.</h1>
-                <div class="changescreen">
-                  <p class="formsub">Already a member?&nbsp;</p>
-                  <a class="formsub2" href="./login.html">
-                    Login
-                  </a>
+            <div className="ctsplit">
+              <div className="formcontainer">
+                <h1 className="formttl">Create your account.</h1>
+                <div className="changescreen">
+                  <p className="formsub">Already a member?&nbsp;</p>
+                  <Link to="login">Login</Link>
                 </div>
                 <hr />
 
@@ -31,7 +35,8 @@ export default function Register() {
                   placeholder="Email"
                   name="email"
                   id="regemail"
-                  class="field"
+                  className="field"
+                  ref={emailref}
                   required
                 />
 
@@ -40,7 +45,8 @@ export default function Register() {
                   placeholder="Password"
                   name="psw"
                   id="regpsw"
-                  class="field"
+                  className="field"
+                  ref={pswref}
                   required
                 />
 
@@ -49,15 +55,16 @@ export default function Register() {
                   placeholder="Repeat Password"
                   name="psw-repeat"
                   id="psw-repeat"
-                  class="field"
+                  className="field"
+                  ref={repeatref}
                   required
                 />
                 <hr />
-                <button type="submit" class="registerbtn">
+                <button type="submit" className="registerbtn">
                   Register
                 </button>
               </div>
-              <div class="asc2"></div>
+              <div className="asc2"></div>
             </div>
           </div>
         </div>

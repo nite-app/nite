@@ -190,6 +190,92 @@
   height: 100vh;
 }
 
+.inlinewords {
+  display: flex;
+  margin-top: 7.5px;
+}
+
+.bottomimgl {
+  width: 48.42px;
+  height: 48.42px;
+  margin-left: 50px;
+  margin-top: 17.5px;
+  border-radius: 15px;
+}
+.bottomimgr {
+  width: 48.42px;
+  height: 48.42px;
+  margin-left: 425px;
+  margin-top: 17.5px;
+  border-radius: 15px;
+}
+
+.bottomwordsl {
+  position: absolute;
+  text-align: left;
+  margin-left: 120px;
+  margin-top: 27px;
+  width: 121px;
+  height: 19px;
+  font-family: Articulat CF;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.bottomwordsr {
+  position: absolute;
+  text-align: left;
+  margin-left: 495px;
+  margin-top: 27px;
+  width: 158px;
+  height: 19px;
+  font-family: Articulat CF;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.radioiconl {
+  margin-top: 25px;
+  margin-left: 200px;
+  width: 24.21px;
+  height: 24.21px;
+  border-radius: 3.5px;
+  box-sizing: border-box;
+}
+
+.radioiconr {
+  margin-top: 25px;
+  margin-left: 200px;
+  width: 24.21px;
+  height: 24.21px;
+  border-radius: 3.5px;
+  box-sizing: border-box;
+}
+
+.habitscontainer {
+  display: flex;
+  height: 27vh;
+}
+
+.right {
+  width: 7vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 120px;
+}
+
+.left {
+  width: 7vw;
+}
+
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {
@@ -295,6 +381,8 @@
   margin-top: 20px;
 }
 
+/*  */
+
 .changescreen {
   display: flex;
   font-size: 16px;
@@ -312,11 +400,4 @@
 .formcontainer label {
   font-family: Articulat CF Medium;
   letter-spacing: 0.5px;
-}
-
-.bottomimg {
-  width: 48.42px;
-  height: 48.42px;
-  top:761px;
-  left:505px;
 }

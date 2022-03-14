@@ -4,7 +4,6 @@ import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 
-
 function Home() {
   return (
     <>
@@ -54,7 +53,118 @@ function Home() {
           <div className="mainpanelscont">
             <div className="bottompanel">
               <h1 className="bottomh">Which Habits have you respected?</h1>
-              <img src="../img/images.jpg" alt="" className="bottomimg"/>
+              <div className="habitscontainer">
+                <div className="left">
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgl"
+                    />
+                    <h4 className="bottomwordsl">Eat Healthy</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconl"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgl"
+                    />
+                    <h4 className="bottomwordsl">Read 10 Pages</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconl"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgl"
+                    />
+                    <h4 className="bottomwordsl">Meditate</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconl"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgl"
+                    />
+                    <h4 className="bottomwordsl">Train Yourself</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconl"
+                    />
+                  </div>
+                </div>
+
+                {/* INSERIRE BARRA VERTICALE SEPARATRICE */}
+                <div className="right">
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgr"
+                    />
+                    <h4 className="bottomwordsr">Run 5 km</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconr"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgr"
+                    />
+                    <h4 className="bottomwordsr">No games</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconr"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgr"
+                    />
+                    <h4 className="bottomwordsr">Listen to podcast</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconr"
+                    />
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimgr"
+                    />
+                    <h4 className="bottomwordsr">Don't drink alcool</h4>
+                    <img
+                      src={require("../img/radio-on-button.png")}
+                      alt=""
+                      className="radioiconr"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="bottompanel">
               <h1 className="bottomh">Today's Goals</h1>
