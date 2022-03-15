@@ -1,3 +1,4 @@
+import React from "react";
 import "../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";

@@ -5,7 +5,7 @@ import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 
-function page2() {
+function Page2() {
   return (
     <>
       <div className="page2">
@@ -59,11 +59,12 @@ function page2() {
           </div>
         </div>
       </div>
+      <Outlet />
     </>
   );
 }
 
-export default page2;
+export default Page2;
 
 const linkStyle = {
   textDecoration: "none",

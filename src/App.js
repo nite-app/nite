@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Register from "./screens/auth/Register";
 import Login from "./screens/auth/Login";
-import Page2 from "./screens/Page2";
+import Page2 from "./screens/Page2.js";
 
 function App() {
   return (
