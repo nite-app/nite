@@ -62,12 +62,9 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Eat Healthy</h4>
-                    <input
-                      type="radio"
-                      value="Male"
-                      name="gender"
-                      className="radioicon"
-                    />
+                    <div classname="radioicon">
+                      <input type="radio" />
+                    </div>
                   </div>
                   <div className="inlinewords">
                     <img
@@ -201,7 +198,7 @@ function Home() {
                 {/* SEP */}
                 <hr className="sep"></hr>
                 {/* SEP */}
-                <div className="right">
+                <div className="right2">
                   <div className="inlinewords">
                     <img
                       src={require("../img/illustrations/water.png")}
