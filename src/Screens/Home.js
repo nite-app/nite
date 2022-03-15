@@ -57,7 +57,7 @@ function Home() {
                 <div className="left">
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconamela.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -70,7 +70,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconalibro.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -83,7 +83,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconameditazione.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -96,7 +96,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconaworkout.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -112,7 +112,7 @@ function Home() {
                 <div className="right">
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconacorsa.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -125,7 +125,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconagiochi.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -138,7 +138,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconapodcast.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -151,7 +151,7 @@ function Home() {
                   </div>
                   <div className="inlinewords">
                     <img
-                      src={require("../img/images.jpg")}
+                      src={require("../img/iconaalcool.png")}
                       alt=""
                       className="bottomimg"
                     />
@@ -167,6 +167,53 @@ function Home() {
             </div>
             <div className="bottompanel">
               <h1 className="bottomh">Today's Goals</h1>
+              <div className="goalscontainer">
+                <div className="left">
+                    <input type="text" className="input"/>                
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/iconalavoro.png")}
+                      alt=""
+                      className="bottomimg"
+                    />
+                    <h4 className="bottomword">Finish Work</h4>
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/iconascrittura.png")}
+                      alt=""
+                      className="bottomimg"
+                    />
+                    <h4 className="bottomword">Write Essay</h4>
+                  </div>
+                  <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimg"
+                    />
+                    <h4 className="bottomword">Play Tennis</h4>
+                  </div>                 
+                </div>
+                <div className="right">
+                    <div className="inlinewords">
+                      <img
+                        src={require("../img/images.jpg")}
+                        alt=""
+                        className="bottomimg"
+                      />  
+                      <h4 className="bottomword">Drink 1 gallon</h4>
+                    </div>
+                    <div className="inlinewords">
+                    <img
+                      src={require("../img/images.jpg")}
+                      alt=""
+                      className="bottomimg"
+                    />
+                    <h4 className="bottomword">Read a book</h4>
+                  </div>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

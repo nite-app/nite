@@ -244,6 +244,25 @@
   margin-left: 50px;
 }
 
+.goalscontainer {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-top: -15px;
+}
+
+.input {
+  
+  width:265px;
+  height: 50px;
+  margin-top:5px;
+  background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 15px;
+}
+
+
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {
