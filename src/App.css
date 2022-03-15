@@ -215,15 +215,12 @@
   margin: 0 0 0 20px;
 }
 
-.radioicon {
+.ch{
   position: absolute;
   right: 0;
   width: 24.21px;
   height: 24.21px;
-  border-radius: 3.5px;
-  filter: invert(100%);
-
-  /* white radio buttons */
+  border-radius: 5px;
 }
 
 .habitscontainer {
@@ -249,6 +246,7 @@
   flex-direction: column;
   margin-left: 35px;
   align-items: flex-start;
+  margin: 15px 0 40px 35px;
 }
 
 .left {
@@ -285,6 +283,13 @@
   align-self: center;
 }
 
+.point {
+  position:absolute;
+  width:10px;
+  height:10px;
+  left:1886px;
+  top:400px;
+}
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {

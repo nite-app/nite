@@ -4,6 +4,7 @@ import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 
+
 function Home() {
   return (
     <>
@@ -61,10 +62,8 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
-                    <div classname="radioicon">
-                      <input type="radio" />
-                    </div>
+                    <h4 className="bottomword">Eat Healthy</h4>                    
+                    <input type="checkbox" className="ch"/>                                                                                                               
                   </div>
                   <div className="inlinewords">
                     <img
@@ -73,11 +72,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Read 10 pages</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                   <div className="inlinewords">
                     <img
@@ -86,11 +81,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Meditate</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                   <div className="inlinewords">
                     <img
@@ -99,11 +90,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Train yourself</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                 </div>
                 {/* SEP */}
@@ -117,11 +104,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Run 5Km</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                   <div className="inlinewords">
                     <img
@@ -130,11 +113,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">No games</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                   <div className="inlinewords">
                     <img
@@ -143,11 +122,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Listen to podcast</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                   <div className="inlinewords">
                     <img
@@ -156,11 +131,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">No alcool</h4>
-                    <img
-                      src={require("../img/radio-on-button.png")}
-                      alt=""
-                      className="radioicon"
-                    />
+                    <input type="checkbox" className="ch"/>  
                   </div>
                 </div>
               </div>
@@ -219,7 +190,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div>       
       </div>
       <Outlet />
     </>
