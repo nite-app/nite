@@ -199,9 +199,9 @@
 }
 
 .bottomimg {
-  width: 48.42px;
-  height: 48.42px;
-  border-radius: 15px;
+  width: 45px;
+  height: 45px;
+  /* border-radius: 15px; */
 }
 
 .bottomword {
@@ -221,6 +221,9 @@
   width: 24.21px;
   height: 24.21px;
   border-radius: 3.5px;
+  filter: invert(100%);
+
+  /* white radio buttons */
 }
 
 .habitscontainer {
@@ -236,7 +239,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 .left {
@@ -254,14 +257,24 @@
 }
 
 .input {
-  
-  width:265px;
+  border: none;
+  width: 265px;
   height: 50px;
-  margin-top:5px;
+  margin-top: 5px;
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 15px;
 }
 
+.sep {
+  position: absolute;
+  height: 240px;
+  width: 5px;
+  border-radius: 2.5px;
+  background-color: white;
+  border: none;
+  justify-self: center;
+  align-self: center;
+}
 
 /* ####################### REGISTER AND LOGIN ########################## */
 
