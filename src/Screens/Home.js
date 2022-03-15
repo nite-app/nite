@@ -4,13 +4,12 @@ import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 
-
 function Home() {
   return (
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          <Link to="register">
+          <Link to="register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
               <h1 className="accountheader">Katie McLeen</h1>
@@ -24,10 +23,12 @@ function Home() {
               <p className="panelitem">Daily Questions</p>
             </div>
             <div className="panel">
-              <h1 className="panelheader">Your Sleep</h1>
-              <p className="panelitem">Add Sleep Insights</p>
-              <p className="panelitem">Weekly Report</p>
-              <p className="panelitem">Your Notes</p>
+              <Link to="page2" style={linkStyle}>
+                <h1 className="panelheader">Your Sleep</h1>
+                <p className="panelitem">Add Sleep Insights</p>
+                <p className="panelitem">Weekly Report</p>
+                <p className="panelitem">Your Notes</p>
+              </Link>
             </div>
             <div className="panel">
               <h1 className="panelheader">Your Habits</h1>
@@ -62,8 +63,8 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>                    
-                    <input type="checkbox" className="ch"/>                                                                                                               
+                    <h4 className="bottomword">Eat Healthy</h4>
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -72,7 +73,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Read 10 pages</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -81,7 +82,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Meditate</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -90,7 +91,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Train yourself</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                 </div>
                 {/* SEP */}
@@ -104,7 +105,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Run 5Km</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -113,7 +114,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">No games</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -122,7 +123,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">Listen to podcast</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
                     <img
@@ -131,7 +132,7 @@ function Home() {
                       className="bottomimg"
                     />
                     <h4 className="bottomword">No alcool</h4>
-                    <input type="checkbox" className="ch"/>  
+                    <input type="checkbox" className="ch" />
                   </div>
                 </div>
               </div>
@@ -190,7 +191,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>       
+        </div>
       </div>
       <Outlet />
     </>
@@ -198,3 +199,9 @@ function Home() {
 }
 
 export default Home;
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "#000",
+  textAlign: "left",
+};

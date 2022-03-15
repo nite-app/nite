@@ -17,6 +17,16 @@
   font-family: "Articulat CF Regular";
 }
 
+.page2 {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #17223b;
+  display: flex;
+  align-items: center;
+  font-family: "Articulat CF Regular";
+}
+
 .sidebar {
   width: 21vw;
   height: 96.5vh;
@@ -133,7 +143,7 @@
 }
 
 .panelitem {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   margin: 0;
   padding-left: 30px;
@@ -192,7 +202,7 @@
 
 .inlinewords {
   display: flex;
-  width: 275px;
+  width: 14vw;
   position: relative;
   align-items: center;
   margin: 15px 0 0 0;
@@ -215,7 +225,7 @@
   margin: 0 0 0 20px;
 }
 
-.ch{
+.ch {
   position: absolute;
   right: 0;
   width: 24.21px;
@@ -284,11 +294,11 @@
 }
 
 .point {
-  position:absolute;
-  width:10px;
-  height:10px;
-  left:1886px;
-  top:400px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 1886px;
+  top: 400px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
