@@ -4,11 +4,11 @@ import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
 export default class Page2 extends Component {
   render() {
@@ -58,33 +58,37 @@ export default class Page2 extends Component {
           </div>
           <div className="maincontainer">
             <h1 className="containerheader">Your Sleep</h1>
-            <div className="mainpanel1">
-              <div className="mainpanelleft">
-                <h1 className="mainpanelleftheader">About tonight</h1>
-                <p className="mainpanellefttext">
-                Take a couple minutes  to reflect on your sleep: write down what
-                you think is more important
-                </p>  
-              </div>   
-              <div className="mainpanelcenter">
-                <h1 className="mainpanelcenterheader">Do you remember a dream?</h1>
-                <FormGroup>
-                  <div className="switch">
-                    <FormControlLabel control={<Switch/>} label="Yes"/>                    
-                  </div>               
-                </FormGroup>
-                <p className="mainpanelcentertext">
-                Take notes about your dreams, if you remember one, 
-                or other general notes
-                </p>
-                <h1 className="mainpanelcenterheader2">How long have you slept?</h1>
-                  <Box>
-                    <TextField label="7.5" className="textfield" variant="filled"/> 
-                  </Box>
-                <p className="textfield">Hours</p>   
-              </div>                                                                  
+            <div className="mainpanelpg2">
+              <h1 className="pg2mainheader">About Tonight</h1>
+              <div className="mainpanelgrid">
+                <div className="mainpanelleft">
+                  <p className="mainpanelleft2text">
+                    Take a couple minutes to reflect on your sleep: write down
+                    what you think is more important
+                  </p>
+                </div>
+                <hr className="mainpanelsep"></hr>
+                <div className="mainpanelcenter">
+                  <div className="pg2maintop">
+                    <h1 className="pg2maintopheader">
+                      Do you remember a dream?
+                    </h1>
+                    <div className="pg2maintopswitch">
+                      <FormGroup>
+                        <FormControlLabel
+                          control={<Switch />}
+                          label="No"
+                          labelPlacement="start"
+                        />
+                      </FormGroup>
+                    </div>
+                  </div>
+                  <div className="pg2mainbottom"></div>
+                </div>
+                <hr className="mainpanelsep"></hr>
+                <div className="mainpanelright"></div>
+              </div>
             </div>
-            <hr className="mainpanelsep"></hr>
             <div className="mainpanelscont">
               <div className="bottompanel"></div>
               <div className="bottompanel"></div>

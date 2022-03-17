@@ -3,7 +3,6 @@
   src: url("./fonts/ArticulatCF-Regular.otf"), format(otf);
 }
 
-
 * {
   font-family: Articulat CF;
 }
@@ -231,7 +230,7 @@
   right: 0;
   width: 24.21px;
   height: 24.21px;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .habitscontainer {
@@ -295,90 +294,102 @@
 }
 
 .point {
-  position: absolute;
   width: 10px;
   height: 10px;
   left: 1886px;
   top: 400px;
 }
 
-.mainpanelleftheader {
-  position:absolute;
-  text-align: left;
-  color:#ffffff;
-  left:505px;
-  top:175px;
-}
-.mainpanellefttext{
-  position:absolute;
-  color:#ffffff;
-  text-align: left;
-  left:505px;
-  top:250px;
-  font-weight: 600;
-  font-size:12px;
-  line-height: 18px;
-  width:250px;
-  opacity: 0.5;
-}
-.mainpanelsep{
-  position: absolute;
-  height: 240px;
+.mainpanelsep {
   width: 5px;
+  height: 25vh;
   border-radius: 2.5px;
   background-color: white;
   border: none;
-  left:902px;
-  top:250px;
+  margin: 0px;
+  justify-self: center;
   align-self: center;
 }
 
-.mainpanelcenterheader{
-  position:absolute;
-  left:950px;
-  top:245px;
-  color:#ffffff;
-  font-size:24px;
+.mainpanelpg2 {
+  margin: 20px;
+  width: 75vw;
+  height: 42vh;
+  background-color: #576c96;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.switch{
-  position:absolute;
-  left:950px;
-  top:307px;
-  width:100px;
-  padding-left:10px;
-  border-radius:15px;
-  background-color: rgba(223, 239, 240, 0.75);  
+.mainpanelleft {
+  width: 23vw;
+  height: 100%;
 }
 
-.mainpanelcentertext{
-  position:absolute;
-  color:#ffffff;
-  text-align: left;
-  left:950px;
-  top: 350px;
-  width:344px;
-  height: 36px;
-  font-weight: 600;
-  font-size:12px;
+.mainpanelcenter {
+  width: 23vw;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.mainpanelright {
+  width: 23vw;
+  height: 100%;
+}
+
+.pg2maintop {
+}
+
+.pg2mainbottom {
+}
+
+.pg2mainheader {
+  color: white;
+  margin: 50px 0 10px 50px;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.mainpanelgrid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainpanelleft2text {
+  font-weight: 400;
+  size: 12px;
   line-height: 18px;
+  color: white;
   opacity: 0.5;
+  text-align: left;
+  width: 355px;
+  height: 36px;
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
-.mainpanelcenterheader2{
-  position:absolute;
-  left:950px;
-  top:400px;
-  color:#ffffff;
-  font-size:24px;
+.pg2maintopheader {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  width: 348px;
+  height: 29px;
+  color: white;
+  margin-top: 24px;
 }
-.textfield{
-  position:absolute;
-  border: none;
+
+.pg2maintopswitch {
   width: 100px;
-  height: 40px;
-  top:275px;
-  left:-165px;
+  padding-left: 20px;
+  border-radius: 15px;
+  margin-left: -1vw;
+  color: white;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
