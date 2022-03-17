@@ -4,6 +4,11 @@ import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from "@mui/material/Switch";
+import TextField from "@mui/material/TextField";
+import Box from '@mui/material/Box';
 
 export default class Page2 extends Component {
   render() {
@@ -63,8 +68,21 @@ export default class Page2 extends Component {
               </div>   
               <div className="mainpanelcenter">
                 <h1 className="mainpanelcenterheader">Do you remember a dream?</h1>
-               
-              </div>                    
+                <FormGroup>
+                  <div className="switch">
+                    <FormControlLabel control={<Switch/>} label="Yes"/>                    
+                  </div>               
+                </FormGroup>
+                <p className="mainpanelcentertext">
+                Take notes about your dreams, if you remember one, 
+                or other general notes
+                </p>
+                <h1 className="mainpanelcenterheader2">How long have you slept?</h1>
+                  <Box>
+                    <TextField label="7.5" className="textfield" variant="filled"/> 
+                  </Box>
+                <p className="textfield">Hours</p>   
+              </div>                                                                  
             </div>
             <hr className="mainpanelsep"></hr>
             <div className="mainpanelscont">

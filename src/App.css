@@ -315,7 +315,7 @@
   text-align: left;
   left:505px;
   top:250px;
-  font-weight: 600px;
+  font-weight: 600;
   font-size:12px;
   line-height: 18px;
   width:250px;
@@ -335,10 +335,50 @@
 
 .mainpanelcenterheader{
   position:absolute;
-  left:957px;
+  left:950px;
   top:245px;
   color:#ffffff;
   font-size:24px;
+}
+
+.switch{
+  position:absolute;
+  left:950px;
+  top:307px;
+  width:100px;
+  padding-left:10px;
+  border-radius:15px;
+  background-color: rgba(223, 239, 240, 0.75);  
+}
+
+.mainpanelcentertext{
+  position:absolute;
+  color:#ffffff;
+  text-align: left;
+  left:950px;
+  top: 350px;
+  width:344px;
+  height: 36px;
+  font-weight: 600;
+  font-size:12px;
+  line-height: 18px;
+  opacity: 0.5;
+}
+
+.mainpanelcenterheader2{
+  position:absolute;
+  left:950px;
+  top:400px;
+  color:#ffffff;
+  font-size:24px;
+}
+.textfield{
+  position:absolute;
+  border: none;
+  width: 100px;
+  height: 40px;
+  top:275px;
+  left:-165px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
