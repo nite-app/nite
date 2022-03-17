@@ -10,6 +10,7 @@ import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 
+
 export default class Page2 extends Component {
   render() {
     return (
@@ -74,19 +75,32 @@ export default class Page2 extends Component {
                       Do you remember a dream?
                     </h1>
                     <div className="pg2maintopswitch">
-                      <FormGroup>
+                      <FormGroup>                     
                         <FormControlLabel
-                          control={<Switch />}
-                          label="No"
-                          labelPlacement="start"
-                        />
-                      </FormGroup>
+                          control={<Switch/>}
+                          label="Yes"
+                          labelPlacement="end"                  
+                        />                     
+                      </FormGroup>                      
+                    </div>
+                    <p className="mainpanelcenter2text">
+                    Take notes about your dreams, if you remember one, 
+                      or other general notes
+                    </p>         
+                  </div>
+                  <div className="pg2mainbottom">
+                  <h1 className="pg2mainbottomheader">How long have you slept?</h1>
+                    <div  className="textfield">
+                      <TextField id="filled-basic" label="Hours" variant="filled"/>
                     </div>
                   </div>
-                  <div className="pg2mainbottom"></div>
                 </div>
                 <hr className="mainpanelsep"></hr>
-                <div className="mainpanelright"></div>
+                <div className="mainpanelright">
+                  <div className="mainpanaelrightheader">
+                    How did you sleep?
+                  </div>
+                </div>
               </div>
             </div>
             <div className="mainpanelscont">

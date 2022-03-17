@@ -340,9 +340,11 @@
 }
 
 .pg2maintop {
+  
 }
 
 .pg2mainbottom {
+
 }
 
 .pg2mainheader {
@@ -388,8 +390,47 @@
   width: 100px;
   padding-left: 20px;
   border-radius: 15px;
-  margin-left: -1vw;
+  margin-left: 0.5vw;
   color: white;
+}
+
+.mainpanelcenter2text{
+  font-weight: 400;
+  size: 12px;
+  line-height: 18px;
+  color: white;
+  opacity: 0.5;
+  text-align: left;
+  width: 355px;
+  height: 36px;
+  margin-top: 20px;
+  margin-left: 1.5vw;
+}
+
+.pg2mainbottomheader{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  width: 318px;
+  height: 29px;
+  color: white;
+}
+
+.textfield{
+  width: 100px;
+  height:55px;
+  margin-left:1vw;
+  background-color: rgba(223, 239, 240, 0.75);
+}
+
+.mainpanaelrightheader{
+  color:white;
+  width:241px;
+  height:29px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top:24px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
