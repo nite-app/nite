@@ -3,6 +3,7 @@
   src: url("./fonts/ArticulatCF-Regular.otf"), format(otf);
 }
 
+
 * {
   font-family: Articulat CF;
 }
@@ -299,6 +300,45 @@
   height: 10px;
   left: 1886px;
   top: 400px;
+}
+
+.mainpanelleftheader {
+  position:absolute;
+  text-align: left;
+  color:#ffffff;
+  left:505px;
+  top:175px;
+}
+.mainpanellefttext{
+  position:absolute;
+  color:#ffffff;
+  text-align: left;
+  left:505px;
+  top:250px;
+  font-weight: 600px;
+  font-size:12px;
+  line-height: 18px;
+  width:250px;
+  opacity: 0.5;
+}
+.mainpanelsep{
+  position: absolute;
+  height: 240px;
+  width: 5px;
+  border-radius: 2.5px;
+  background-color: white;
+  border: none;
+  left:902px;
+  top:250px;
+  align-self: center;
+}
+
+.mainpanelcenterheader{
+  position:absolute;
+  left:957px;
+  top:245px;
+  color:#ffffff;
+  font-size:24px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 

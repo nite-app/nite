@@ -52,8 +52,21 @@ export default class Page2 extends Component {
             </div>
           </div>
           <div className="maincontainer">
-            <h1 className="containerheader">Good morning, Katie</h1>
-            <div className="mainpanel1">.</div>
+            <h1 className="containerheader">Your Sleep</h1>
+            <div className="mainpanel1">
+              <div className="mainpanelleft">
+                <h1 className="mainpanelleftheader">About tonight</h1>
+                <p className="mainpanellefttext">
+                Take a couple minutes  to reflect on your sleep: write down what
+                you think is more important
+                </p>  
+              </div>   
+              <div className="mainpanelcenter">
+                <h1 className="mainpanelcenterheader">Do you remember a dream?</h1>
+               
+              </div>                    
+            </div>
+            <hr className="mainpanelsep"></hr>
             <div className="mainpanelscont">
               <div className="bottompanel"></div>
               <div className="bottompanel"></div>
