@@ -460,7 +460,7 @@
   padding: 2.5px 5px 2.5px 10px;
 }
 
-.mainpanaelrightheader {
+.mainpanelrightheader {
   color: white;
   width: 241px;
   height: 29px;
@@ -468,6 +468,167 @@
   font-size: 24px;
   line-height: 29px;
   margin-top: 0px;
+}
+
+.mainpanelrightbutton{
+  width:365px;
+  height:50px;
+  background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 20px;
+  margin-top:15px;
+  display:flex;
+  align-items:flex-start;
+}
+
+.mainpanelrightbuttontext{
+  width:251px;
+  height:17px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align:left;
+}
+
+.bottompanel2header{
+  font-size: 32px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  margin-left: 50px;
+  margin-top: 35px;
+  letter-spacing: 0.5px;
+}
+
+.goalscontainergrid{
+ display:grid;
+ grid-template-columns: 48% 4% 48%;
+ grid-template-rows: repeat(2, 1fr);
+ width:100%;
+
+}
+
+.bottompanelsep{
+  width: 5px;
+  height: 10vh;
+  border-radius: 2.5px;
+  background-color: white;
+  border: none;
+  margin-left: 19vw;
+  margin-top:10px;
+  justify-items: center;
+}
+
+.goalscontainergridtopleftheader{
+  width: 267px;
+  height: 29px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color:white;
+  margin-left:1.5vw;
+}
+
+.goalscontainerinput{
+  display:flex;
+  margin-left:50px;
+
+}
+
+.goalscontainergridtopleftinput{
+  width:70px;
+  height:45px;
+  background-color:  #DFEFF0;
+  border-radius:15px;
+  border:none;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.goalscontainerinputp{
+  margin-right:10px;
+  color:white;
+  font-size: 15px;
+}
+
+.goalscontainertopleftbutton{
+  width:20px;
+  height:19.49px;
+  background:url("img/Vector.png");
+  margin-top:15px; 
+  border:none; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.goalscontainertopsep{
+  width: 5px;
+  height: 14vh;
+  border-radius: 2.5px;
+  background-color: white;
+  border: none;
+  margin-top:10px;
+  justify-items: center;
+
+}
+
+.goalscontainergridtopright{
+  width: 200px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-align: left;
+  margin-top:15px;
+  margin-left:38px;
+}
+
+.goalscontainergridtoprighttext{
+  width: 228px;
+  height: 29px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color:white;
+  margin-top:21px;
+}
+
+.goalscontainerbottom{
+  width: 562px;
+  height: 29px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin-top:17px;
+}
+
+.goalscontainerbottomtext{
+  width: 154px;
+  height: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin-left:42px;
+  margin-top:13px;
+}
+
+.goalscontainerbottomfooter{
+  width: 563px;
+  height: 34px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin-top:16px;
+  text-align: left;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
