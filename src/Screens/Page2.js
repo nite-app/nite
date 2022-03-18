@@ -9,7 +9,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-
+import { createTheme } from "@mui/material/styles";
 
 export default class Page2 extends Component {
   render() {
@@ -75,23 +75,33 @@ export default class Page2 extends Component {
                       Do you remember a dream?
                     </h1>
                     <div className="pg2maintopswitch">
-                      <FormGroup>                     
+                      <FormGroup>
                         <FormControlLabel
-                          control={<Switch/>}
+                          control={<Switch />}
                           label="Yes"
-                          labelPlacement="end"                  
-                        />                     
-                      </FormGroup>                      
+                          labelPlacement="end"
+                        />
+                      </FormGroup>
                     </div>
                     <p className="mainpanelcenter2text">
-                    Take notes about your dreams, if you remember one, 
-                      or other general notes
-                    </p>         
+                      Take notes about your dreams, if you remember one, or
+                      other general notes
+                    </p>
                   </div>
                   <div className="pg2mainbottom">
-                  <h1 className="pg2mainbottomheader">How long have you slept?</h1>
-                    <div  className="textfield">
-                      <TextField id="filled-basic" label="Hours" variant="filled"/>
+                    <h1 className="pg2mainbottomheader">
+                      How long have you slept?
+                    </h1>
+                    <div className="textfield">
+                      <TextField
+                        id="filled-basic"
+                        label="Hours"
+                        variant="standard"
+                        type="number"
+                        margin="none"
+                        size="small"
+                        color="primary"
+                      />
                     </div>
                   </div>
                 </div>
@@ -120,3 +130,11 @@ const linkStyle = {
   color: "#000",
   textAlign: "left",
 };
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#DFEFF0",
+    },
+  },
+});

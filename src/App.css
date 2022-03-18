@@ -324,27 +324,25 @@
 
 .mainpanelleft {
   width: 23vw;
-  height: 100%;
+  height: 28vh;
 }
 
 .mainpanelcenter {
   width: 23vw;
-  height: 100%;
+  height: 28vh;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
 }
 
 .mainpanelright {
   width: 23vw;
-  height: 100%;
+  height: 28vh;
 }
 
 .pg2maintop {
-  
 }
 
 .pg2mainbottom {
-
 }
 
 .pg2mainheader {
@@ -383,7 +381,7 @@
   width: 348px;
   height: 29px;
   color: white;
-  margin-top: 24px;
+  margin-top: 0px;
 }
 
 .pg2maintopswitch {
@@ -394,43 +392,48 @@
   color: white;
 }
 
-.mainpanelcenter2text{
-  font-weight: 400;
-  size: 12px;
+.mainpanelcenter2text {
+  font-weight: 300;
+  size: 10px;
   line-height: 18px;
   color: white;
   opacity: 0.5;
   text-align: left;
   width: 355px;
   height: 36px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 1.5vw;
 }
 
-.pg2mainbottomheader{
+.pg2mainbottomheader {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
   width: 318px;
   height: 29px;
   color: white;
+  margin: 0px;
+  margin-bottom: 10px;
 }
 
-.textfield{
+.textfield {
   width: 100px;
-  height:55px;
-  margin-left:1vw;
+  height: 50px;
+  margin-left: 1vw;
   background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 10px;
+  border: none;
+  padding: 2.5px 5px 2.5px 5px;
 }
 
-.mainpanaelrightheader{
-  color:white;
-  width:241px;
-  height:29px;
+.mainpanaelrightheader {
+  color: white;
+  width: 241px;
+  height: 29px;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  margin-top:24px;
+  margin-top: 0px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 
