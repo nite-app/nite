@@ -366,7 +366,7 @@
   size: 12px;
   line-height: 18px;
   color: white;
-  opacity: 0.5;
+  opacity: 1;
   text-align: left;
   width: 355px;
   height: 80%;
@@ -389,6 +389,7 @@
 
 .mainpanelleft2text::placeholder {
   color: white;
+  opacity: 0.5;
 }
 
 .pg2maintopheader {
@@ -440,7 +441,7 @@
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 10px;
   border: none;
-  padding: 2.5px 5px 2.5px 5px;
+  padding: 2.5px 5px 2.5px 10px;
 }
 
 .mainpanaelrightheader {
