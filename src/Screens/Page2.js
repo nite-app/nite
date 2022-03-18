@@ -8,11 +8,6 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import { createTheme } from "@mui/material/styles";
-import { grey } from "@mui/material/colors";
-
-const primary = grey[50];
 
 export default class Page2 extends Component {
   render() {
@@ -137,11 +132,3 @@ const linkStyle = {
   color: "#000",
   textAlign: "left",
 };
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: grey[50],
-    },
-  },
-});

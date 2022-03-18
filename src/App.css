@@ -231,6 +231,22 @@
   width: 24.21px;
   height: 24.21px;
   border-radius: 50%;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  background: url("./img/CheckEmpty.png");
+  background-size: cover;
+  background-position: center;
+  border: none;
+}
+
+.ch:checked {
+  background: url("./img/checkFilled.png");
+  background-size: cover;
+  background-position: center;
+  border: none;
 }
 
 .habitscontainer {
