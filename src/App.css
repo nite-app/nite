@@ -369,9 +369,26 @@
   opacity: 0.5;
   text-align: left;
   width: 355px;
-  height: 36px;
+  height: 80%;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 20px;
+  margin: none;
+  background: transparent;
+  resize: none;
+  border: 0 none;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.mainpanelleft2text:focus {
+  border: none;
+}
+
+.mainpanelleft2text::placeholder {
+  color: white;
 }
 
 .pg2maintopheader {

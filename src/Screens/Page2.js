@@ -10,6 +10,9 @@ import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
+
+const primary = grey[50];
 
 export default class Page2 extends Component {
   render() {
@@ -63,10 +66,15 @@ export default class Page2 extends Component {
               <h1 className="pg2mainheader">About Tonight</h1>
               <div className="mainpanelgrid">
                 <div className="mainpanelleft">
-                  <p className="mainpanelleft2text">
-                    Take a couple minutes to reflect on your sleep: write down
-                    what you think is more important
-                  </p>
+                  <textarea
+                    name="dream"
+                    id="dreamtxt"
+                    cols=""
+                    rows="5"
+                    placeholder="Take a couple minutes to reflect on your sleep: write down
+                    what you think is more important"
+                    className="mainpanelleft2text"
+                  ></textarea>
                 </div>
                 <hr className="mainpanelsep"></hr>
                 <div className="mainpanelcenter">
@@ -100,7 +108,6 @@ export default class Page2 extends Component {
                         type="number"
                         margin="none"
                         size="small"
-                        color="primary"
                       />
                     </div>
                   </div>
@@ -134,7 +141,7 @@ const linkStyle = {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#DFEFF0",
+      main: grey[50],
     },
   },
 });
