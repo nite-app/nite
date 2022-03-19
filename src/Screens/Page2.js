@@ -81,7 +81,7 @@ export default class Page2 extends Component {
                       <FormGroup>
                         <FormControlLabel
                           control={<Switch />}
-                          label="Yes"
+                          label="No"
                           labelPlacement="end"
                         />
                       </FormGroup>
@@ -109,22 +109,35 @@ export default class Page2 extends Component {
                 </div>
                 <hr className="mainpanelsep"></hr>
                 <div className="mainpanelright">
-                  <div className="mainpanelrightheader">
-                    How did you sleep?
-                  </div>
+                  <div className="mainpanelrightheader">How did you sleep?</div>
                   <button className="mainpanelrightbutton">
+                    <img
+                      src={require("../img/greencircle.png")}
+                      alt=""
+                      className="mainpanelright2img"
+                    />
                     <p className="mainpanelrightbuttontext">
-                       Pretty good, i feel great and energic
+                      Pretty good, i feel great and energic
                     </p>
                   </button>
                   <button className="mainpanelrightbutton">
+                    <img
+                      src={require("../img/yellowcircle.png")}
+                      alt=""
+                      className="mainpanelright2img"
+                    />
                     <p className="mainpanelrightbuttontext">
-                       It could have been better, but still ok
+                      It could have been better, but still ok
                     </p>
                   </button>
                   <button className="mainpanelrightbutton">
+                    <img
+                      src={require("../img/redcircle.png")}
+                      alt=""
+                      className="mainpanelright2img"
+                    />
                     <p className="mainpanelrightbuttontext">
-                       Not really good, I feel tired
+                      Not really good, I feel tired
                     </p>
                   </button>
                 </div>
@@ -132,40 +145,50 @@ export default class Page2 extends Component {
             </div>
             <div className="mainpanelscont">
               <div className="bottompanel">
-                <div className="bottompanel2header">
-                  Sleep goal
-                </div>
-                <div className="goalscontainergrid">          
-                   <div className="goalscontainergridtopleft">
-                      <h1 className="goalscontainergridtopleftheader">
-                        I have to wake up at...
-                      </h1>
-                      <div className="goalscontainerinput">
-                        <input type="number" className="goalscontainergridtopleftinput" min="00" max="23" />
-                        <p className="goalscontainerinputp">:</p>
-                        <input type="number" className="goalscontainergridtopleftinput" min="00" max="59" />
-                        <button className="goalscontainertopleftbutton"></button>                       
-                      </div>                                
-                   </div>
-                   <hr className="goalscontainertopsep"></hr>
-                   <div className="goalscontainergridtopright">
-                      You should try to fall asleep
-                      at one of the following times:
-                      <div className="goalscontainergridtoprighttext">
-                        22:25 - 23:55 - 01:25
-                      </div>
-                   </div>                   
-                   <div className="goalscontainerbottom">
+                <div className="bottompanel2header">Sleep goal</div>
+                <div className="goalscontainergrid">
+                  <div className="goalscontainergridtopleft">
+                    <h1 className="goalscontainergridtopleftheader">
+                      I have to wake up at...
+                    </h1>
+                    <div className="goalscontainerinput">
+                      <input
+                        type="number"
+                        className="goalscontainergridtopleftinput"
+                        min="00"
+                        max="23"
+                      />
+                      <p className="goalscontainerinputp">:</p>
+                      <input
+                        type="number"
+                        className="goalscontainergridtopleftinput"
+                        min="00"
+                        max="59"
+                      />
+                      <button className="goalscontainertopleftbutton"></button>
+                    </div>
+                  </div>
+                  <hr className="goalscontainertopsep"></hr>
+                  <div className="goalscontainergridtopright">
+                    You should try to fall asleep at one of the following times:
+                    <div className="goalscontainergridtoprighttext">
+                      22:25 - 23:55 - 01:25
+                    </div>
+                  </div>
+                  <div className="goalscontainerbottom">
+                    <p className="goalscontainerbottomtitle">
                       If you got to bed now, you should wake up at:
-                      <div className="goalscontainerbottomtext">
+                    </p>
+                    <div className="goalscontainerbottomtext">
                       3:15 - 4:45 - 6:15
                       <p className="goalscontainerbottomfooter">
-                      Please keep in mind that you should be falling asleep at these times.
-                      The average human takes fourteen minutes to fall asleep, so plan accordingly! 
+                        Please keep in mind that you should be falling asleep at
+                        these times. The average human takes fourteen minutes to
+                        fall asleep, so plan accordingly!
                       </p>
-                      </div>
-                   </div>
-                </div>             
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="bottompanel"></div>
             </div>
