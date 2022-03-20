@@ -32,10 +32,12 @@ function Home() {
               </Link>
             </div>
             <div className="panel">
-              <h1 className="panelheader">Your Habits</h1>
-              <p className="panelitem">View Habits</p>
-              <p className="panelitem">Edit Habits</p>
-              <p className="panelitem">Weekly Report</p>
+              <Link to="page3" style={linkStyle}>
+                <h1 className="panelheader">Your Habits</h1>
+                <p className="panelitem">View Habits</p>
+                <p className="panelitem">Edit Habits</p>
+                <p className="panelitem">Weekly Report</p>
+              </Link>
             </div>
           </div>
           <div className="break">.</div>

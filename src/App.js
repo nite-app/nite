@@ -5,6 +5,7 @@ import Home from "./screens/Home";
 import Register from "./screens/auth/Register";
 import Login from "./screens/auth/Login";
 import Page2 from "./screens/Page2.js";
+import Page3 from "./screens/Page3.js"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="page2" element={<Page2 />} />
+        <Route path="page3" element={<Page3 />} />
       </Routes>
     </BrowserRouter>
   );

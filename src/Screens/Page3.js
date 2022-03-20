@@ -32,10 +32,12 @@ const Page3 = () => {
               </Link>
             </div>
             <div className="panel">
-              <h1 className="panelheader">Your Habits</h1>
-              <p className="panelitem">View Habits</p>
-              <p className="panelitem">Edit Habits</p>
-              <p className="panelitem">Weekly Report</p>
+              <Link to="page3" style={linkStyle}>
+                <h1 className="panelheader">Your Habits</h1>
+                <p className="panelitem">View Habits</p>
+                <p className="panelitem">Edit Habits</p>
+                <p className="panelitem">Weekly Report</p>
+              </Link>
             </div>
           </div>
           <div className="break">.</div>
@@ -52,7 +54,37 @@ const Page3 = () => {
         </div>
         <div className="maincontainer">
           <h1 className="containerheader">Good morning, Katie</h1>
-          <div className="mainpanel1">.</div>
+          <div className="mainpanel1">
+            <div className="mainpanel3grid">
+              <div className="mainpanel3gridleft">
+              <div className="mainpanel3gridleftgridheader">
+                  Current habits
+              </div>
+                <div className="mainpanel3gridleftgrid">
+                  <div className="mainpanel3gridleftgridleft">                   
+                      <div className="mainpanel3currenthabits">
+                        <img
+                        src={require("../img/illustrations/appleicon.png")}
+                        alt=""
+                        className="mainpanel3currenthabitsimg"
+                        />
+                        <h4 className="mainpanel3currenthabitstext">Finish Work</h4>
+                      </div>                   
+                  </div>
+                  <hr className="mainpanel3gridleftsep"></hr>
+                  <div className="mainpanel3gridleftgridright">
+
+                  </div>
+                </div>
+              </div>
+
+              <hr className="mainpanel3sep"></hr>
+
+              <div className="mainpanel3gridright">
+
+              </div>
+            </div>
+          </div>
           <div className="mainpanelscont">
             <div className="bottompanel"></div>
             <div className="bottompanel"></div>

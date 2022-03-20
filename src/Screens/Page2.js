@@ -37,10 +37,12 @@ export default class Page2 extends Component {
                 </Link>
               </div>
               <div className="panel">
-                <h1 className="panelheader">Your Habits</h1>
-                <p className="panelitem">View Habits</p>
-                <p className="panelitem">Edit Habits</p>
-                <p className="panelitem">Weekly Report</p>
+                <Link to="page3" style={linkStyle}>
+                  <h1 className="panelheader">Your Habits</h1>
+                  <p className="panelitem">View Habits</p>
+                  <p className="panelitem">Edit Habits</p>
+                  <p className="panelitem">Weekly Report</p>
+                </Link>
               </div>
             </div>
             <div className="break">.</div>
@@ -59,8 +61,8 @@ export default class Page2 extends Component {
             <h1 className="containerheader">Your Sleep</h1>
             <div className="mainpanelpg2">
               <h1 className="pg2mainheader">About Tonight</h1>
-              <div className="mainpanelgrid">
-                <div className="mainpanelleft">
+              <div className="mainpanel2grid">
+                <div className="mainpanel2left">
                   <textarea
                     name="dream"
                     id="dreamtxt"
@@ -71,8 +73,8 @@ export default class Page2 extends Component {
                     className="mainpanelleft2text"
                   ></textarea>
                 </div>
-                <hr className="mainpanelsep"></hr>
-                <div className="mainpanelcenter">
+                <hr className="mainpanel2sep"></hr>
+                <div className="mainpanel2center">
                   <div className="pg2maintop">
                     <h1 className="pg2maintopheader">
                       Do you remember a dream?
@@ -86,7 +88,7 @@ export default class Page2 extends Component {
                         />
                       </FormGroup>
                     </div>
-                    <p className="mainpanelcenter2text">
+                    <p className="mainpanel2centertext">
                       Take notes about your dreams, if you remember one, or
                       other general notes
                     </p>
@@ -107,36 +109,36 @@ export default class Page2 extends Component {
                     </div>
                   </div>
                 </div>
-                <hr className="mainpanelsep"></hr>
-                <div className="mainpanelright">
-                  <div className="mainpanelrightheader">How did you sleep?</div>
-                  <button className="mainpanelrightbutton">
+                <hr className="mainpanel2sep"></hr>
+                <div className="mainpanel2right">
+                  <div className="mainpanel2rightheader">How did you sleep?</div>
+                  <button className="mainpanel2rightbutton">
                     <img
                       src={require("../img/greencircle.png")}
                       alt=""
-                      className="mainpanelright2img"
+                      className="mainpanel2rightimg"
                     />
-                    <p className="mainpanelrightbuttontext">
+                    <p className="mainpanel2rightbuttontext">
                       Pretty good, i feel great and energic
                     </p>
                   </button>
-                  <button className="mainpanelrightbutton">
+                  <button className="mainpanel2rightbutton">
                     <img
                       src={require("../img/yellowcircle.png")}
                       alt=""
-                      className="mainpanelright2img"
+                      className="mainpanel2rightimg"
                     />
-                    <p className="mainpanelrightbuttontext">
+                    <p className="mainpanel2rightbuttontext">
                       It could have been better, but still ok
                     </p>
                   </button>
-                  <button className="mainpanelrightbutton">
+                  <button className="mainpanel2rightbutton">
                     <img
                       src={require("../img/redcircle.png")}
                       alt=""
-                      className="mainpanelright2img"
+                      className="mainpanel2rightimg"
                     />
-                    <p className="mainpanelrightbuttontext">
+                    <p className="mainpanel2rightbuttontext">
                       Not really good, I feel tired
                     </p>
                   </button>
