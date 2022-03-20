@@ -1,6 +1,14 @@
 @font-face {
   font-family: "Articulat CF Regular";
-  src: url("./fonts/articulatcf-extrabold-webfont.woff"), format(woff);
+  src: url("./fonts/ArticulatCF-Normal.otf"), format(otf),
+    url("./fonts/ArticulatCF-Regular.otf"), format(otf),
+    url("./fonts/ArticulatCF-DemiBold.otf"), format(otf),
+    url("./fonts/ArticulatCF-Medium.otf"), format(otf),
+    url("./fonts/ArticulatCF-Heavy.otf"), format(otf),
+    url("./fonts/ArticulatCF-Bold.otf"), format(otf),
+    url("./fonts/ArticulatCF-ExtraBold.otf"), format(otf),
+    url("./fonts/ArticulatCF-Light.otf"), format(otf),
+    url("./fonts/ArticulatCF-ExtraLight.otf"), format(otf);
 }
 
 * {
@@ -353,7 +361,7 @@
   grid-template-rows: repeat(2, 1fr);
 }
 
-.mainpanelright {
+.mainpanel2right {
   width: 23vw;
   height: 28vh;
 }
@@ -651,53 +659,53 @@ input::-webkit-inner-spin-button {
   margin-top: 10px;
   text-align: left;
   margin-bottom: 0px;
-  margin-left:5px;
+  margin-left: 5px;
 }
 
-.mainpanel3grid{
+.mainpanel3grid {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns:48% 4% 48%;
+  grid-template-columns: 48% 4% 48%;
   justify-content: center;
   align-items: center;
 }
 
-.mainpanel3sep{
+.mainpanel3sep {
   height: 300px;
   width: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
 }
 
-.mainpanel3gridleftgrid{
+.mainpanel3gridleftgrid {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns:48% 4% 48%;
+  grid-template-columns: 48% 4% 48%;
   justify-content: center;
   align-items: center;
 }
 
-.mainpanel3gridleftgridheader{
+.mainpanel3gridleftgridheader {
   width: 238px;
   height: 39px;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
-  color: #FFFFFF;
-  margin-left:30px;
-  margin-top:0px;
+  color: #ffffff;
+  margin-left: 30px;
+  margin-top: 0px;
 }
 
-.mainpanel3gridleftsep{
+.mainpanel3gridleftsep {
   height: 210px;
   width: 4px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
 }
 
-.mainpanel3currenthabits{
+.mainpanel3currenthabits {
   display: flex;
   width: 14vw;
   position: relative;
@@ -705,12 +713,12 @@ input::-webkit-inner-spin-button {
   margin: 15px 0 0 0;
 }
 
-.mainpanel3currenthabitsimg{
+.mainpanel3currenthabitsimg {
   width: 45px;
   height: 45px;
 }
 
-.mainpanel3currenthabitstext{
+.mainpanel3currenthabitstext {
   text-align: left;
   font-family: Articulat CF;
   letter-spacing: 0.5px;
