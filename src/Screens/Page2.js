@@ -27,7 +27,7 @@ export default class Page2 extends Component {
                 <h1 className="panelheader">Home</h1>
                 <p className="panelitem">Overview</p>
                 <p className="panelitem">Daily Questions</p>
-              </div>
+              </div>            
               <div className="panel">
                 <Link to="page2" style={linkStyle}>
                   <h1 className="panelheader">Your Sleep</h1>
@@ -190,7 +190,11 @@ export default class Page2 extends Component {
                   </div>
                 </div>
               </div>
-              <div className="bottompanel"></div>
+              <div className="bottompanel">
+                <div className="bottompanel2header">
+                  Weekly report
+                </div>
+              </div>
             </div>
           </div>
         </div>

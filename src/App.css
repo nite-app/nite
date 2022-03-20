@@ -638,7 +638,7 @@ input::-webkit-inner-spin-button {
 
 .goalscontainerbottomtitle {
   margin: 0px;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .goalscontainerbottomfooter {
@@ -651,7 +651,10 @@ input::-webkit-inner-spin-button {
   margin-top: 10px;
   text-align: left;
   margin-bottom: 0px;
+  margin-left:5px;
 }
+
+
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {
