@@ -27,7 +27,7 @@ export default class Page2 extends Component {
                 <h1 className="panelheader">Home</h1>
                 <p className="panelitem">Overview</p>
                 <p className="panelitem">Daily Questions</p>
-              </div>            
+              </div>
               <div className="panel">
                 <Link to="page2" style={linkStyle}>
                   <h1 className="panelheader">Your Sleep</h1>
@@ -88,10 +88,15 @@ export default class Page2 extends Component {
                         />
                       </FormGroup>
                     </div>
-                    <p className="mainpanel2centertext">
-                      Take notes about your dreams, if you remember one, or
-                      other general notes
-                    </p>
+                    <textarea
+                      name="notes"
+                      id="notestxt"
+                      cols=""
+                      rows="2"
+                      placeholder="Take notes about your dreams, if you remember one, or
+                    other general notes"
+                      className="mainpanelcenter2text"
+                    ></textarea>
                   </div>
                   <div className="pg2mainbottom">
                     <h1 className="pg2mainbottomheader">
@@ -111,7 +116,9 @@ export default class Page2 extends Component {
                 </div>
                 <hr className="mainpanel2sep"></hr>
                 <div className="mainpanel2right">
-                  <div className="mainpanel2rightheader">How did you sleep?</div>
+                  <div className="mainpanel2rightheader">
+                    How did you sleep?
+                  </div>
                   <button className="mainpanel2rightbutton">
                     <img
                       src={require("../img/greencircle.png")}
@@ -172,9 +179,12 @@ export default class Page2 extends Component {
                   </div>
                   <hr className="goalscontainertopsep"></hr>
                   <div className="goalscontainergridtopright">
-                    You should try to fall asleep at one of the following times:
+                    <p className="goalscontainerp">
+                      You should try to fall asleep at one of the following
+                      times:
+                    </p>
                     <div className="goalscontainergridtoprighttext">
-                      22:25 - 23:55 - 01:25
+                      <p className="goalscontainerp">22:25 - 23:55 - 01:25</p>
                     </div>
                   </div>
                   <div className="goalscontainerbottom">
@@ -182,7 +192,7 @@ export default class Page2 extends Component {
                       If you got to bed now, you should wake up at:
                     </p>
                     <div className="goalscontainerbottomtext">
-                      3:15 - 4:45 - 6:15
+                      <p className="goalscontainerp">3:15 - 4:45 - 6:15</p>
                       <p className="goalscontainerbottomfooter">
                         Please keep in mind that you should be falling asleep at
                         these times. The average human takes fourteen minutes to
@@ -193,9 +203,7 @@ export default class Page2 extends Component {
                 </div>
               </div>
               <div className="bottompanel">
-                <div className="bottompanel2header">
-                  Weekly report
-                </div>
+                <div className="bottompanel2header">Weekly report</div>
               </div>
             </div>
           </div>

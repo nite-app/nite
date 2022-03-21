@@ -72,6 +72,10 @@ p {
   font-family: Articulat CF Medium;
 }
 
+::placeholder {
+  font-family: Articulat CF Regular;
+}
+
 /* APP CODE */
 
 .App {
@@ -396,6 +400,7 @@ p {
   margin: 0px;
   justify-self: center;
   align-self: center;
+  margin-bottom: 35px;
 }
 
 .mainpanelpg2 {
@@ -482,6 +487,36 @@ p {
   opacity: 0.5;
 }
 
+.mainpanelcenter2text {
+  font-weight: 400;
+  size: 12px;
+  line-height: 18px;
+  color: white;
+  opacity: 1;
+  text-align: left;
+  width: 100%;
+  height: 40%;
+  margin-left: 15px;
+  margin: none;
+  background: transparent;
+  resize: none;
+  border: 0 none;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.mainpanelcenter2text:focus {
+  border: none;
+}
+
+.mainpanelcenter2text::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
 .pg2maintopheader {
   font-weight: 600;
   font-size: 24px;
@@ -527,7 +562,7 @@ p {
 .textfield {
   width: 100px;
   height: 50px;
-  margin-left: 1vw;
+  margin-left: 15px;
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 10px;
   border: none;
@@ -584,8 +619,9 @@ p {
 .goalscontainergrid {
   display: grid;
   grid-template-columns: 48% 4% 48%;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 45% 55%;
   width: 100%;
+  height: 100%;
 }
 
 .bottompanelsep {
@@ -654,7 +690,7 @@ input::-webkit-inner-spin-button {
 
 .goalscontainertopsep {
   width: 5px;
-  height: 14vh;
+  height: 12vh;
   border-radius: 2.5px;
   background-color: white;
   border: none;
@@ -697,7 +733,6 @@ input::-webkit-inner-spin-button {
 }
 
 .goalscontainerbottomtext {
-  width: 154px;
   height: 24px;
   font-weight: 600;
   font-size: 20px;
@@ -705,11 +740,17 @@ input::-webkit-inner-spin-button {
   color: #ffffff;
   margin-left: 42px;
   margin-top: 13px;
+  text-align: left;
+}
+
+.goalscontainerp {
+  margin: 0px;
 }
 
 .goalscontainerbottomtitle {
   margin: 0px;
-  margin-left: 0px;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 .goalscontainerbottomfooter {
@@ -722,7 +763,6 @@ input::-webkit-inner-spin-button {
   margin-top: 10px;
   text-align: left;
   margin-bottom: 0px;
-  margin-left: 5px;
 }
 
 .mainpanel3grid {
