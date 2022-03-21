@@ -356,11 +356,17 @@ p {
 
 .input {
   border: none;
-  width: 265px;
+  width: 245px;
   height: 50px;
   margin-top: 5px;
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 15px;
+  padding-left: 20px;
+}
+
+.input:focus {
+  outline: none;
+  border: none;
 }
 
 .sep {
@@ -791,6 +797,7 @@ input::-webkit-inner-spin-button {
   margin: auto;
   margin-left: 30px;
 }
+
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {
