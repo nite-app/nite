@@ -269,7 +269,7 @@ p {
   height: 100vh;
 }
 
-.inlinewords {
+.inlinewordspg3 {
   display: flex;
   width: 14vw;
   position: relative;
@@ -277,13 +277,13 @@ p {
   margin: 15px 0 0 0;
 }
 
-.bottomimg {
+.bottomimgpg3 {
   width: 45px;
   height: 45px;
   /* border-radius: 15px; */
 }
 
-.bottomword {
+.bottomwordpg3 {
   text-align: left;
   font-family: Articulat CF Medium;
   letter-spacing: 0.5px;
@@ -648,6 +648,8 @@ p {
 .goalscontainerinput {
   display: flex;
   margin-left: 50px;
+  font-size: 16px;
+  font-family: Articulat CF Medium;
 }
 
 .goalscontainergridtopleftinput {
@@ -784,9 +786,14 @@ input::-webkit-inner-spin-button {
 
 .mainpanel3gridleftgrid {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: grid;
   grid-template-columns: 48% 4% 48%;
+}
+
+.mainpanel3gridleftgridleft {
+  padding-left: 50px;
+  height: 100%;
 }
 
 .mainpanel3gridleftgridheader {
@@ -798,7 +805,7 @@ input::-webkit-inner-spin-button {
   color: #ffffff;
   margin-left: 30px;
   margin-top: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .mainpanel3gridleft {

@@ -62,13 +62,37 @@ const Page3 = () => {
                 </div>
                 <div className="mainpanel3gridleftgrid">
                   <div className="mainpanel3gridleftgridleft">
-                    <div className="mainpanel3currenthabits">
+                    <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/appleicon.png")}
+                        src={require("../img/illustrations/bookicon.png")}
                         alt=""
-                        className="mainpanel3currenthabitsimg"
+                        className="bottomimgpg3"
                       />
-                      <p className="mainpanel3currenthabitstext">Finish Work</p>
+                      <h4 className="bottomwordpg3">Read a book</h4>
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/bookicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Read a book</h4>
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/bookicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Read a book</h4>
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/bookicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Read a book</h4>
                     </div>
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
