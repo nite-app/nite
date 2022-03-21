@@ -1,19 +1,78 @@
 @font-face {
-  font-family: "Articulat CF Regular";
-  src: url("./fonts/ArticulatCF-Normal.otf"), format(otf),
-    url("./fonts/ArticulatCF-Regular.otf"), format(otf),
-    url("./fonts/ArticulatCF-DemiBold.otf"), format(otf),
-    url("./fonts/ArticulatCF-Medium.otf"), format(otf),
-    url("./fonts/ArticulatCF-Heavy.otf"), format(otf),
-    url("./fonts/ArticulatCF-Bold.otf"), format(otf),
-    url("./fonts/ArticulatCF-ExtraBold.otf"), format(otf),
-    url("./fonts/ArticulatCF-Light.otf"), format(otf),
-    url("./fonts/ArticulatCF-ExtraLight.otf"), format(otf);
+  font-family: Articulat CF;
+  src: url(./fonts/ArticulatCF-Normal.otf);
 }
+
+@font-face {
+  font-family: Articulat CF Regular;
+  src: url(./fonts/ArticulatCF-Regular.otf);
+}
+
+@font-face {
+  font-family: Articulat CF Medium;
+  src: url(./fonts/ArticulatCF-Medium.otf);
+}
+
+@font-face {
+  font-family: Articulat CF DemiBold;
+  src: url(./fonts/ArticulatCF-DemiBold.otf);
+}
+
+@font-face {
+  font-family: Articulat CF Bold;
+  src: url(./fonts/ArticulatCF-Bold.otf);
+}
+
+@font-face {
+  font-family: Articulat CF;
+  src: url(./fonts/ArticulatCF-ExtraBold.otf);
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: Articulat CF Heavy;
+  src: url(./fonts/ArticulatCF-Heavy.otf);
+}
+
+@font-face {
+  font-family: Articulat CF Light;
+  src: url(./fonts/ArticulatCF-Light.otf);
+}
+
+@font-face {
+  font-family: Articulat CF ExtraLight;
+  src: url(./fonts/ArticulatCF-ExtraLight.otf);
+}
+
+@font-face {
+  font-family: Articulat CF Thin;
+  src: url(./fonts/ArticulatCF-Thin.otf);
+}
+
+@font-face {
+  font-family: Articulat CF Woff;
+  src: url(./fonts/articulatcf-extrabold-webfont.woff);
+}
+
+/* SET DEFAULTS */
 
 * {
   font-family: Articulat CF;
 }
+
+h1 {
+  font-family: Articulat CF Bold;
+}
+
+h2 {
+  font-family: Articulat CF Bold;
+}
+
+p {
+  font-family: Articulat CF Medium;
+}
+
+/* APP CODE */
 
 .App {
   text-align: center;
@@ -224,7 +283,7 @@
 
 .bottomword {
   text-align: left;
-  font-family: Articulat CF;
+  font-family: Articulat CF Medium;
   letter-spacing: 0.5px;
   font-size: 16px;
   font-weight: 400;
