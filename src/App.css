@@ -131,8 +131,6 @@ p {
   justify-self: start;
   margin-left: 25px;
   font-size: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -240,7 +238,7 @@ p {
 }
 
 .bottompanel {
-  width: 37.1vw;
+  width: 37vw;
   height: 37vh;
   background-color: #576c96;
   border-radius: 25px;
@@ -731,10 +729,11 @@ input::-webkit-inner-spin-button {
 }
 
 .mainpanel3sep {
-  height: 300px;
+  height: 34vh;
   width: 5px;
   background: #ffffff;
   border-radius: 15px;
+  border: none;
 }
 
 .mainpanel3gridleftgrid {
@@ -742,8 +741,6 @@ input::-webkit-inner-spin-button {
   height: 100%;
   display: grid;
   grid-template-columns: 48% 4% 48%;
-  justify-content: center;
-  align-items: center;
 }
 
 .mainpanel3gridleftgridheader {
@@ -755,10 +752,15 @@ input::-webkit-inner-spin-button {
   color: #ffffff;
   margin-left: 30px;
   margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.mainpanel3gridleft {
+  height: 75%;
 }
 
 .mainpanel3gridleftsep {
-  height: 210px;
+  height: 22vh;
   width: 4px;
   background: #ffffff;
   border-radius: 15px;
@@ -768,8 +770,9 @@ input::-webkit-inner-spin-button {
   display: flex;
   width: 14vw;
   position: relative;
-  align-items: center;
+  align-items: flex-end;
   margin: 15px 0 0 0;
+  padding-left: 35px;
 }
 
 .mainpanel3currenthabitsimg {
@@ -785,7 +788,8 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
   line-height: 20px;
   color: #ffffff;
-  margin: 0 0 0 20px;
+  margin: auto;
+  margin-left: 30px;
 }
 /* ####################### REGISTER AND LOGIN ########################## */
 

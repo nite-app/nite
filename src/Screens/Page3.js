@@ -57,32 +57,28 @@ const Page3 = () => {
           <div className="mainpanel1">
             <div className="mainpanel3grid">
               <div className="mainpanel3gridleft">
-              <div className="mainpanel3gridleftgridheader">
+                <div className="mainpanel3gridleftgridheader">
                   Current habits
-              </div>
+                </div>
                 <div className="mainpanel3gridleftgrid">
-                  <div className="mainpanel3gridleftgridleft">                   
-                      <div className="mainpanel3currenthabits">
-                        <img
+                  <div className="mainpanel3gridleftgridleft">
+                    <div className="mainpanel3currenthabits">
+                      <img
                         src={require("../img/illustrations/appleicon.png")}
                         alt=""
                         className="mainpanel3currenthabitsimg"
-                        />
-                        <h4 className="mainpanel3currenthabitstext">Finish Work</h4>
-                      </div>                   
+                      />
+                      <p className="mainpanel3currenthabitstext">Finish Work</p>
+                    </div>
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
-                  <div className="mainpanel3gridleftgridright">
-
-                  </div>
+                  <div className="mainpanel3gridleftgridright"></div>
                 </div>
               </div>
 
               <hr className="mainpanel3sep"></hr>
 
-              <div className="mainpanel3gridright">
-
-              </div>
+              <div className="mainpanel3gridright"></div>
             </div>
           </div>
           <div className="mainpanelscont">
