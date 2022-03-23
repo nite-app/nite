@@ -275,6 +275,7 @@ p {
   position: relative;
   align-items: center;
   color: white;
+  margin-top: 15px;
 }
 
 .bottomimg {
@@ -294,6 +295,17 @@ p {
   width: 45px;
   height: 45px;
   /* border-radius: 15px; */
+}
+
+.bottomword {
+  text-align: left;
+  font-family: Articulat CF Medium;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0 0 0 20px;
 }
 
 .bottomwordpg3 {
