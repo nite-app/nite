@@ -53,7 +53,7 @@ const Page3 = () => {
           </div>
         </div>
         <div className="maincontainer">
-          <h1 className="containerheader">Good morning, Katie</h1>
+          <h1 className="containerheader">Your Habits</h1>
           <div className="mainpanel1">
             <div className="mainpanel3grid">
               <div className="mainpanel3gridleft">
@@ -64,45 +64,94 @@ const Page3 = () => {
                   <div className="mainpanel3gridleftgridleft">
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/bookicon.png")}
+                        src={require("../img/illustrations/appleicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
-                      <h4 className="bottomwordpg3">Read a book</h4>
+                      <h4 className="bottomwordpg3">Eat healthy</h4>
+                      <input type="checkbox" className="ch" />
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/bookicon.png")}
+                        src={require("../img/illustrations/readicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
-                      <h4 className="bottomwordpg3">Read a book</h4>
+                      <h4 className="bottomwordpg3">Read 10 pages</h4>
+                      <input type="checkbox" className="ch" />
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/bookicon.png")}
+                        src={require("../img/illustrations/meditate.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
-                      <h4 className="bottomwordpg3">Read a book</h4>
+                      <h4 className="bottomwordpg3">Meditate</h4>
+                      <input type="checkbox" className="ch" />
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/bookicon.png")}
+                        src={require("../img/illustrations/workouticon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
-                      <h4 className="bottomwordpg3">Read a book</h4>
-                    </div>
+                      <h4 className="bottomwordpg3">Train yourself</h4>
+                      <input type="checkbox" className="ch" />
+                    </div>                   
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
-                  <div className="mainpanel3gridleftgridright"></div>
+                  <div className="mainpanel3gridleftgridright">
+                  <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/runicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Run 5 km</h4>
+                      <input type="checkbox" className="ch" />
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/gamesicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">No games</h4>
+                      <input type="checkbox" className="ch" />
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/micicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Listen to podcast</h4>
+                      <input type="checkbox" className="ch" />
+                    </div>
+                    <div className="inlinewordspg3">
+                      <img
+                        src={require("../img/illustrations/alcoolicon.png")}
+                        alt=""
+                        className="bottomimgpg3"
+                      />
+                      <h4 className="bottomwordpg3">Don't drink alcool</h4>
+                      <input type="checkbox" className="ch" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <hr className="mainpanel3sep"></hr>
 
-              <div className="mainpanel3gridright"></div>
+              <div className="mainpanel3gridright">
+                <div className="mainpanel3gridrightgridheader">
+                  Set a new habit
+                </div>
+                <div className="mainpanel3gridrighttextname">
+                  Name
+                </div>               
+                <input type="text" className="mainpanel3textinput" />               
+              </div>
             </div>
           </div>
           <div className="mainpanelscont">

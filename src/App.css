@@ -796,8 +796,6 @@ input::-webkit-inner-spin-button {
   height: 100%;
   display: grid;
   grid-template-columns: 48% 4% 48%;
-  justify-content: center;
-  align-items: center;
 }
 
 .mainpanel3sep {
@@ -806,11 +804,14 @@ input::-webkit-inner-spin-button {
   background: #ffffff;
   border-radius: 15px;
   border: none;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
 }
 
 .mainpanel3gridleftgrid {
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: grid;
   grid-template-columns: 48% 4% 48%;
 }
@@ -828,7 +829,7 @@ input::-webkit-inner-spin-button {
   line-height: 39px;
   color: #ffffff;
   margin-left: 30px;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 15px;
 }
 
@@ -837,7 +838,7 @@ input::-webkit-inner-spin-button {
 }
 
 .mainpanel3gridleftsep {
-  height: 22vh;
+  height: 25vh;
   width: 4px;
   background: #ffffff;
   border-radius: 15px;
@@ -869,6 +870,42 @@ input::-webkit-inner-spin-button {
   margin-left: 30px;
 }
 
+.mainpanel3gridleftgridright{
+  margin-left:28px;
+}
+
+.mainpanel3gridrightgridheader{
+  width: 238px;
+  height: 39px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.mainpanel3gridrighttextname{
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFFFFF;
+  width: 68px;
+  height: 27px;
+  margin-left:50px;
+  margin-top:15px;
+}
+
+.mainpanel3textinput{
+  border: none;
+  width: 245px;
+  height: 50px;
+  margin-top: 5px;
+  background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 15px;
+  margin-left: 0px;
+}
 /* ####################### REGISTER AND LOGIN ########################## */
 
 .acont {
