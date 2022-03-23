@@ -269,6 +269,19 @@ p {
   height: 100vh;
 }
 
+.inlinewords {
+  display: flex;
+  width: 14vw;
+  position: relative;
+  align-items: center;
+  color: white;
+}
+
+.bottomimg {
+  height: 45px;
+  margin-right: 25px;
+}
+
 .inlinewordspg3 {
   display: flex;
   width: 14vw;
@@ -324,7 +337,6 @@ p {
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  margin-top: -15px;
 }
 
 .right {
