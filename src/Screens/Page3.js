@@ -149,8 +149,17 @@ const Page3 = () => {
                 </div>
                 <div className="mainpanel3gridrighttextname">
                   Name
+                  <input type="text" className="mainpanel3textinput" />
                 </div>               
-                <input type="text" className="mainpanel3textinput" />               
+                <div className="mainpanel3gridrighttexticon">
+                  Icon
+                  <img src={require("../img/uploadicon.png")}
+                   type="file" 
+                  accept="image/png" 
+                  className="mainpanel3gridrightuploadicon"
+                  alt="" 
+                  />                
+                </div>         
               </div>
             </div>
           </div>
