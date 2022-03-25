@@ -97,11 +97,11 @@ const Page3 = () => {
                       />
                       <h4 className="bottomwordpg3">Train yourself</h4>
                       <input type="checkbox" className="ch" />
-                    </div>                   
+                    </div>
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
                   <div className="mainpanel3gridleftgridright">
-                  <div className="inlinewordspg3">
+                    <div className="inlinewordspg3">
                       <img
                         src={require("../img/illustrations/runicon.png")}
                         alt=""
@@ -144,22 +144,8 @@ const Page3 = () => {
               <hr className="mainpanel3sep"></hr>
 
               <div className="mainpanel3gridright">
-                <div className="mainpanel3gridrightgridheader">
-                  Set a new habit
-                </div>
-                <div className="mainpanel3gridrighttextname">
-                  Name
-                  <input type="text" className="mainpanel3textinput" />
-                </div>               
-                <div className="mainpanel3gridrighttexticon">
-                  Icon
-                  <img src={require("../img/uploadicon.png")}
-                   type="file" 
-                  accept="image/png" 
-                  className="mainpanel3gridrightuploadicon"
-                  alt="" 
-                  />                
-                </div>         
+                <h1 className="mainpanel3gridrighttitle">Set a new habit</h1>
+                <div className="container"></div>
               </div>
             </div>
           </div>

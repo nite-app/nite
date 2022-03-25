@@ -806,7 +806,11 @@ input::-webkit-inner-spin-button {
   border: none;
   justify-content: center;
   align-items: center;
-  margin-top:20px;
+  margin-top: 20px;
+}
+
+.mainpanel3gridleft {
+  height: 100%;
 }
 
 .mainpanel3gridleftgrid {
@@ -814,11 +818,26 @@ input::-webkit-inner-spin-button {
   height: 100%;
   display: grid;
   grid-template-columns: 48% 4% 48%;
+  align-items: center;
+}
+
+.mainpanel3gridleftgridright {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+  margin-top: -25px;
 }
 
 .mainpanel3gridleftgridleft {
   padding-left: 50px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px;
 }
 
 .mainpanel3gridleftgridheader {
@@ -828,9 +847,9 @@ input::-webkit-inner-spin-button {
   font-size: 32px;
   line-height: 39px;
   color: #ffffff;
-  margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-left: 50px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .mainpanel3gridleft {
@@ -870,11 +889,23 @@ input::-webkit-inner-spin-button {
   margin-left: 30px;
 }
 
-.mainpanel3gridleftgridright{
-  margin-left:28px;
+.mainpanel3gridleftgridright {
+  margin-left: 28px;
 }
 
-.mainpanel3gridrightgridheader{
+.mainpanel3gridright {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.mainpanel3gridrighttitle {
+  color: white;
+}
+
+.mainpanel3gridrightgridheader {
   width: 238px;
   height: 39px;
   font-weight: 600;
@@ -886,46 +917,52 @@ input::-webkit-inner-spin-button {
   margin-bottom: 15px;
 }
 
-.mainpanel3gridrighttextname{
+.mainpanel3gridrighttextname {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 68px;
   height: 27px;
-  margin-left:50px;
-  margin-top:15px;
+  margin-left: 30px;
+  margin-top: 15px;
 }
 
-.mainpanel3textinput{
+.mainpanel3textinput {
   border: none;
   width: 245px;
   height: 50px;
   margin-top: 5px;
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 15px;
-  margin-right:340px;
-  margin-top:10px;
+  margin-right: 340px;
+  margin-top: 10px;
 }
 
-.mainpanel3gridrighttexticon{
+.mainpanel3gridrightcontainer {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 50% 50%;
+}
+
+.mainpanel3gridrighttexticon {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 68px;
   height: 27px;
-  margin-left:40px;
-  margin-top:97px;
+  margin-left: 40px;
+  margin-top: 97px;
 }
 
-.mainpanel3gridrightuploadicon{
-  background-color:  #DFEFF0;
+.mainpanel3gridrightuploadicon {
+  background-color: #dfeff0;
   cursor: pointer;
   border-radius: 10px;
-  padding:8px;
-  margin-top:10px;
-  margin-right:10px;
+  padding: 8px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 /* ####################### REGISTER AND LOGIN ########################## */
