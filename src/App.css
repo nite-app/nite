@@ -275,7 +275,7 @@ p {
   position: relative;
   align-items: center;
   color: white;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .bottomimg {
@@ -386,10 +386,11 @@ p {
   border: none;
   width: 245px;
   height: 50px;
-  margin-top: 5px;
+  margin-top: 15px;
   background-color: rgba(223, 239, 240, 0.75);
   border-radius: 15px;
   padding-left: 20px;
+  margin-bottom: 15px;
 }
 
 .input:focus {
@@ -811,6 +812,8 @@ input::-webkit-inner-spin-button {
 
 .mainpanel3gridleft {
   height: 100%;
+  width: 100%;
+  padding: 25px;
 }
 
 .mainpanel3gridleftgrid {
@@ -831,7 +834,7 @@ input::-webkit-inner-spin-button {
 }
 
 .mainpanel3gridleftgridleft {
-  padding-left: 50px;
+  padding-left: 15px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -847,8 +850,8 @@ input::-webkit-inner-spin-button {
   font-size: 32px;
   line-height: 39px;
   color: #ffffff;
-  margin-left: 50px;
-  margin-top: 40px;
+  margin-left: 25px;
+  margin-top: 21px;
   margin-bottom: 10px;
 }
 
@@ -943,6 +946,10 @@ input::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 50% 50%;
+  height: 100%;
+  width: 100%;
+  justify-content: left;
+  align-items: flex-start;
 }
 
 .mainpanel3gridrighttexticon {
@@ -956,6 +963,47 @@ input::-webkit-inner-spin-button {
   margin-top: 97px;
 }
 
+.mainpanel3gridrighttxt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainpanel3gridrightintext {
+  margin: 0px;
+  align-self: flex-start;
+  text-align: start;
+  color: white;
+  font-size: 22px;
+  font-family: Articulat CF Regular;
+  margin-bottom: 0.7vh;
+  margin-top: -1vh;
+}
+
+.mainpanel3gridrightadd {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-row-start: 2;
+}
+
+.mainpanel3gridrightinput {
+  border: none;
+  width: 245px;
+  height: 50px;
+  margin-top: 5px;
+  background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 15px;
+  padding-left: 20px;
+  align-self: flex-start;
+}
+
 .mainpanel3gridrightuploadicon {
   background-color: #dfeff0;
   cursor: pointer;
@@ -963,6 +1011,17 @@ input::-webkit-inner-spin-button {
   padding: 8px;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+.iconselect {
+  height: 100%;
+}
+
+.iconcircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: url("img/tempicon.png");
 }
 
 /* ####################### REGISTER AND LOGIN ########################## */

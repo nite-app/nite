@@ -145,7 +145,18 @@ const Page3 = () => {
 
               <div className="mainpanel3gridright">
                 <h1 className="mainpanel3gridrighttitle">Set a new habit</h1>
-                <div className="container"></div>
+                <div className="mainpanel3gridrightcontainer">
+                  <div className="mainpanel3gridrighttxt">
+                    <p className="mainpanel3gridrightintext">Name</p>
+                    <input type="text" className="mainpanel3gridrightinput" />
+                  </div>
+                  <div className="mainpanel3gridrightadd">
+                    <div className="iconselect">
+                      <div className="iconcircle">.</div>
+                    </div>
+                    <div className="reminderselect"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
