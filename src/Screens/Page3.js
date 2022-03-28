@@ -152,6 +152,7 @@ const Page3 = () => {
                   </div>
                   <div className="mainpanel3gridrightadd">
                     <div className="iconselect">
+                      <p className="mainpanel3gridrightintext">Icon</p>
                       <div className="iconcircle">.</div>
                     </div>
                     <div className="reminderselect"></div>

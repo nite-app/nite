@@ -1004,6 +1004,11 @@ input::-webkit-inner-spin-button {
   align-self: flex-start;
 }
 
+.mainpanel3gridrightinput:focus {
+  outline: none;
+  border: none;
+}
+
 .mainpanel3gridrightuploadicon {
   background-color: #dfeff0;
   cursor: pointer;
