@@ -147,15 +147,32 @@ const Page3 = () => {
                 <h1 className="mainpanel3gridrighttitle">Set a new habit</h1>
                 <div className="mainpanel3gridrightcontainer">
                   <div className="mainpanel3gridrighttxt">
-                    <p className="mainpanel3gridrightintext">Name</p>
+                    <p className="mainpanel3gridrightintext1">Name</p>
                     <input type="text" className="mainpanel3gridrightinput" />
+                  </div>
+                  <div className="colorsselect">
+                    <p className="mainpanel3gridrightintext1">Color</p>
+                    <div className="colorsgrid">
+                      <div className="colorcircle red"></div>
+                      <div className="colorcircle orange"></div>
+                      <div className="colorcircle yellow"></div>
+                      <div className="colorcircle green"></div>
+                      <div className="colorcircle aqua"></div>
+                      <div className="colorcircle blue"></div>
+                      <div className="colorcircle purple"></div>
+                      <div className="colorcircle pink"></div>
+                      <div className="colorcircle white"></div>
+                    </div>
                   </div>
                   <div className="mainpanel3gridrightadd">
                     <div className="iconselect">
                       <p className="mainpanel3gridrightintext">Icon</p>
                       <div className="iconcircle">.</div>
                     </div>
-                    <div className="reminderselect"></div>
+                    <div className="reminderselect">
+                      <p className="mainpanel3gridrightintext">Reminders</p>
+                      <button className="reminderbtn">Add a reminder</button>
+                    </div>
                   </div>
                 </div>
               </div>
