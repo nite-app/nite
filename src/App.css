@@ -445,6 +445,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-left: 50px;
 }
 
 .mainpanel2center {
@@ -491,7 +492,6 @@ p {
   width: 355px;
   height: 80%;
   margin-top: 20px;
-  margin-left: 50px;
   margin: none;
   background: transparent;
   resize: none;
