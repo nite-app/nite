@@ -1,10 +1,18 @@
 import React, { useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Register() {
   const emailref = useRef();
   const pswref = useRef();
   const repeatref = useRef();
+  const { signup } = useAuth();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    signup(emailref.current.value, pswref.current.value);
+  }
 
   return (
     <>

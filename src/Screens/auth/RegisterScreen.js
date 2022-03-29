@@ -1,11 +1,14 @@
 import React from "react";
 import Register from "../../components/Auth/Login";
+import { AuthProvider } from "../../contexts/AuthContext";
 
 function RegisterScreen() {
   return (
-    <>
-      <Register />
-    </>
+    <AuthProvider>
+      <div className="signupcontainer">
+        <Register />
+      </div>
+    </AuthProvider>
   );
 }
 
