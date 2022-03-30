@@ -1,22 +1,38 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import Alert from "../Alert";
 
 export default function Register() {
   const emailref = useRef();
   const pswref = useRef();
   const repeatref = useRef();
-  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { signup, currentUser } = useAuth();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    signup(emailref.current.value, pswref.current.value);
+    if (pswref.current.value !== repeatref.current.value) {
+      return setError("Passwords don't match");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      signup(emailref.current.value, pswref.current.value);
+    } catch {
+      setError("Internal Error: Failed to create your account");
+    }
+
+    setLoading(false);
   }
 
   return (
     <>
       <div className="fullpage">
+        {error && alert(error)}
         <div className="formcontainer">
           <div className="acont">
             <div className="back">
@@ -31,6 +47,7 @@ export default function Register() {
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>
+                {JSON.stringify(currentUser)}
                 <div className="changescreen">
                   <p className="formsub">Already a member?&nbsp;</p>
                   <Link to="login">Login</Link>
@@ -67,7 +84,12 @@ export default function Register() {
                   required
                 />
                 <hr />
-                <button type="submit" className="registerbtn">
+                <button
+                  type="submit"
+                  className="registerbtn"
+                  onClick={handleSubmit}
+                  disabled={loading} //works only if loading is false
+                >
                   Register
                 </button>
               </div>
