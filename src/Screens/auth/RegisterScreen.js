@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "../../components/Auth/Login";
+import Register from "../../components/Auth/Register";
 import { AuthProvider } from "../../contexts/AuthContext";
 
 function RegisterScreen() {

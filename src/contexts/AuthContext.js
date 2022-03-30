@@ -12,17 +12,18 @@ export function AuthProvider({ children }) {
 
   function signup(email, password) {
     auth.createUserWithEmailAndPassword(email, password);
+    console.log("Created user as: " + email);
   }
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(function (user) {
-      if (user) {
-        setCurrentUser(user);
-      }
-    });
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged(function (user) {
+  //     if (user) {
+  //       setCurrentUser(user);
+  //     }
+  //   });
 
-    return unsubscribe;
-  }, []);
+  //   return unsubscribe;
+  // }, []);
 
   const value = {
     currentUser,
