@@ -47,7 +47,7 @@ export default function Register() {
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>
-                {JSON.stringify(currentUser)}
+                {currentUser.email}
                 <div className="changescreen">
                   <p className="formsub">Already a member?&nbsp;</p>
                   <Link to="login">Login</Link>
