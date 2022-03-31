@@ -20,6 +20,7 @@ export function AuthProvider({ children }) {
       .catch(function (error) {
         console.log(error);
       });
+    console.log("Created user with email: " + email);
   }
 
   React.useEffect(() => {

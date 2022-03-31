@@ -19,17 +19,13 @@ export default function Register() {
       alert("Password do not match");
     }
 
-    // try {
-    //   setError("");
-    //   setLoading(true);
-    //   signup(emailref.current.value, pswref.current.value);
-    // } catch {
-    //   setError("Internal Error: Failed to create your account");
-    // }
-
-    setError("");
-    setLoading(true);
-    signup(emailref.current.value, pswref.current.value);
+    try {
+      setError("");
+      setLoading(true);
+      signup(emailref.current.value, pswref.current.value);
+    } catch {
+      setError("Internal Error: Failed to create your account");
+    }
 
     setLoading(false);
   }
