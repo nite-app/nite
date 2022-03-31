@@ -10,21 +10,23 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   function signup(email, password) {
-    auth.createUserWithEmailAndPassword(email, password);
-    console.log("Created user as: " + email);
+    console.log("Got to the signup function");
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
-      // detaching the listener
-      if (user) {
-        setCurrentUser(user);
-      } else {
-        // No user is signed in...code to handle unauthenticated users.
-      }
+      setCurrentUser(user);
+      setLoading(false);
     });
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
@@ -34,5 +36,9 @@ export function AuthProvider({ children }) {
     signup,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

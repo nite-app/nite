@@ -9,22 +9,27 @@ export default function Register() {
   const repeatref = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (pswref.current.value !== repeatref.current.value) {
       return setError("Passwords don't match");
+      alert("Password do not match");
     }
 
-    try {
-      setError("");
-      setLoading(true);
-      signup(emailref.current.value, pswref.current.value);
-    } catch {
-      setError("Internal Error: Failed to create your account");
-    }
+    // try {
+    //   setError("");
+    //   setLoading(true);
+    //   signup(emailref.current.value, pswref.current.value);
+    // } catch {
+    //   setError("Internal Error: Failed to create your account");
+    // }
+
+    setError("");
+    setLoading(true);
+    signup(emailref.current.value, pswref.current.value);
 
     setLoading(false);
   }
@@ -47,7 +52,6 @@ export default function Register() {
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>
-                {currentUser.email}
                 <div className="changescreen">
                   <p className="formsub">Already a member?&nbsp;</p>
                   <Link to="login">Login</Link>
