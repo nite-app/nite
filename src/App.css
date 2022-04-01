@@ -76,6 +76,12 @@ p {
   font-family: Articulat CF Regular;
 }
 
+.BlueLink {
+  color: #084298;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 /* ALERTS */
 
 /* The alert message box */
@@ -1250,6 +1256,10 @@ input::-webkit-inner-spin-button {
 .field::placeholder {
   font-family: Articulat CF Medium;
   color: #c7c7c7;
+}
+
+.field:focus {
+  outline: none;
 }
 
 .registerbtn {

@@ -50,7 +50,9 @@ export default function Register() {
                 <h1 className="formttl">Create your account.</h1>
                 <div className="changescreen">
                   <p className="formsub">Already a member?&nbsp;</p>
-                  <Link to="login">Login</Link>
+                  <Link to="login" className="BlueLink">
+                    Login
+                  </Link>
                 </div>
                 <hr />
 

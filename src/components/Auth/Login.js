@@ -18,9 +18,9 @@ function Login() {
           <h1 className="formttl">Log into your account.</h1>
           <div className="changescreen">
             <p className="formsub">First time here?&nbsp;</p>
-            <a className="formsub2" href="./register.html">
+            <Link to="register" className="BlueLink">
               Register
-            </a>
+            </Link>
           </div>
 
           <hr />
