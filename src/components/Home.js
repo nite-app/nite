@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
@@ -8,6 +8,15 @@ import { useAuth } from "../contexts/AuthContext";
 
 function Home() {
   const { currentUser } = useAuth();
+  const [name, setName] = useState("User");
+
+  function namesetter() {
+    if (currentUser.email === "") {
+      setName("User");
+    } else {
+      setName(currentUser.email);
+    }
+  }
 
   return (
     <>
@@ -16,7 +25,7 @@ function Home() {
           <Link to="/register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
-              <h1 className="accountheader">{currentUser.email}</h1>
+              <h1 className="accountheader">{name}</h1>
             </div>
           </Link>
           <div className="break">.</div>
