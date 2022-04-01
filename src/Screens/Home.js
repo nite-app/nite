@@ -10,7 +10,7 @@ function Home() {
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          <Link to="register" style={linkStyle}>
+          <Link to="/register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
               <h1 className="accountheader">Katie McLeen</h1>
@@ -24,7 +24,7 @@ function Home() {
               <p className="panelitem">Daily Questions</p>
             </div>
             <div className="panel">
-              <Link to="page2" style={linkStyle}>
+              <Link to="/page2" style={linkStyle}>
                 <h1 className="panelheader">Your Sleep</h1>
                 <p className="panelitem">Add Sleep Insights</p>
                 <p className="panelitem">Weekly Report</p>
@@ -32,7 +32,7 @@ function Home() {
               </Link>
             </div>
             <div className="panel">
-              <Link to="page3" style={linkStyle}>
+              <Link to="/page3" style={linkStyle}>
                 <h1 className="panelheader">Your Habits</h1>
                 <p className="panelitem">View Habits</p>
                 <p className="panelitem">Edit Habits</p>

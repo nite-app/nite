@@ -23,6 +23,17 @@ export function AuthProvider({ children }) {
     console.log("Created user with email: " + email);
   }
 
+  function login(email, password) {
+    console.log("Got to the login function");
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch(function (error) {
+        console.log(error);
+      });
+    console.log("Logged in as: " + email);
+  }
+
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
@@ -35,6 +46,7 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     signup,
+    login,
   };
 
   return (

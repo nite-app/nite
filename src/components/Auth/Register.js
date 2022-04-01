@@ -37,7 +37,7 @@ export default function Register() {
         <div className="formcontainer">
           <div className="acont">
             <div className="back">
-              <Link to="home">
+              <Link to="/">
                 <img
                   src={require("../../img/chevron-left-solid.png")}
                   width="25px"
@@ -50,7 +50,7 @@ export default function Register() {
                 <h1 className="formttl">Create your account.</h1>
                 <div className="changescreen">
                   <p className="formsub">Already a member?&nbsp;</p>
-                  <Link to="login" className="BlueLink">
+                  <Link to="/login" className="BlueLink">
                     Login
                   </Link>
                 </div>
