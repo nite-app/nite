@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from "../Alert";
 
@@ -9,22 +9,20 @@ function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault();
 
-    // try {
-    //   setError("");
-    //   setLoading(true);
-    //   login(emailref.current.value, pswref.current.value);
-    // } catch {
-    //   setError("Internal Error: Failed to login");
-    //   console.log(error);
-    // }
-
-    setError("");
-    setLoading(true);
-    login(emailref.current.value, pswref.current.value);
+    try {
+      setError("");
+      setLoading(true);
+      login(emailref.current.value, pswref.current.value);
+      navigate("/");
+    } catch {
+      setError("Internal Error: Failed to login");
+      console.log(error);
+    }
 
     setLoading(false);
   }

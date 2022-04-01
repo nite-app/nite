@@ -4,8 +4,11 @@ import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
+import { useAuth } from "../contexts/AuthContext";
 
 function Home() {
+  const { currentUser } = useAuth();
+
   return (
     <>
       <div className="App" id="Home">
@@ -13,7 +16,7 @@ function Home() {
           <Link to="/register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
-              <h1 className="accountheader">Katie McLeen</h1>
+              <h1 className="accountheader">{currentUser.email}</h1>
             </div>
           </Link>
           <div className="break">.</div>
