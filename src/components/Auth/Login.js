@@ -18,7 +18,7 @@ function Login() {
       setError("");
       setLoading(true);
       login(emailref.current.value, pswref.current.value);
-      navigate("/");
+      // navigate("/");
     } catch {
       setError("Internal Error: Failed to login");
       console.log(error);

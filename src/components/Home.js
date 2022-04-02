@@ -13,10 +13,14 @@ function Home() {
   function namesetter() {
     if (currentUser.email === "") {
       setName("User");
+      return "User";
     } else {
       setName(currentUser.email);
+      return currentUser.email;
     }
   }
+
+  React.useEffect(namesetter);
 
   return (
     <>
