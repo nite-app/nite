@@ -11,7 +11,7 @@ function Home() {
   const [name, setName] = useState("User");
 
   function namesetter() {
-    if (currentUser.email === "") {
+    if (currentUser == null) {
       setName("User");
       return "User";
     } else {
