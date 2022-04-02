@@ -7,20 +7,7 @@ import searchicon from "../img/searchimg.png";
 import { useAuth } from "../contexts/AuthContext";
 
 function Home() {
-  const { currentUser } = useAuth();
-  const [name, setName] = useState("User");
-
-  function namesetter() {
-    if (currentUser == null) {
-      setName("User");
-      return "User";
-    } else {
-      setName(currentUser.email);
-      return currentUser.email;
-    }
-  }
-
-  React.useEffect(namesetter);
+  const { name } = useAuth();
 
   return (
     <>
@@ -69,7 +56,7 @@ function Home() {
           </div>
         </div>
         <div className="maincontainer">
-          <h1 className="containerheader">Good morning, Katie</h1>
+          <h1 className="containerheader">Good morning, {name}</h1>
           <div className="mainpanel1">.</div>
           <div className="mainpanelscont">
             <div className="bottompanel">
