@@ -13,10 +13,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<HomeScreen />}></Route>
-        <Route path="/register" element={<RegisterScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/page2" element={<Page2 />} />
-        <Route path="/page3" element={<Page3 />} />
+        <Route exact path="/register" element={<RegisterScreen />} />
+        <Route exact path="/login" element={<LoginScreen />} />
+        <Route exact path="/page2" element={<Page2 />} />
+        <Route exact path="/page3" element={<Page3 />} />
       </Routes>
     </BrowserRouter>
   );

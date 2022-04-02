@@ -10,7 +10,7 @@ const Page3 = () => {
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          <Link to="register" style={linkStyle}>
+          <Link to="/register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
               <h1 className="accountheader">Katie McLeen</h1>
@@ -19,12 +19,14 @@ const Page3 = () => {
           <div className="break">.</div>
           <div className="sidecontent">
             <div className="panel">
-              <h1 className="panelheader">Home</h1>
-              <p className="panelitem">Overview</p>
-              <p className="panelitem">Daily Questions</p>
+              <Link to="/home" style={linkStyle}>
+                <h1 className="panelheader">Home</h1>
+                <p className="panelitem">Overview</p>
+                <p className="panelitem">Daily Questions</p>
+              </Link>
             </div>
             <div className="panel">
-              <Link to="page2" style={linkStyle}>
+              <Link to="/page2" style={linkStyle}>
                 <h1 className="panelheader">Your Sleep</h1>
                 <p className="panelitem">Add Sleep Insights</p>
                 <p className="panelitem">Weekly Report</p>
@@ -32,12 +34,10 @@ const Page3 = () => {
               </Link>
             </div>
             <div className="panel">
-              <Link to="page3" style={linkStyle}>
-                <h1 className="panelheader">Your Habits</h1>
-                <p className="panelitem">View Habits</p>
-                <p className="panelitem">Edit Habits</p>
-                <p className="panelitem">Weekly Report</p>
-              </Link>
+              <h1 className="panelheader">Your Habits</h1>
+              <p className="panelitem">View Habits</p>
+              <p className="panelitem">Edit Habits</p>
+              <p className="panelitem">Weekly Report</p>
             </div>
           </div>
           <div className="break">.</div>

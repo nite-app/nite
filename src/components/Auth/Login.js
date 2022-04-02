@@ -29,7 +29,7 @@ function Login() {
   return (
     <div className="acont">
       <div className="back">
-        <Link to="/">
+        <Link to="/home">
           <img
             src={require("../../img/chevron-left-solid.png")}
             alt=""
