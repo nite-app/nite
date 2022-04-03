@@ -30,7 +30,7 @@ function Page2() {
           <div className="break">.</div>
           <div className="sidecontent">
             <div className="panel">
-              <Link to="/home" style={linkStyle}>
+              <Link to="/" style={linkStyle}>
                 <h1 className="panelheader">Home</h1>
                 <p className="panelitem">Overview</p>
                 <p className="panelitem">Daily Questions</p>
