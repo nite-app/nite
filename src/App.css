@@ -197,6 +197,7 @@ p {
   display: flex;
   margin: 30px;
   align-items: center;
+  position: relative;
 }
 
 .accountheader {
@@ -205,13 +206,19 @@ p {
   font-weight: 400;
   justify-self: start;
   margin-left: 25px;
-  font-size: 24px;
+  font-size: 20px;
   max-width: 250px;
 }
 
 #accImg {
   width: 64px;
   height: 64px;
+}
+
+#signoutimg {
+  width: 25px;
+  position: absolute;
+  right: 0;
 }
 
 .break {

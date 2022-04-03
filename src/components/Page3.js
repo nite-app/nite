@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
+import signoutimg from "../img/signoutimg.png";
+import { useAuth } from "../contexts/AuthContext";
 
 const Page3 = () => {
+  const [error, setError] = useState("");
+  const { name } = useAuth();
+  const { signout } = useAuth();
+
   return (
     <>
       <div className="App" id="Home">
@@ -13,7 +19,8 @@ const Page3 = () => {
           <Link to="/register" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
-              <h1 className="accountheader">Katie McLeen</h1>
+              <h1 className="accountheader">{name}</h1>
+              <img src={signoutimg} alt="" id="signoutimg" onClick={signout} />
             </div>
           </Link>
           <div className="break">.</div>

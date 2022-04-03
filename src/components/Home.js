@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
+import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
 
 function Home() {
+  const [error, setError] = useState("");
   const { name } = useAuth();
+  const { signout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleSignout() {
+    setError("");
+
+    try {
+      signout();
+      navigate("/login");
+    } catch {
+      setError("Failed to Sign Out");
+    }
+  }
 
   return (
     <>
@@ -17,6 +32,12 @@ function Home() {
             <div className="account">
               <img src={temp} alt="" id="accImg" />
               <h1 className="accountheader">{name}</h1>
+              <img
+                src={signoutimg}
+                alt=""
+                id="signoutimg"
+                onClick={handleSignout}
+              />
             </div>
           </Link>
           <div className="break">.</div>

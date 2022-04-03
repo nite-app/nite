@@ -39,17 +39,22 @@ export function AuthProvider({ children }) {
     navigate("/");
   }
 
+  function signout() {
+    console.log("Signed out successfully");
+    return firebase.auth().signOut();
+  }
+
   function namesetter() {
     if (currentUser == null) {
       setName("User");
-      return "User";
     } else {
       let s = currentUser.email;
       let n = s.indexOf("@");
       s = s.substring(0, n != -1 ? n : s.length);
       setName(s);
-      return s;
     }
+
+    return name;
   }
 
   React.useEffect(() => {
@@ -68,6 +73,7 @@ export function AuthProvider({ children }) {
     name,
     signup,
     login,
+    signout,
   };
 
   return (
