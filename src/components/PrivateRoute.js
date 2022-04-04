@@ -1,9 +1,11 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
-import useUser from "../hooks/useUser";
+import { useUser } from "../contexts/userContext";
 
 const PrivateRoute = () => {
   const { user } = useUser();
   const location = useLocation();
+
+  console.log("at PrivateRoute: " + user);
 
   return user ? (
     <Outlet />

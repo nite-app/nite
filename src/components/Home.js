@@ -6,12 +6,24 @@ import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
+import BarChart from "./BarChart";
+import { HomeData } from "../Charts Data/HomeData";
 
 function Home() {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
   const navigate = useNavigate();
+
+  const [chart1Data, setChart1Data] = useState({
+    labels: HomeData.map((data) => data.day),
+    datasets: [
+      {
+        label: "total sleep",
+        data: HomeData.map((data) => data.sleep),
+      },
+    ],
+  });
 
   function handleSignout() {
     setError("");
@@ -78,7 +90,9 @@ function Home() {
         </div>
         <div className="maincontainer">
           <h1 className="containerheader">Good morning, {name}</h1>
-          <div className="mainpanel1">.</div>
+          <div className="mainpanel1">
+            <BarChart chartData={chart1Data} />
+          </div>
           <div className="mainpanelscont">
             <div className="bottompanel">
               <h1 className="bottomh">Which Habits have you respected?</h1>

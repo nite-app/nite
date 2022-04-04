@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
-import useUser from "../hooks/useUser";
 
 const AuthContext = React.createContext();
 
@@ -15,8 +14,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [name, setName] = useState("User");
-  const { user } = useUser();
-  const { setUser } = useUser();
 
   function signup(email, password) {
     console.log("Got to the signup function");
@@ -38,7 +35,6 @@ export function AuthProvider({ children }) {
       .catch(function (error) {
         console.log(error);
       });
-    setUser(currentUser);
     console.log("Logged in as: " + email);
     navigate("/");
   }

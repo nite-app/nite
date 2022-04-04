@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { useUser } from "../../contexts/userContext";
 import Alert from "../Alert";
 
 function Login() {
@@ -10,22 +11,29 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  let { setUserTrue } = useUser();
 
-  async function handleLogin(e) {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    try {
-      setError("");
-      setLoading(true);
-      login(emailref.current.value, pswref.current.value);
-      // navigate("/");
-    } catch {
-      setError("Internal Error: Failed to login");
-      console.log(error);
-    }
+    // try {
+    //   setError("");
+    //   setLoading(true);
+    //   setUser(true);
+    //   login(emailref.current.value, pswref.current.value);
+    // } catch {
+    //   setError("Internal Error: Failed to login");
+    //   console.log(error);
+    // }
+
+    setError("");
+    setLoading(true);
+    setUserTrue();
+    login(emailref.current.value, pswref.current.value);
+    navigate("/");
 
     setLoading(false);
-  }
+  };
   return (
     <div className="acont">
       <div className="back">

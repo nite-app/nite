@@ -12,11 +12,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<PrivateRoute />}>
-          <Route exact path="/" element={<HomeScreen />} />
-          <Route exact path="/page2" element={<Page2Screen />} />
-          <Route exact path="/page3" element={<Page3Screen />} />
-        </Route>
+        {/* <Route element={<PrivateRoute />}> */}
+        <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/page2" element={<Page2Screen />} />
+        <Route exact path="/page3" element={<Page3Screen />} />
+        {/* </Route> */}
         <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/register" element={<RegisterScreen />} />
       </Routes>
