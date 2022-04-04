@@ -15,6 +15,16 @@ function Home() {
   const { signout } = useAuth();
   const navigate = useNavigate();
 
+  const [userData, setUserData] = useState({
+    labels: HomeData.map((data) => data.day),
+    datasets: [
+      {
+        label: "hours",
+        data: HomeData.map((data) => data.sleep),
+      },
+    ],
+  });
+
   function handleSignout() {
     setError("");
 
@@ -80,7 +90,21 @@ function Home() {
         </div>
         <div className="maincontainer">
           <h1 className="containerheader">Good morning, {name}</h1>
-          <div className="mainpanel1">{/* <BarChart chartData={} /> */}</div>
+          <div className="mainpanel1">
+            <div className="mainpanel1left">
+              <div className="mainpanel1leftleft">
+                <BarChart chartData={userData} />
+              </div>
+              <div className="space"></div>
+              <div className="mainpanel1leftright">
+                <h3 className="mainpanel1header">Week Average</h3>
+              </div>
+            </div>
+            {/* SEP */}
+            <hr className="mainpanel1sep"></hr>
+            {/* SEP */}
+            <div className="mainpanel1right"></div>
+          </div>
           <div className="mainpanelscont">
             <div className="bottompanel">
               <h1 className="bottomh">Which Habits have you respected?</h1>

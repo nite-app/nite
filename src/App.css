@@ -311,8 +311,40 @@ p {
   margin: 20px;
   width: 75vw;
   height: 42vh;
+  max-height: 42vh;
   background-color: #576c96;
   border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainpanel1left {
+  width: 46vw;
+  max-height: 42vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 57.5% 5% 37.5%;
+}
+
+.mainpanel1right {
+  width: 26vw;
+  max-width: 26vw;
+}
+
+.mainpanel1sep {
+  height: 35vh;
+  width: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.mainpanel1header {
+  color: white;
+  font-family: Articulat CF SemiBold;
+  font-size: 24px;
+  letter-spacing: 0.5px;
 }
 
 .mainpanelscont {
