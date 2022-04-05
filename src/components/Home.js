@@ -6,7 +6,7 @@ import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
-import BarChart from "./BarChart";
+import BarChart from "./Charts/BarChart";
 import { HomeData } from "../Charts Data/HomeData";
 
 function Home() {
@@ -19,10 +19,21 @@ function Home() {
     labels: HomeData.map((data) => data.day),
     datasets: [
       {
-        label: "hours",
+        label: "",
         data: HomeData.map((data) => data.sleep),
+        backgroundColor: ["#C2FAF1"],
+        borderRadius: 10,
       },
     ],
+  });
+
+  const [userOptions, setUserOptions] = useState({
+    plugins: {
+      title: {
+        display: true,
+        text: "Custom Chart Title",
+      },
+    },
   });
 
   function handleSignout() {
@@ -103,7 +114,9 @@ function Home() {
             {/* SEP */}
             <hr className="mainpanel1sep"></hr>
             {/* SEP */}
-            <div className="mainpanel1right"></div>
+            <div className="mainpanel1right">
+              <h3 className="mainpanel1header">How did you sleep?</h3>
+            </div>
           </div>
           <div className="mainpanelscont">
             <div className="bottompanel">

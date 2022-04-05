@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
 
 import HomeScreen from "./screens/HomeScreen";
 import RegisterScreen from "./screens/auth/RegisterScreen";

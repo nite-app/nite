@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { useUser } from "../../contexts/userContext";
 import Alert from "../Alert";
 
 function Login() {
@@ -11,7 +10,6 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
-  let { setUserTrue } = useUser();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,7 +26,6 @@ function Login() {
 
     setError("");
     setLoading(true);
-    setUserTrue();
     login(emailref.current.value, pswref.current.value);
     navigate("/");
 

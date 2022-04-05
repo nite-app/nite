@@ -316,7 +316,6 @@ p {
   border-radius: 25px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .mainpanel1left {
@@ -340,11 +339,19 @@ p {
   background-color: white;
 }
 
+.mainpanel1leftright {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 .mainpanel1header {
   color: white;
   font-family: Articulat CF SemiBold;
   font-size: 24px;
   letter-spacing: 0.5px;
+  text-align: left;
 }
 
 .mainpanelscont {
