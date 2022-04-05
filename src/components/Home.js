@@ -7,6 +7,7 @@ import searchicon from "../img/searchimg.png";
 import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
 import BarChart from "./Charts/BarChart";
+import LineChart from "./Charts/LineChart";
 import { HomeData } from "../Charts Data/HomeData";
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
         label: "",
         data: HomeData.map((data) => data.sleep),
         backgroundColor: ["#C2FAF1"],
+        foregroundColor: ["#C2FAF1"],
         borderRadius: 10,
       },
     ],
@@ -29,9 +31,8 @@ function Home() {
 
   const [userOptions, setUserOptions] = useState({
     plugins: {
-      title: {
-        display: true,
-        text: "Custom Chart Title",
+      legend: {
+        display: false,
       },
     },
   });
@@ -104,7 +105,7 @@ function Home() {
           <div className="mainpanel1">
             <div className="mainpanel1left">
               <div className="mainpanel1leftleft">
-                <BarChart chartData={userData} />
+                <LineChart chartData={userData} chartOptions={userOptions} />
               </div>
               <div className="space"></div>
               <div className="mainpanel1leftright">
