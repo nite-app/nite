@@ -24,7 +24,13 @@ function Home() {
         data: HomeData.map((data) => data.sleep),
         backgroundColor: ["#C2FAF1"],
         foregroundColor: ["#C2FAF1"],
+        borderColor: ["#C2FAF1"],
         borderRadius: 10,
+        borderWidth: 5,
+        pointHitRadius: 100,
+        pointHoverRadius: 7,
+        pointHoverBackgroundColor: "#C2FAF1",
+        pointHoverBorderColor: "#C2FAF1",
       },
     ],
   });
@@ -33,6 +39,27 @@ function Home() {
     plugins: {
       legend: {
         display: false,
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+          color: "#FFFFFF",
+        },
+        ticks: {
+          color: "#FFFFFF",
+        },
+      },
+      y: {
+        ticks: {
+          display: false,
+          fontSize: 8,
+        },
+        grid: {
+          display: false,
+          lineWidth: 0,
+        },
       },
     },
   });
@@ -105,18 +132,29 @@ function Home() {
           <div className="mainpanel1">
             <div className="mainpanel1left">
               <div className="mainpanel1leftleft">
-                <LineChart chartData={userData} chartOptions={userOptions} />
+                <LineChart
+                  chartData={userData}
+                  chartOptions={userOptions}
+                  className="HomeLineChart"
+                />
               </div>
               <div className="space"></div>
               <div className="mainpanel1leftright">
-                <h3 className="mainpanel1header">Week Average</h3>
+                <div className="mainpanel1leftrightcontainer">
+                  <h3 className="mainpanel1header">Week Average</h3>
+                </div>
               </div>
             </div>
             {/* SEP */}
             <hr className="mainpanel1sep"></hr>
             {/* SEP */}
             <div className="mainpanel1right">
-              <h3 className="mainpanel1header">How did you sleep?</h3>
+              <div className="mainpanel1rightcontainer">
+                <h3 className="mainpanel1header">How did you sleep?</h3>
+                <div className="mainpanel1rightbuttons"></div>
+                <h3 className="mainpanel1header">How did you sleep?</h3>
+                <div className="mainpanel1rightinput"></div>
+              </div>
             </div>
           </div>
           <div className="mainpanelscont">
