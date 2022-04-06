@@ -1,11 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import HomeScreen from "./screens1/HomeScreen";
-import RegisterScreen from "./screens1/auth/RegisterScreen";
-import LoginScreen from "./screens1/auth/LoginScreen";
-import Page2Screen from "./screens1/Page2Screen.js";
-import Page3Screen from "./screens1/Page3Screen.js";
+import HomeScreen from "./screens/HomeScreen";
+import RegisterScreen from "./screens/auth/RegisterScreen";
+import LoginScreen from "./screens/auth/LoginScreen";
+import Page2Screen from "./screens/Page2Screen.js";
+import Page3Screen from "./screens/Page3Screen.js";
 
 function App() {
   return (
