@@ -326,7 +326,7 @@ p {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 57.5% 5% 37.5%;
+  grid-template-columns: 60% 40%;
 }
 
 .mainpanel1right {
@@ -370,10 +370,83 @@ p {
   font-size: 24px;
   letter-spacing: 0.5px;
   text-align: left;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.mainpanel1header2 {
+  color: white;
+  font-family: Articulat CF SemiBold;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.mainpanel1header3 {
+  color: white;
+  font-family: Articulat CF SemiBold;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .mainpanel1rightcontainer {
   padding: 4vh;
+  height: 85%;
+}
+
+.mainpanel1rightinput {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mainpanel1days {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90%;
+  width: 100%;
+}
+
+.mainpanel1day {
+  display: grid;
+  grid-template-columns: 40% 5% 55%;
+  align-items: flex-end;
+}
+
+.mainpanel1daytext {
+  margin: 0;
+  color: white;
+  font-family: Articulat CF Regular;
+  font-size: 16px;
+}
+
+.sleepbar {
+  height: 5px;
+}
+
+.quality {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+.mainpanel1rightbutton {
+  width: 365px;
+  height: 50px;
+  background-color: rgba(223, 239, 240, 0.75);
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-start;
+  border: none;
+  padding-left: 20px;
 }
 
 .mainpanelscont {

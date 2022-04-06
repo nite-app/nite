@@ -9,6 +9,7 @@ import { useAuth } from "../contexts/AuthContext";
 import BarChart from "./Charts/BarChart";
 import LineChart from "./Charts/LineChart";
 import { HomeData } from "../Charts Data/HomeData";
+import TextField from "@mui/material/TextField";
 
 function Home() {
   const [error, setError] = useState("");
@@ -138,10 +139,46 @@ function Home() {
                   className="HomeLineChart"
                 />
               </div>
-              <div className="space"></div>
               <div className="mainpanel1leftright">
                 <div className="mainpanel1leftrightcontainer">
-                  <h3 className="mainpanel1header">Week Average</h3>
+                  <h3 className="mainpanel1header3">Week Average</h3>
+                  <div className="mainpanel1days">
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Monday</p>
+                      <div className="quality green"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Tuesday</p>
+                      <div className="quality red"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Wednesday</p>
+                      <div className="quality yellow"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Thursday</p>
+                      <div className="quality yellow"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Friday</p>
+                      <div className="quality green"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Saturday</p>
+                      <div className="quality red"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                    <div className="mainpanel1day">
+                      <p className="mainpanel1daytext">Sunday</p>
+                      <div className="quality green"></div>
+                      <div className="sleepbar"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,9 +188,49 @@ function Home() {
             <div className="mainpanel1right">
               <div className="mainpanel1rightcontainer">
                 <h3 className="mainpanel1header">How did you sleep?</h3>
-                <div className="mainpanel1rightbuttons"></div>
-                <h3 className="mainpanel1header">How did you sleep?</h3>
-                <div className="mainpanel1rightinput"></div>
+                <div className="mainpanel1rightbuttons">
+                  <button className="mainpanel1rightbutton">
+                    <img
+                      src={require("../img/greencircle.png")}
+                      alt=""
+                      className="mainpanel2rightimg"
+                    />
+                    <p className="mainpanel2rightbuttontext">
+                      Pretty good, i feel great and energic
+                    </p>
+                  </button>
+                  <button className="mainpanel1rightbutton">
+                    <img
+                      src={require("../img/yellowcircle.png")}
+                      alt=""
+                      className="mainpanel2rightimg"
+                    />
+                    <p className="mainpanel2rightbuttontext">
+                      It could have been better, but still ok
+                    </p>
+                  </button>
+                  <button className="mainpanel1rightbutton">
+                    <img
+                      src={require("../img/redcircle.png")}
+                      alt=""
+                      className="mainpanel2rightimg"
+                    />
+                    <p className="mainpanel2rightbuttontext">
+                      Not really good, I feel tired
+                    </p>
+                  </button>
+                </div>
+                <h3 className="mainpanel1header2">How did you sleep?</h3>
+                <div className="mainpanel1rightinput">
+                  <TextField
+                    id="filled-basic"
+                    label="Hours"
+                    variant="standard"
+                    type="number"
+                    margin="none"
+                    size="small"
+                  />
+                </div>
               </div>
             </div>
           </div>
