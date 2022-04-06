@@ -353,6 +353,9 @@ p {
   width: 75%;
   height: 75%;
   padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .mainpanel1leftleft {
@@ -396,6 +399,7 @@ p {
 
 .mainpanel1rightcontainer {
   padding: 4vh;
+  padding-bottom: 0;
   height: 80%;
   display: flex;
   flex-direction: column;
