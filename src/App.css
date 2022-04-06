@@ -396,7 +396,10 @@ p {
 
 .mainpanel1rightcontainer {
   padding: 4vh;
-  height: 85%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .mainpanel1rightinput {
