@@ -17,6 +17,8 @@ function Home() {
   const { signout } = useAuth();
   const navigate = useNavigate();
 
+  // component bar, props width
+
   const [userData, setUserData] = useState({
     labels: HomeData.map((data) => data.day),
     datasets: [
