@@ -16,7 +16,7 @@ function HomeDay({ index }) {
   return (
     <div className="mainpanel1day">
       <p className="mainpanel1daytext">{days[index]}</p>
-      <DayCircle />
+      <DayCircle index={index} />
       <SleepBar index={index} />
     </div>
   );
