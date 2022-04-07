@@ -10,6 +10,7 @@ import BarChart from "./Charts/BarChart";
 import LineChart from "./Charts/LineChart";
 import { HomeData } from "../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
+import HomeDay from "./HomeDay";
 
 function Home() {
   const [error, setError] = useState("");
@@ -18,6 +19,7 @@ function Home() {
   const navigate = useNavigate();
 
   // component bar, props width
+  const [barWidth, setBarWidth] = useState();
 
   const [userData, setUserData] = useState({
     labels: HomeData.map((data) => data.day),
@@ -145,41 +147,13 @@ function Home() {
                 <div className="mainpanel1leftrightcontainer">
                   <h3 className="mainpanel1header3">Week Average</h3>
                   <div className="mainpanel1days">
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Monday</p>
-                      <div className="quality green"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Tuesday</p>
-                      <div className="quality red"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Wednesday</p>
-                      <div className="quality yellow"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Thursday</p>
-                      <div className="quality yellow"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Friday</p>
-                      <div className="quality green"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Saturday</p>
-                      <div className="quality red"></div>
-                      <div className="sleepbar"></div>
-                    </div>
-                    <div className="mainpanel1day">
-                      <p className="mainpanel1daytext">Sunday</p>
-                      <div className="quality green"></div>
-                      <div className="sleepbar"></div>
-                    </div>
+                    <HomeDay index={0} />
+                    <HomeDay index={1} />
+                    <HomeDay index={2} />
+                    <HomeDay index={3} />
+                    <HomeDay index={4} />
+                    <HomeDay index={5} />
+                    <HomeDay index={6} />
                   </div>
                 </div>
               </div>
@@ -231,8 +205,12 @@ function Home() {
                     type="number"
                     margin="none"
                     size="small"
-                    InputProps={{ inputProps: { min: 0, max: 24 } }}
-                    format={Number}
+                    onInput={(e) => {
+                      e.target.value = Math.max(0, parseInt(e.target.value))
+                        .toString()
+                        .slice(0, 2);
+                    }}
+                    min={0}
                   />
                 </div>
               </div>

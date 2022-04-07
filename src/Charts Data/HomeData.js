@@ -3,6 +3,7 @@ export const HomeData = [
     id: 0,
     day: "MON",
     sleep: 8.5,
+    color: "green",
   },
   {
     id: 1,

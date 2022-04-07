@@ -426,7 +426,7 @@ p {
 
 .mainpanel1day {
   display: grid;
-  grid-template-columns: 40% 5% 55%;
+  grid-template-columns: 40% 10% 50%;
   align-items: flex-end;
 }
 
