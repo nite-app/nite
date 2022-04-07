@@ -231,6 +231,8 @@ function Home() {
                     type="number"
                     margin="none"
                     size="small"
+                    InputProps={{ inputProps: { min: 0, max: 24 } }}
+                    format={Number}
                   />
                 </div>
               </div>
@@ -247,7 +249,7 @@ function Home() {
                       alt=""
                       className="bottomimg"
                     />
-                    <h4 className="bottomword">Eat Healthy</h4>
+                    <h4 className="bottomword">Eat healthy</h4>
                     <input type="checkbox" className="ch" />
                   </div>
                   <div className="inlinewords">
