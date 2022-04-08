@@ -1,5 +1,5 @@
 import React from "react";
-import Page3 from "../components/Page3";
+import Page3 from "../components/Pages/Page3";
 import { AuthProvider } from "../contexts/AuthContext";
 
 const HomeScreen = () => {

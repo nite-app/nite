@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../../App.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import temp from "../img/temp.png";
-import seticon from "../img/setimg.png";
-import searchicon from "../img/searchimg.png";
-import signoutimg from "../img/signoutimg.png";
-import { useAuth } from "../contexts/AuthContext";
-import BarChart from "./Charts/BarChart";
-import LineChart from "./Charts/LineChart";
-import { HomeData } from "../Charts Data/HomeData";
+import temp from "../../img/temp.png";
+import seticon from "../../img/setimg.png";
+import searchicon from "../../img/searchimg.png";
+import signoutimg from "../../img/signoutimg.png";
+import { useAuth } from "../../contexts/AuthContext";
+import BarChart from "../Charts/BarChart";
+import LineChart from "../Charts/LineChart";
+import { HomeData } from "../../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
-import HomeDay from "./HomeDay";
+import HomeDay from "../HomeDay";
+import Habit from "../Habit";
 
 function Home() {
   const [error, setError] = useState("");
@@ -167,7 +168,7 @@ function Home() {
                 <div className="mainpanel1rightbuttons">
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../img/greencircle.png")}
+                      src={require("../../img/greencircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />
@@ -177,7 +178,7 @@ function Home() {
                   </button>
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../img/yellowcircle.png")}
+                      src={require("../../img/yellowcircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />
@@ -187,7 +188,7 @@ function Home() {
                   </button>
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../img/redcircle.png")}
+                      src={require("../../img/redcircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />
@@ -221,139 +222,23 @@ function Home() {
               <h1 className="bottomh">Which Habits have you respected?</h1>
               <div className="habitscontainer">
                 <div className="left">
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/appleicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Eat healthy</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/readicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Read 10 pages</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/meditate.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Meditate</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/workouticon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Train yourself</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
+                  <Habit icon={"appleicon.png"} text={"Read Healthy"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
                 </div>
                 {/* SEP */}
                 <hr className="sep"></hr>
                 {/* SEP */}
                 <div className="right">
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/runicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Run 5Km</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/gamesicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">No games</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/micicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Listen to podcast</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/alcoolicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">No alcool</h4>
-                    <input type="checkbox" className="ch" />
-                  </div>
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
                 </div>
               </div>
             </div>
-            <div className="bottompanel">
-              <h1 className="bottomh">Today's Goals</h1>
-              <div className="goalscontainer">
-                <div className="left">
-                  <input type="text" className="input" />
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/workicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Finish Work</h4>
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/writingicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Write Essay</h4>
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/handballicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Play Handball</h4>
-                  </div>
-                </div>
-                {/* SEP */}
-                <hr className="sep"></hr>
-                {/* SEP */}
-                <div className="right2">
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/water.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Drink 1 gallon</h4>
-                  </div>
-                  <div className="inlinewords">
-                    <img
-                      src={require("../img/illustrations/bookicon.png")}
-                      alt=""
-                      className="bottomimg"
-                    />
-                    <h4 className="bottomword">Read a book</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="bottompanel"></div>
           </div>
         </div>
       </div>

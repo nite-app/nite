@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../../App.css";
 import { Link, Outlet } from "react-router-dom";
-import temp from "../img/temp.png";
-import seticon from "../img/setimg.png";
-import searchicon from "../img/searchimg.png";
-import signoutimg from "../img/signoutimg.png";
-import { useAuth } from "../contexts/AuthContext";
+import temp from "../../img/temp.png";
+import seticon from "../../img/setimg.png";
+import searchicon from "../../img/searchimg.png";
+import signoutimg from "../../img/signoutimg.png";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Page3 = () => {
   const [error, setError] = useState("");
@@ -71,7 +71,7 @@ const Page3 = () => {
                   <div className="mainpanel3gridleftgridleft">
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/appleicon.png")}
+                        src={require("../../img/illustrations/appleicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -80,7 +80,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/readicon.png")}
+                        src={require("../../img/illustrations/readicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -89,7 +89,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/meditate.png")}
+                        src={require("../../img/illustrations/meditate.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -98,7 +98,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/workouticon.png")}
+                        src={require("../../img/illustrations/workouticon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -110,7 +110,7 @@ const Page3 = () => {
                   <div className="mainpanel3gridleftgridright">
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/runicon.png")}
+                        src={require("../../img/illustrations/runicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -119,7 +119,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/gamesicon.png")}
+                        src={require("../../img/illustrations/gamesicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -128,7 +128,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/micicon.png")}
+                        src={require("../../img/illustrations/micicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
@@ -137,7 +137,7 @@ const Page3 = () => {
                     </div>
                     <div className="inlinewordspg3">
                       <img
-                        src={require("../img/illustrations/alcoolicon.png")}
+                        src={require("../../img/illustrations/alcoolicon.png")}
                         alt=""
                         className="bottomimgpg3"
                       />
