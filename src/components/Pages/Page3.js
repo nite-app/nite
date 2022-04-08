@@ -6,6 +6,7 @@ import seticon from "../../img/setimg.png";
 import searchicon from "../../img/searchimg.png";
 import signoutimg from "../../img/signoutimg.png";
 import { useAuth } from "../../contexts/AuthContext";
+import Input from "@mui/material/Input";
 
 const Page3 = () => {
   const [error, setError] = useState("");
@@ -188,14 +189,17 @@ const Page3 = () => {
                       <p className="mainpanel3gridrightintext">Icon</p>
                       <div className="iconcircle">
                         <label htmlFor="iconSelect" className="selectIconBtn">
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </label>
-                        <input
+                        <Input
                           id="iconSelect"
                           type="file"
                           className="iconcircle"
                           text=""
                           style={{ visibility: "hidden" }}
+                          inputProps={{
+                            accept: "image/png, image/gif, image/jpeg",
+                          }}
                         />
                       </div>
                     </div>
