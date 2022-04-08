@@ -447,6 +447,27 @@ p {
   border-radius: 15px;
 }
 
+.quality-green {
+  background-color: #52b652;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+.quality-yellow {
+  background-color: #f3f319;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+.quality-red {
+  background-color: #c85e5e;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
 .mainpanel1rightbutton {
   width: 365px;
   height: 50px;
