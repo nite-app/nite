@@ -1258,6 +1258,12 @@ input::-webkit-inner-spin-button {
   padding-top: 10px;
 }
 
+.selectIconBtn {
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+}
+
 .mainpanel3gridrightinput {
   border: none;
   width: 275px;
@@ -1292,6 +1298,7 @@ input::-webkit-inner-spin-button {
   height: 50px;
   border-radius: 25px;
   background: url("img/tempicon.png");
+  outline: none;
 }
 
 .reminderselect {

@@ -222,19 +222,22 @@ function Home() {
               <h1 className="bottomh">Which Habits have you respected?</h1>
               <div className="habitscontainer">
                 <div className="left">
-                  <Habit icon={"appleicon.png"} text={"Read Healthy"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"appleicon.png"} text={"Eat healthy"} />
+                  <Habit icon={"readicon.png"} text={"Read a book"} />
+                  <Habit icon={"alcoolicon.png"} text={"Don't drink alcool"} />
+                  <Habit
+                    icon={"gamesicon.png"}
+                    text={"Don't play videogames"}
+                  />
                 </div>
                 {/* SEP */}
                 <hr className="sep"></hr>
                 {/* SEP */}
                 <div className="right">
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
-                  <Habit icon={"bookicon.png"} text={"Eat a book"} />
+                  <Habit icon={"handballicon.png"} text={"Play handball"} />
+                  <Habit icon={"meditate.png"} text={"Meditate"} />
+                  <Habit icon={"workouticon.png"} text={"Train yourself"} />
+                  <Habit icon={"runicon.png"} text={"Run 5 km"} />
                 </div>
               </div>
             </div>

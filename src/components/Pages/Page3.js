@@ -11,6 +11,13 @@ const Page3 = () => {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
+  const [habitText, setHabitText] = useState();
+
+  function handleAddHabit() {
+    console.log(habitText);
+  }
+
+  function handleAddIcon() {}
 
   return (
     <>
@@ -155,7 +162,12 @@ const Page3 = () => {
                 <div className="mainpanel3gridrightcontainer">
                   <div className="mainpanel3gridrighttxt">
                     <p className="mainpanel3gridrightintext1">Name</p>
-                    <input type="text" className="mainpanel3gridrightinput" />
+                    <input
+                      type="text"
+                      className="mainpanel3gridrightinput"
+                      value={habitText}
+                      onChange={(text) => setHabitText(text)}
+                    />
                   </div>
                   <div className="colorsselect">
                     <p className="mainpanel3gridrightintext1">Color</p>
@@ -174,11 +186,27 @@ const Page3 = () => {
                   <div className="mainpanel3gridrightadd">
                     <div className="iconselect">
                       <p className="mainpanel3gridrightintext">Icon</p>
-                      <div className="iconcircle"></div>
+                      <div className="iconcircle">
+                        <label htmlFor="iconSelect" className="selectIconBtn">
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <input
+                          id="iconSelect"
+                          type="file"
+                          className="iconcircle"
+                          text=""
+                          style={{ visibility: "hidden" }}
+                        />
+                      </div>
                     </div>
                     <div className="reminderselect">
-                      <p className="mainpanel3gridrightintext">Reminders</p>
-                      <button className="reminderbtn">Add a reminder</button>
+                      <p className="mainpanel3gridrightintext">Add</p>
+                      <button
+                        className="reminderbtn"
+                        onClick={() => handleAddHabit()}
+                      >
+                        Add Habit
+                      </button>
                     </div>
                   </div>
                 </div>
