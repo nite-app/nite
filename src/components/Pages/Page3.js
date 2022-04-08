@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../../img/temp.png";
@@ -12,13 +12,25 @@ const Page3 = () => {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
-  const [habitText, setHabitText] = useState();
+  const [habitText, setHabitText] = useState("");
+  const [habitList, setHabitlist] = useState([]);
+  const [id, setId] = useState(0);
+
+  // useEffect(() => {
+  //   count =
+
+  //   return setId()
+  // }, [])
+
+  function inputChange(event) {
+    //if id < 7 (massimo 8 habtits, throw error on index=8)
+    setHabitText(event.target.value);
+    setHabitlist([...habitList, {}]);
+  }
 
   function handleAddHabit() {
     console.log(habitText);
   }
-
-  function handleAddIcon() {}
 
   return (
     <>
@@ -167,7 +179,8 @@ const Page3 = () => {
                       type="text"
                       className="mainpanel3gridrightinput"
                       value={habitText}
-                      onChange={(text) => setHabitText(text)}
+                      onChange={inputChange}
+                      required
                     />
                   </div>
                   <div className="colorsselect">
