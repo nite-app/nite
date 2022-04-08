@@ -7,20 +7,23 @@ import searchicon from "../../img/searchimg.png";
 import signoutimg from "../../img/signoutimg.png";
 import { useAuth } from "../../contexts/AuthContext";
 import Input from "@mui/material/Input";
+import { v4 as uuidv4 } from "uuid";
 
 const Page3 = () => {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
   const [habitText, setHabitText] = useState("");
+  const [habitIcon, setHabitIcon] = useState("");
   const [habitList, setHabitlist] = useState([]);
   const [id, setId] = useState(0);
+  const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  //   count =
+  useEffect(() => {
+    console.log(habitList.length);
 
-  //   return setId()
-  // }, [])
+    return setCount(habitList.length);
+  }, []);
 
   function inputChange(event) {
     //if id < 7 (massimo 8 habtits, throw error on index=8)
@@ -29,8 +32,16 @@ const Page3 = () => {
   }
 
   function handleAddHabit() {
-    console.log(habitText);
+    setCount(count + 1);
+    //controllo empty textbox
+    if (count < 8) {
+      console.log(habitText);
+    } else {
+      alert("You can add a maximum of 8 habits!");
+    }
   }
+
+  function handleIconAdd() {}
 
   return (
     <>
@@ -213,6 +224,7 @@ const Page3 = () => {
                           inputProps={{
                             accept: "image/png, image/gif, image/jpeg",
                           }}
+                          onChange={handleIconAdd()}
                         />
                       </div>
                     </div>
