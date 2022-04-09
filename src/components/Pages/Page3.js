@@ -17,16 +17,35 @@ const Page3 = () => {
 
   //HABITS
   const [habitText, setHabitText] = useState("");
-  const [habitList, setHabitList] = useState([]);
+  const [habitListLeft, setHabitListLeft] = useState([]);
+  const [habitListRight, setHabitListRight] = useState([]);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(habitListLeft.length + habitListRight.length);
+    console.log("count: " + count);
+  }, []);
 
   const handleAddHabit = () => {
-    console.log(habitText);
+    if (count < 4) {
+      setHabitListLeft([...habitListLeft, habitText]);
+      setHabitText("");
+    } else if (count > 3 && count < 8) {
+      setHabitListRight([...habitListRight, habitText]);
+      setHabitText("");
+    } else {
+      alert("Puoi inserire al masismo 8 Habits!");
+    }
 
-    setHabitList([...habitList, habitText]);
-    setHabitText("");
+    setCount(count + 1);
+    console.log(count);
   };
 
   const habitTextChange = (event) => {
+    setHabitText(event.target.value);
+  };
+
+  const habitIconChange = (event) => {
     setHabitText(event.target.value);
   };
 
@@ -87,12 +106,16 @@ const Page3 = () => {
                 </div>
                 <div className="mainpanel3gridleftgrid">
                   <div className="mainpanel3gridleftgridleft">
-                    {habitList.map((habit) => {
+                    {habitListLeft.map((habit) => {
                       return <Habit icon={"alcoolicon.png"} text={habit} />;
                     })}
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
-                  <div className="mainpanel3gridleftgridright"></div>
+                  <div className="mainpanel3gridleftgridright">
+                    {habitListRight.map((habit) => {
+                      return <Habit icon={"alcoolicon.png"} text={habit} />;
+                    })}
+                  </div>
                 </div>
               </div>
 
