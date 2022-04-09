@@ -7,41 +7,28 @@ import searchicon from "../../img/searchimg.png";
 import signoutimg from "../../img/signoutimg.png";
 import { useAuth } from "../../contexts/AuthContext";
 import Input from "@mui/material/Input";
+import Habit from "../Habit";
 import { v4 as uuidv4 } from "uuid";
 
 const Page3 = () => {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
+
+  //HABITS
   const [habitText, setHabitText] = useState("");
-  const [habitIcon, setHabitIcon] = useState("");
-  const [habitList, setHabitlist] = useState([]);
-  const [id, setId] = useState(0);
-  const [count, setCount] = useState(0);
+  const [habitList, setHabitList] = useState([]);
 
-  useEffect(() => {
-    console.log(habitList.length);
+  const handleAddHabit = () => {
+    console.log(habitText);
 
-    return setCount(habitList.length);
-  }, []);
+    setHabitList([...habitList, habitText]);
+    setHabitText("");
+  };
 
-  function inputChange(event) {
-    //if id < 7 (massimo 8 habtits, throw error on index=8)
+  const habitTextChange = (event) => {
     setHabitText(event.target.value);
-    setHabitlist([...habitList, {}]);
-  }
-
-  function handleAddHabit() {
-    setCount(count + 1);
-    //controllo empty textbox
-    if (count < 8) {
-      console.log(habitText);
-    } else {
-      alert("You can add a maximum of 8 habits!");
-    }
-  }
-
-  function handleIconAdd() {}
+  };
 
   return (
     <>
@@ -100,82 +87,12 @@ const Page3 = () => {
                 </div>
                 <div className="mainpanel3gridleftgrid">
                   <div className="mainpanel3gridleftgridleft">
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/appleicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Eat healthy</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/readicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Read 10 pages</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/meditate.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Meditate</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/workouticon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Train yourself</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
+                    {habitList.map((habit) => {
+                      return <Habit icon={"alcoolicon.png"} text={habit} />;
+                    })}
                   </div>
                   <hr className="mainpanel3gridleftsep"></hr>
-                  <div className="mainpanel3gridleftgridright">
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/runicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Run 5 km</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/gamesicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">No games</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/micicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Listen to podcast</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                    <div className="inlinewordspg3">
-                      <img
-                        src={require("../../img/illustrations/alcoolicon.png")}
-                        alt=""
-                        className="bottomimgpg3"
-                      />
-                      <h4 className="bottomwordpg3">Don't drink alcool</h4>
-                      <input type="checkbox" className="ch" />
-                    </div>
-                  </div>
+                  <div className="mainpanel3gridleftgridright"></div>
                 </div>
               </div>
 
@@ -190,7 +107,7 @@ const Page3 = () => {
                       type="text"
                       className="mainpanel3gridrightinput"
                       value={habitText}
-                      onChange={inputChange}
+                      onChange={habitTextChange}
                       required
                     />
                   </div>
@@ -224,16 +141,13 @@ const Page3 = () => {
                           inputProps={{
                             accept: "image/png, image/gif, image/jpeg",
                           }}
-                          onChange={handleIconAdd()}
+                          onChange={() => {}}
                         />
                       </div>
                     </div>
                     <div className="reminderselect">
                       <p className="mainpanel3gridrightintext">Add</p>
-                      <button
-                        className="reminderbtn"
-                        onClick={() => handleAddHabit()}
-                      >
+                      <button className="reminderbtn" onClick={handleAddHabit}>
                         Add Habit
                       </button>
                     </div>

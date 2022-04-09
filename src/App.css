@@ -1087,13 +1087,13 @@ input::-webkit-inner-spin-button {
 }
 
 .mainpanel3gridleftgridleft {
-  padding-left: 15px;
+  padding-left: 30px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: -25px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 70px;
 }
 
 .mainpanel3gridleftgridheader {
