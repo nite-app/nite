@@ -57,6 +57,10 @@ export function AuthProvider({ children }) {
     return name;
   }
 
+  function resetPassword(email) {
+    return firebase.auth().sendPasswordResetEmail(email);
+  }
+
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
@@ -74,6 +78,7 @@ export function AuthProvider({ children }) {
     signup,
     login,
     signout,
+    resetPassword,
   };
 
   return (

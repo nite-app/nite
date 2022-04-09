@@ -3,24 +3,28 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from "../Alert";
 
-function Login() {
+function Reset() {
   const emailref = useRef();
-  const pswref = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
   const navigate = useNavigate();
+  const { resetPassword } = useAuth();
 
-  const handleLogin = async (e) => {
+  const handleReset = async (e) => {
     e.preventDefault();
 
     setError("");
     setLoading(true);
+    resetPassword(emailref.current.value);
     try {
-      login(emailref.current.value, pswref.current.value);
-      navigate("/");
+      //   resetPassword(emailref.current.value);
+      alert(
+        "Check your inbox at " +
+          emailref.current.value +
+          " for further informations"
+      );
     } catch {
-      setError("Internal Error: Failed to login");
+      setError("Internal Error: Failed to reset password");
       console.log(error);
     }
 
@@ -31,7 +35,7 @@ function Login() {
     <div className="acont">
       <div className="back">
         {/* Change to go to onboarding */}
-        <Link to="/">
+        <Link to="/register">
           <img
             src={require("../../img/chevron-left-solid.png")}
             alt=""
@@ -41,11 +45,11 @@ function Login() {
       </div>
       <div className="ctsplit">
         <div className="formcontainer">
-          <h1 className="formttl">Log into your account.</h1>
+          <h1 className="formttl">Reset your password.</h1>
           <div className="changescreen">
-            <p className="formsub">First time here?&nbsp;</p>
-            <Link to="/register" className="BlueLink">
-              Register
+            <p className="formsub">Did you just remember it?&nbsp;</p>
+            <Link to="/login" className="BlueLink">
+              Login
             </Link>
           </div>
 
@@ -59,32 +63,16 @@ function Login() {
             ref={emailref}
             required
           />
-          <input
-            type="password"
-            placeholder="Password"
-            name="psw"
-            id="logpsw"
-            className="field"
-            ref={pswref}
-            required
-          />
           <hr />
 
           <button
             type="submit"
             className="loginbtn"
-            onClick={handleLogin}
+            onClick={handleReset}
             disabled={loading}
           >
-            Login
+            Reset Password
           </button>
-          <Link
-            to={"/reset"}
-            className="BlueLink"
-            style={{ marginTop: "20px" }}
-          >
-            Forgot Password?
-          </Link>
         </div>
         <div className="asc2"></div>
       </div>
@@ -92,4 +80,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Reset;

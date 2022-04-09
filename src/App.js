@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import RegisterScreen from "./screens/auth/RegisterScreen";
 import LoginScreen from "./screens/auth/LoginScreen";
+import ResetScreen from "./screens/auth/ResetScreen";
 import Page2Screen from "./screens/Page2Screen.js";
 import Page3Screen from "./screens/Page3Screen.js";
 
@@ -18,6 +19,7 @@ function App() {
         {/* </Route> */}
         <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/register" element={<RegisterScreen />} />
+        <Route exact path="/reset" element={<ResetScreen />} />
       </Routes>
     </BrowserRouter>
   );

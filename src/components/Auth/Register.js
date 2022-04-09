@@ -37,7 +37,8 @@ export default function Register() {
         <div className="formcontainer">
           <div className="acont">
             <div className="back">
-              <Link to="/home">
+              {/* Change to go to onboarding */}
+              <Link to="/">
                 <img
                   src={require("../../img/chevron-left-solid.png")}
                   width="25px"
