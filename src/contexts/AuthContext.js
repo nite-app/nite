@@ -14,6 +14,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [name, setName] = useState("User");
+  const [logged, setLogged] = useState(false);
 
   function signup(email, password) {
     console.log("Got to the signup function");
@@ -57,6 +58,16 @@ export function AuthProvider({ children }) {
     return name;
   }
 
+  function loggedsetter() {
+    if (currentUser == null) {
+      setLogged(false);
+    } else {
+      setLogged(true);
+    }
+
+    return logged;
+  }
+
   function resetPassword(email) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
@@ -66,15 +77,18 @@ export function AuthProvider({ children }) {
       console.log("Checking auth status...");
       setCurrentUser(user);
       setLoading(false);
+      console.log(logged);
     });
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
 
   React.useEffect(namesetter);
+  React.useEffect(loggedsetter);
 
   const value = {
     currentUser,
     name,
+    logged,
     signup,
     login,
     signout,
