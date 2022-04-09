@@ -59,7 +59,8 @@ export function AuthProvider({ children }) {
   }
 
   function loggedsetter() {
-    if (currentUser == null) {
+    console.log(currentUser);
+    if (currentUser === null) {
       setLogged(false);
     } else {
       setLogged(true);
