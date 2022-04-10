@@ -61,8 +61,10 @@ export function AuthProvider({ children }) {
   function loggedsetter() {
     console.log(currentUser);
     if (currentUser === null) {
+      console.log("Should return logged to false");
       setLogged(false);
     } else {
+      console.log("Should return logged to true");
       setLogged(true);
     }
 
@@ -83,8 +85,8 @@ export function AuthProvider({ children }) {
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
 
-  React.useEffect(namesetter);
-  React.useEffect(loggedsetter);
+  useEffect(namesetter);
+  useEffect(loggedsetter);
 
   const value = {
     currentUser,

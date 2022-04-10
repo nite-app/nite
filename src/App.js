@@ -8,6 +8,8 @@ import ResetScreen from "./screens/auth/ResetScreen";
 import Page2Screen from "./screens/Page2Screen.js";
 import Page3Screen from "./screens/Page3Screen.js";
 
+import PrivateRoute from "./components/PrivateRoute";
+
 function App() {
   return (
     <BrowserRouter>
