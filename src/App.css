@@ -54,6 +54,11 @@
   src: url(./fonts/articulatcf-extrabold-webfont.woff);
 }
 
+@font-face {
+  font-family: Articulat CF Italic;
+  src: url(./fonts/ArticulatCF-NormalOblique.otf);
+}
+
 /* SET DEFAULTS */
 
 * {
@@ -636,7 +641,7 @@ p {
 }
 
 .quotecontainer {
-  padding: 0 100px 50px 50px;
+  padding: 0 80px 50px 50px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -654,7 +659,9 @@ p {
 
 .author {
   color: white;
-  font-family: Articulat CF Regular;
+  font-family: Articulat CF Italic;
+  text-align: end;
+  width: 100%;
 }
 
 .input {
