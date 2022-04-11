@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import axios from "axios";
 import temp from "../../img/temp.png";
 import seticon from "../../img/setimg.png";
 import searchicon from "../../img/searchimg.png";
@@ -18,6 +19,8 @@ function Home() {
   const { name } = useAuth();
   const { signout } = useAuth();
   const navigate = useNavigate();
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
 
   // component bar, props width
   const [barWidth, setBarWidth] = useState();
@@ -80,6 +83,22 @@ function Home() {
       setError("Failed to Sign Out");
     }
   }
+
+  function fetchQuote() {
+    axios
+      .get("https://api.quotable.io/random")
+      .then((response) => {
+        setQuote(response.data.content);
+        setAuthor(response.data.author);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    fetchQuote();
+  }, []);
 
   return (
     <>
@@ -225,10 +244,7 @@ function Home() {
                   <Habit icon={"appleicon.png"} text={"Eat healthy"} />
                   <Habit icon={"readicon.png"} text={"Read a book"} />
                   <Habit icon={"alcoolicon.png"} text={"Don't drink alcool"} />
-                  <Habit
-                    icon={"gamesicon.png"}
-                    text={"Don't play videogames"}
-                  />
+                  <Habit icon={"gamesicon.png"} text={"No games"} />
                 </div>
                 {/* SEP */}
                 <hr className="sep"></hr>
@@ -241,7 +257,13 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="bottompanel"></div>
+            <div className="bottompanel">
+              <h1 className="bottomh">Daily quote</h1>
+              <div className="quotecontainer">
+                <h1 className="quote">"{quote}"</h1>
+                <h3 className="author">- {author}</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>

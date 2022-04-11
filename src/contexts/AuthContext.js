@@ -58,19 +58,6 @@ export function AuthProvider({ children }) {
     return name;
   }
 
-  function loggedsetter() {
-    console.log(currentUser);
-    if (currentUser === null) {
-      console.log("Should return logged to false");
-      setLogged(false);
-    } else {
-      console.log("Should return logged to true");
-      setLogged(true);
-    }
-
-    return logged;
-  }
-
   function resetPassword(email) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
@@ -86,7 +73,19 @@ export function AuthProvider({ children }) {
   }, []);
 
   useEffect(namesetter);
-  useEffect(loggedsetter);
+
+  useEffect(() => {
+    const setLog = firebase.auth().onAuthStateChanged(() => {
+      console.log("Checking logged status...");
+      if (currentUser === null) {
+        setLogged(false);
+      } else {
+        setLogged(true);
+      }
+      console.log(logged);
+    });
+    return () => setLog();
+  });
 
   const value = {
     currentUser,

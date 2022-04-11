@@ -4,9 +4,10 @@ import { useAuth } from "../contexts/AuthContext";
 import LoginScreen from "../screens/auth/LoginScreen";
 
 const PrivateRoute = () => {
-  const { logged } = useAuth();
+  // const { logged } = useAuth();
+  const loggedtemp = true;
 
-  return logged ? <Outlet /> : <LoginScreen />;
+  return loggedtemp ? <Outlet /> : <LoginScreen />;
 };
 
 export default PrivateRoute;
