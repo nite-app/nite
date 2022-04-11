@@ -238,7 +238,7 @@ function Home() {
           </div>
           <div className="mainpanelscont">
             <div className="bottompanel">
-              <h1 className="bottomh">Which Habits have you respected?</h1>
+              <h1 className="bottomh">Which habits have you respected?</h1>
               <div className="habitscontainer">
                 <div className="left">
                   <Habit icon={"appleicon.png"} text={"Eat healthy"} />
