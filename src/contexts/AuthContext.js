@@ -17,7 +17,6 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
 
   function signup(email, password) {
-    console.log("Got to the signup function");
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -29,7 +28,6 @@ export function AuthProvider({ children }) {
   }
 
   function login(email, password) {
-    console.log("Got to the login function");
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -67,7 +65,6 @@ export function AuthProvider({ children }) {
       console.log("Checking auth status...");
       setCurrentUser(user);
       setLoading(false);
-      console.log(logged);
     });
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
@@ -76,13 +73,11 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const setLog = firebase.auth().onAuthStateChanged(() => {
-      console.log("Checking logged status...");
       if (currentUser === null) {
         setLogged(false);
       } else {
         setLogged(true);
       }
-      console.log(logged);
     });
     return () => setLog();
   });

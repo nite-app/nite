@@ -258,7 +258,7 @@ function Home() {
               </div>
             </div>
             <div className="bottompanel">
-              <h1 className="bottomh">Daily quote</h1>
+              <h1 className="bottomh">Random quote</h1>
               <div className="quotecontainer">
                 <h1 className="quote">"{quote}"</h1>
                 <h3 className="author">- {author}</h3>

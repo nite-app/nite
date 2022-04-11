@@ -23,22 +23,24 @@ const Page3 = () => {
 
   useEffect(() => {
     setCount(habitListLeft.length + habitListRight.length);
-    console.log("count: " + count);
   }, []);
 
   const handleAddHabit = () => {
-    if (count < 4) {
-      setHabitListLeft([...habitListLeft, habitText]);
-      setHabitText("");
-    } else if (count > 3 && count < 8) {
-      setHabitListRight([...habitListRight, habitText]);
-      setHabitText("");
-    } else {
-      alert("Puoi inserire al masismo 8 Habits!");
-    }
+    if (habitText !== "") {
+      if (count < 4) {
+        setHabitListLeft([...habitListLeft, habitText]);
+        setHabitText("");
+      } else if (count > 3 && count < 8) {
+        setHabitListRight([...habitListRight, habitText]);
+        setHabitText("");
+      } else {
+        alert("Puoi inserire al masismo 8 Habits!");
+      }
 
-    setCount(count + 1);
-    console.log(count);
+      setCount(count + 1);
+    } else {
+      alert("Write some text!");
+    }
   };
 
   const habitTextChange = (event) => {
