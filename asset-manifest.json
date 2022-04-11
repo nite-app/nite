@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e9544b9.css",
-    "main.js": "/static/js/main.172b02fb.js",
+    "main.css": "/static/css/main.3fc43bd3.css",
+    "main.js": "/static/js/main.b667170c.js",
     "static/js/787.1185226e.chunk.js": "/static/js/787.1185226e.chunk.js",
     "static/media/temp.jpg": "/static/media/temp.a0108a44ac1f56714589.jpg",
     "static/media/ArticulatCF-Heavy.otf": "/static/media/ArticulatCF-Heavy.1238237f2b46b41e330d.otf",
     "static/media/ArticulatCF-ExtraBold.otf": "/static/media/ArticulatCF-ExtraBold.842d2e5c22d50bcd724d.otf",
     "static/media/ArticulatCF-Bold.otf": "/static/media/ArticulatCF-Bold.a6363b4aa7f21a9af1ac.otf",
     "static/media/ArticulatCF-DemiBold.otf": "/static/media/ArticulatCF-DemiBold.81fcafd43264e0d97e19.otf",
+    "static/media/ArticulatCF-NormalOblique.otf": "/static/media/ArticulatCF-NormalOblique.8c530b7b7288cbc02fe6.otf",
     "static/media/ArticulatCF-Regular.otf": "/static/media/ArticulatCF-Regular.05f1ab8c90a1c58f7cb0.otf",
     "static/media/ArticulatCF-ExtraLight.otf": "/static/media/ArticulatCF-ExtraLight.da9c61c8d573f46344d7.otf",
     "static/media/ArticulatCF-Normal.otf": "/static/media/ArticulatCF-Normal.10f3c83adc58ce29a8aa.otf",
@@ -29,12 +30,12 @@
     "static/media/water.png": "/static/media/water.cfb5f88c86257fdf00f5.png",
     "static/media/runicon.png": "/static/media/runicon.668f7710317f477bb14d.png",
     "index.html": "/index.html",
-    "main.7e9544b9.css.map": "/static/css/main.7e9544b9.css.map",
-    "main.172b02fb.js.map": "/static/js/main.172b02fb.js.map",
+    "main.3fc43bd3.css.map": "/static/css/main.3fc43bd3.css.map",
+    "main.b667170c.js.map": "/static/js/main.b667170c.js.map",
     "787.1185226e.chunk.js.map": "/static/js/787.1185226e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e9544b9.css",
-    "static/js/main.172b02fb.js"
+    "static/css/main.3fc43bd3.css",
+    "static/js/main.b667170c.js"
   ]
 }
