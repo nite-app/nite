@@ -1,15 +1,15 @@
 import React, { Component, useEffect, useState } from "react";
-import "../../App.css";
+import "../App.css";
 import { Link, Outlet } from "react-router-dom";
-import temp from "../../img/temp.png";
-import seticon from "../../img/setimg.png";
-import searchicon from "../../img/searchimg.png";
-import signoutimg from "../../img/signoutimg.png";
+import temp from "../img/temp.png";
+import seticon from "../img/setimg.png";
+import searchicon from "../img/searchimg.png";
+import signoutimg from "../img/signoutimg.png";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 function Page2() {
   const [error, setError] = useState("");
@@ -139,7 +139,7 @@ function Page2() {
                 <div className="mainpanel2rightheader">How did you sleep?</div>
                 <button className="mainpanel2rightbutton">
                   <img
-                    src={require("../../img/greencircle.png")}
+                    src={require("../img/greencircle.png")}
                     alt=""
                     className="mainpanel2rightimg"
                   />
@@ -149,7 +149,7 @@ function Page2() {
                 </button>
                 <button className="mainpanel2rightbutton">
                   <img
-                    src={require("../../img/yellowcircle.png")}
+                    src={require("../img/yellowcircle.png")}
                     alt=""
                     className="mainpanel2rightimg"
                   />
@@ -159,7 +159,7 @@ function Page2() {
                 </button>
                 <button className="mainpanel2rightbutton">
                   <img
-                    src={require("../../img/redcircle.png")}
+                    src={require("../img/redcircle.png")}
                     alt=""
                     className="mainpanel2rightimg"
                   />

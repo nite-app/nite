@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "../../App.css";
+import "../App.css";
 import { Link, Outlet } from "react-router-dom";
-import temp from "../../img/temp.png";
-import seticon from "../../img/setimg.png";
-import searchicon from "../../img/searchimg.png";
-import signoutimg from "../../img/signoutimg.png";
-import { useAuth } from "../../contexts/AuthContext";
+import temp from "../img/temp.png";
+import seticon from "../img/setimg.png";
+import searchicon from "../img/searchimg.png";
+import signoutimg from "../img/signoutimg.png";
+import { useAuth } from "../contexts/AuthContext";
 import Input from "@mui/material/Input";
-import Habit from "../Habit";
+import Habit from "../components/Habit";
 import { v4 as uuidv4 } from "uuid";
 
 const Page3 = () => {

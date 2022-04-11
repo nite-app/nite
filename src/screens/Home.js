@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "../../App.css";
+import "../App.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
-import temp from "../../img/temp.png";
-import seticon from "../../img/setimg.png";
-import searchicon from "../../img/searchimg.png";
-import signoutimg from "../../img/signoutimg.png";
-import { useAuth } from "../../contexts/AuthContext";
-import BarChart from "../Charts/BarChart";
-import LineChart from "../Charts/LineChart";
-import { HomeData } from "../../Charts Data/HomeData";
+import temp from "../img/temp.png";
+import seticon from "../img/setimg.png";
+import searchicon from "../img/searchimg.png";
+import signoutimg from "../img/signoutimg.png";
+import { useAuth } from "../contexts/AuthContext";
+import BarChart from "../components/Charts/BarChart";
+import LineChart from "../components/Charts/LineChart";
+import { HomeData } from "../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
-import HomeDay from "../HomeDay";
-import Habit from "../Habit";
+import HomeDay from "../components/HomeDay";
+import Habit from "../components/Habit";
 
 function Home() {
   const [error, setError] = useState("");
@@ -187,7 +187,7 @@ function Home() {
                 <div className="mainpanel1rightbuttons">
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../../img/greencircle.png")}
+                      src={require("../img/greencircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />
@@ -197,7 +197,7 @@ function Home() {
                   </button>
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../../img/yellowcircle.png")}
+                      src={require("../img/yellowcircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />
@@ -207,7 +207,7 @@ function Home() {
                   </button>
                   <button className="mainpanel1rightbutton">
                     <img
-                      src={require("../../img/redcircle.png")}
+                      src={require("../img/redcircle.png")}
                       alt=""
                       className="mainpanel2rightimg"
                     />

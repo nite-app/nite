@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import Alert from "../Alert";
+import Alert from "../../components/Alert";
 
 export default function Register() {
   const emailref = useRef();
