@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const AuthContext = React.createContext();
 
@@ -15,6 +16,20 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [name, setName] = useState("User");
   const [logged, setLogged] = useState(false);
+
+  const db = getFirestore();
+  //collection ref
+  const colRef = collection(db, "users");
+  //get collection data
+  getDocs(colRef)
+    .then((snapshot) => {
+      let users = [];
+      snapshot.docs.forEach((doc) => {
+        users.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(users);
+    })
+    .catch((error) => console.log(error));
 
   function signup(email, password) {
     firebase
