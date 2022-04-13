@@ -2,7 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 import firebase from "firebase/compat/app";
 import { useNavigate } from "react-router-dom";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  collection,
+  getDocs,
+  addDoc,
+  setDoc,
+} from "firebase/firestore";
 
 const AuthContext = React.createContext();
 
@@ -21,16 +28,19 @@ export function AuthProvider({ children }) {
   //collection ref
   const colRef = collection(db, "users");
   //get collection data
-  getDocs(colRef)
-    .then((snapshot) => {
-      let users = [];
-      snapshot.docs.forEach((doc) => {
-        users.push({ ...doc.data(), id: doc.id });
-      });
-      console.log(users);
-    })
-    .catch((error) => console.log(error));
+  function retrieveData() {
+    getDocs(colRef)
+      .then((snapshot) => {
+        let users = [];
+        snapshot.docs.forEach((doc) => {
+          users.push({ ...doc.data(), id: doc.id });
+        });
+        console.log(users);
+      })
+      .catch((error) => console.log(error));
+  }
 
+  //######################### SIGN UP #########################
   function signup(email, password) {
     firebase
       .auth()
@@ -41,7 +51,9 @@ export function AuthProvider({ children }) {
     console.log("Created user with email: " + email);
     navigate("/login");
   }
+  //######################### SIGN UP #########################
 
+  //######################### LOG IN #########################
   function login(email, password) {
     firebase
       .auth()
@@ -52,12 +64,16 @@ export function AuthProvider({ children }) {
     console.log("Logged in as: " + email);
     navigate("/");
   }
+  //######################### LOG IN #########################
 
+  //######################### SIGN OUT #########################
   function signout() {
     console.log("Signed out successfully");
     return firebase.auth().signOut();
   }
+  //######################### SIGN OUT #########################
 
+  //######################### SET NAME #########################
   function namesetter() {
     if (currentUser == null) {
       setName("User");
@@ -70,11 +86,15 @@ export function AuthProvider({ children }) {
 
     return name;
   }
+  //######################### SET NAME #########################
 
+  //######################### PASSWORD RESET #########################
   function resetPassword(email) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
+  //######################### PASSWORD RESET #########################
 
+  //######################### PRIVATE ROUTE CHECK #########################
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
@@ -85,7 +105,9 @@ export function AuthProvider({ children }) {
   }, []);
 
   useEffect(namesetter);
+  //######################### CHECK STATUS #########################
 
+  //######################### PRIVATE ROUTE CHECK #########################
   useEffect(() => {
     const setLog = firebase.auth().onAuthStateChanged(() => {
       if (currentUser === null) {
@@ -96,6 +118,17 @@ export function AuthProvider({ children }) {
     });
     return () => setLog();
   });
+  //######################### PRIVATE ROUTE CHECK #########################
+
+  //######################### ADD USER NAME TO DB #########################
+  const addDocument = async (currentUser, email, first, last) => {
+    await setDoc(doc(db, "users", currentUser.uid.toString()), {
+      email: email,
+      firstName: first,
+      lastName: last,
+    });
+  };
+  //######################### ADD USER NAME TO DB #########################
 
   const value = {
     currentUser,
@@ -105,6 +138,7 @@ export function AuthProvider({ children }) {
     login,
     signout,
     resetPassword,
+    addDocument,
   };
 
   return (

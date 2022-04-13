@@ -7,22 +7,29 @@ export default function Register() {
   const emailref = useRef();
   const pswref = useRef();
   const repeatref = useRef();
+  const fnameref = useRef();
+  const lnameref = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
+  const { login } = useAuth();
+  const { addDocument } = useAuth();
+  const { currentUser } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (pswref.current.value !== repeatref.current.value) {
-      return setError("Passwords don't match");
-      alert("Password do not match");
+      return alert("Password do not match");
     }
 
     try {
       setError("");
       setLoading(true);
       signup(emailref.current.value, pswref.current.value);
+      login(emailref.current.value, pswref.current.value);
+      //add doc to db with first and last name
+      // addDocument(currentUser, emailref.current.value, fnameref.current.value, lnameref.current.value);
     } catch {
       setError("Internal Error: Failed to create your account");
     }
@@ -56,6 +63,27 @@ export default function Register() {
                   </Link>
                 </div>
                 <hr />
+
+                <div className="registerNameContainer">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    name="fname"
+                    id="regfname"
+                    className="field"
+                    ref={fnameref}
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    name="lname"
+                    id="reglname"
+                    className="field"
+                    ref={lnameref}
+                    required
+                  />
+                </div>
 
                 <input
                   type="text"

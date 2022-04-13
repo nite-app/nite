@@ -1494,6 +1494,11 @@ input::-webkit-inner-spin-button {
   margin-top: 20px;
 }
 
+.registerNameContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .back {
   position: absolute;
   display: flex;
