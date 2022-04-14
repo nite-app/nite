@@ -19,21 +19,29 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (pswref.current.value !== repeatref.current.value) {
+    const password = pswref.current.value;
+    const pwrepeat = repeatref.current.value;
+    const email = emailref.current.value;
+    const fname = fnameref.current.value;
+    const lname = lnameref.current.value;
+
+    if (password !== pwrepeat) {
       return alert("Password do not match");
     }
 
     try {
       setError("");
       setLoading(true);
-      signup(emailref.current.value, pswref.current.value);
-      login(emailref.current.value, pswref.current.value);
-      //add doc to db with first and last name
-      // addDocument(currentUser, emailref.current.value, fnameref.current.value, lnameref.current.value);
+      signup(email, password);
     } catch {
       setError("Internal Error: Failed to create your account");
     }
 
+    setTimeout(() => {
+      login(email, password);
+      console.log("Current user in register: " + currentUser);
+      // addDocument(currentUser, email, fname, lname);
+    }, 500);
     setLoading(false);
   }
 

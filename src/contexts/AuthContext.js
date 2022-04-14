@@ -40,7 +40,6 @@ export function AuthProvider({ children }) {
       .catch((error) => console.log(error));
   }
 
-  //######################### SIGN UP #########################
   function signup(email, password) {
     firebase
       .auth()
@@ -51,9 +50,7 @@ export function AuthProvider({ children }) {
     console.log("Created user with email: " + email);
     navigate("/login");
   }
-  //######################### SIGN UP #########################
 
-  //######################### LOG IN #########################
   function login(email, password) {
     firebase
       .auth()
@@ -62,18 +59,16 @@ export function AuthProvider({ children }) {
         console.log(error);
       });
     console.log("Logged in as: " + email);
+    setCurrentUser(firebase.auth().currentUser);
+    console.log("Current user after logging in: " + currentUser);
     navigate("/");
   }
-  //######################### LOG IN #########################
 
-  //######################### SIGN OUT #########################
   function signout() {
     console.log("Signed out successfully");
     return firebase.auth().signOut();
   }
-  //######################### SIGN OUT #########################
 
-  //######################### SET NAME #########################
   function namesetter() {
     if (currentUser == null) {
       setName("User");
@@ -86,15 +81,11 @@ export function AuthProvider({ children }) {
 
     return name;
   }
-  //######################### SET NAME #########################
 
-  //######################### PASSWORD RESET #########################
   function resetPassword(email) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
-  //######################### PASSWORD RESET #########################
 
-  //######################### PRIVATE ROUTE CHECK #########################
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
@@ -105,9 +96,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   useEffect(namesetter);
-  //######################### CHECK STATUS #########################
 
-  //######################### PRIVATE ROUTE CHECK #########################
   useEffect(() => {
     const setLog = firebase.auth().onAuthStateChanged(() => {
       if (currentUser === null) {
@@ -118,17 +107,14 @@ export function AuthProvider({ children }) {
     });
     return () => setLog();
   });
-  //######################### PRIVATE ROUTE CHECK #########################
 
-  //######################### ADD USER NAME TO DB #########################
   const addDocument = async (currentUser, email, first, last) => {
-    await setDoc(doc(db, "users", currentUser.uid.toString()), {
+    await setDoc(doc(db, "users", currentUser.uid), {
       email: email,
       firstName: first,
       lastName: last,
     });
   };
-  //######################### ADD USER NAME TO DB #########################
 
   const value = {
     currentUser,

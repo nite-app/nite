@@ -643,6 +643,7 @@ p {
 .quotecontainer {
   padding: 0 80px 50px 50px;
   height: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
