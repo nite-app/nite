@@ -23,8 +23,8 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [name, setName] = useState("User");
   const [logged, setLogged] = useState(false);
-
   const db = getFirestore();
+
   //collection ref
   const colRef = collection(db, "users");
   //get collection data
@@ -59,8 +59,6 @@ export function AuthProvider({ children }) {
         console.log(error);
       });
     console.log("Logged in as: " + email);
-    setCurrentUser(firebase.auth().currentUser);
-    console.log("Current user after logging in: " + currentUser);
     navigate("/");
   }
 
