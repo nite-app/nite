@@ -40,14 +40,17 @@ export function AuthProvider({ children }) {
       .catch((error) => console.log(error));
   }
 
-  function signup(email, password) {
+  function signup(email, password, currentUser, first, last) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log("Created user with email: " + email);
+        login(email, password);
+      })
       .catch(function (error) {
         console.log(error);
       });
-    console.log("Created user with email: " + email);
     navigate("/login");
   }
 
@@ -55,6 +58,10 @@ export function AuthProvider({ children }) {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        setCurrentUser(firebase.auth().currentUser);
+        console.log("Current User: " + currentUser);
+      })
       .catch(function (error) {
         console.log(error);
       });

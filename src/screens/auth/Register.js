@@ -37,11 +37,6 @@ export default function Register() {
       setError("Internal Error: Failed to create your account");
     }
 
-    setTimeout(() => {
-      login(email, password);
-      console.log("Current user in register: " + currentUser);
-      // addDocument(currentUser, email, fname, lname);
-    }, 500);
     setLoading(false);
   }
 
