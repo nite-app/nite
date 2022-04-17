@@ -12,17 +12,20 @@ import {
 
 export default function Register() {
   const navigate = useNavigate();
+  //Params Refs
   const emailref = useRef();
   const pswref = useRef();
   const repeatref = useRef();
   const fnameref = useRef();
   const lnameref = useRef();
+  //System states
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  //Ctx exports
   const { signup } = useAuth();
   const { addDocument } = useAuth();
   const { currentUser } = useAuth();
-
+  //db conf
   const db = getFirestore();
   const usersRef = collection(db, "users");
 
