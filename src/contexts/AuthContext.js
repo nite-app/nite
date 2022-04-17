@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
       .catch((error) => console.log(error));
   }
 
-  function signup(email, password, currentUser, first, last) {
+  function signup(email, password) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -51,22 +51,16 @@ export function AuthProvider({ children }) {
       .catch(function (error) {
         console.log(error);
       });
-    navigate("/login");
   }
 
   function login(email, password) {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        setCurrentUser(firebase.auth().currentUser);
-        console.log("Current User: " + currentUser);
-      })
       .catch(function (error) {
         console.log(error);
       });
     console.log("Logged in as: " + email);
-    navigate("/");
   }
 
   function signout() {

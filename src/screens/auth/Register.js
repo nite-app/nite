@@ -1,9 +1,17 @@
-import React, { useRef, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from "../../components/Alert";
+import {
+  collection,
+  doc,
+  setDoc,
+  getFirestore,
+  onSnapshot,
+} from "firebase/firestore";
 
 export default function Register() {
+  const navigate = useNavigate();
   const emailref = useRef();
   const pswref = useRef();
   const repeatref = useRef();
@@ -12,9 +20,15 @@ export default function Register() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
-  const { login } = useAuth();
   const { addDocument } = useAuth();
   const { currentUser } = useAuth();
+
+  const db = getFirestore();
+  const usersRef = collection(db, "users");
+
+  const [emailState, setEmailState] = useState("");
+  const [firstState, setFirstState] = useState("");
+  const [lastState, setLastState] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,6 +38,9 @@ export default function Register() {
     const email = emailref.current.value;
     const fname = fnameref.current.value;
     const lname = lnameref.current.value;
+    setEmailState(email);
+    setFirstState(fname);
+    setLastState(lname);
 
     if (password !== pwrepeat) {
       return alert("Password do not match");
@@ -39,6 +56,19 @@ export default function Register() {
 
     setLoading(false);
   }
+
+  useEffect(() => {
+    console.log("CurrentUser: " + currentUser);
+    if (currentUser !== null) {
+      onSnapshot(usersRef, (snap) => {
+        if (snap.exists === false) {
+          addDocument(currentUser, emailState, firstState, lastState);
+        } else {
+          console.log("DEBUG: document already exists");
+        }
+      });
+    }
+  }, [currentUser]);
 
   return (
     <>
