@@ -43,6 +43,17 @@ export function AuthProvider({ children }) {
     });
   };
 
+  function getUserData(currentUser) {
+    const docRef = doc(db, "users", currentUser.uid);
+    const docSnap = getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      console.log("No such document!");
+    }
+  }
+
   function signup(email, password) {
     firebase
       .auth()
@@ -120,6 +131,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     addDocument,
     docExists,
+    getUserData,
   };
 
   return (

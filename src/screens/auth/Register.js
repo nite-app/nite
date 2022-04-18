@@ -2,13 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from "../../components/Alert";
-import {
-  collection,
-  doc,
-  setDoc,
-  getFirestore,
-  onSnapshot,
-} from "firebase/firestore";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -58,11 +51,9 @@ export default function Register() {
   }
 
   useEffect(() => {
-    console.log("CurrentUser: " + currentUser);
     if (currentUser !== null) {
       if (docExists(currentUser) === false) {
         addDocument(currentUser, emailState, firstState, lastState);
-        console.log("Created Document");
       }
     }
   }, [currentUser]);

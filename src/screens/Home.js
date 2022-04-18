@@ -18,6 +18,8 @@ function Home() {
   const [error, setError] = useState("");
   const { name } = useAuth();
   const { signout } = useAuth();
+  const { getUserData } = useAuth();
+  const { currentUser } = useAuth();
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -99,6 +101,10 @@ function Home() {
   useEffect(() => {
     fetchQuote();
   }, []);
+
+  // useEffect(() => {
+  //   getUserData(currentUser);
+  // }, [currentUser]);
 
   return (
     <>
