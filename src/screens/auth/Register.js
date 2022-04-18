@@ -24,10 +24,8 @@ export default function Register() {
   //Ctx exports
   const { signup } = useAuth();
   const { addDocument } = useAuth();
+  const { docExists } = useAuth();
   const { currentUser } = useAuth();
-  //db conf
-  const db = getFirestore();
-  const usersRef = collection(db, "users");
 
   const [emailState, setEmailState] = useState("");
   const [firstState, setFirstState] = useState("");
@@ -56,20 +54,16 @@ export default function Register() {
     } catch {
       setError("Internal Error: Failed to create your account");
     }
-
     setLoading(false);
   }
 
   useEffect(() => {
     console.log("CurrentUser: " + currentUser);
     if (currentUser !== null) {
-      onSnapshot(usersRef, (snap) => {
-        if (snap.exists === false) {
-          addDocument(currentUser, emailState, firstState, lastState);
-        } else {
-          console.log("DEBUG: document already exists");
-        }
-      });
+      if (docExists(currentUser) === false) {
+        addDocument(currentUser, emailState, firstState, lastState);
+        console.log("Created Document");
+      }
     }
   }, [currentUser]);
 

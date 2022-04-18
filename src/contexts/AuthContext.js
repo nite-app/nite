@@ -6,7 +6,7 @@ import {
   getFirestore,
   doc,
   collection,
-  getDocs,
+  getDoc,
   setDoc,
 } from "firebase/firestore";
 
@@ -24,20 +24,24 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
 
-  //collection ref
-  const colRef = collection(db, "users");
-  //get collection data
-  function retrieveData() {
-    getDocs(colRef)
-      .then((snapshot) => {
-        let users = [];
-        snapshot.docs.forEach((doc) => {
-          users.push({ ...doc.data(), id: doc.id });
-        });
-        console.log(users);
-      })
-      .catch((error) => console.log(error));
+  function docExists(currentUser) {
+    const docRef = doc(db, "users", currentUser.uid);
+    const docSnap = getDoc(docRef);
+
+    if (docSnap.exists) {
+      return true;
+    } else {
+      return false;
+    }
   }
+
+  const addDocument = async (currentUser, email, first, last) => {
+    await setDoc(doc(db, "users", currentUser.uid), {
+      email: email,
+      firstName: first,
+      lastName: last,
+    });
+  };
 
   function signup(email, password) {
     firebase
@@ -106,14 +110,6 @@ export function AuthProvider({ children }) {
     return () => setLog();
   });
 
-  const addDocument = async (currentUser, email, first, last) => {
-    await setDoc(doc(db, "users", currentUser.uid), {
-      email: email,
-      firstName: first,
-      lastName: last,
-    });
-  };
-
   const value = {
     currentUser,
     name,
@@ -123,6 +119,7 @@ export function AuthProvider({ children }) {
     signout,
     resetPassword,
     addDocument,
+    docExists,
   };
 
   return (
