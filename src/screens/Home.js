@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {
+  getFirestore,
+  doc,
+  collection,
+  getDoc,
+  setDoc,
+} from "firebase/firestore";
 import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
@@ -16,13 +23,14 @@ import Habit from "../components/Habit";
 
 function Home() {
   const [error, setError] = useState("");
-  const { name } = useAuth();
   const { signout } = useAuth();
-  const { getUserData } = useAuth();
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
+  const [name, setName] = useState("");
+
+  const db = getFirestore();
 
   // component bar, props width
   const [barWidth, setBarWidth] = useState();
@@ -102,9 +110,21 @@ function Home() {
     fetchQuote();
   }, []);
 
-  // useEffect(() => {
-  //   getUserData(currentUser);
-  // }, [currentUser]);
+  useEffect(() => {
+    if (currentUser !== null) {
+      console.log(currentUser.uid);
+      const docRef = doc(db, "users", currentUser.uid);
+      const docSnap = getDoc(docRef);
+
+      if (docSnap.exists) {
+        console.log("Document data:", docSnap.data());
+      } else {
+        console.log("No such document!");
+      }
+    } else {
+      setName("User");
+    }
+  }, [currentUser]);
 
   return (
     <>
