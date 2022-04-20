@@ -30,6 +30,7 @@ function Home() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 
+  const firstName = name.split(" ")[0];
   const db = getFirestore();
 
   // component bar, props width
@@ -163,7 +164,7 @@ function Home() {
           </div>
         </div>
         <div className="maincontainer">
-          <h1 className="containerheader">Good morning, {name}</h1>
+          <h1 className="containerheader">Good morning, {firstName}</h1>
           <div className="mainpanel1">
             <div className="mainpanel1left">
               <div className="mainpanel1leftleft">
