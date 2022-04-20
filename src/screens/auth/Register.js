@@ -36,16 +36,26 @@ export default function Register() {
     setFirstState(fname);
     setLastState(lname);
 
-    if (password !== pwrepeat) {
-      return alert("Password do not match");
-    }
+    if (
+      email !== "" &&
+      fname !== "" &&
+      lname !== "" &&
+      password !== "" &&
+      pwrepeat !== ""
+    ) {
+      if (password !== pwrepeat) {
+        return alert("Password do not match");
+      }
 
-    try {
-      setError("");
-      setLoading(true);
-      signup(email, password);
-    } catch {
-      setError("Internal Error: Failed to create your account");
+      try {
+        setError("");
+        setLoading(true);
+        signup(email, password);
+      } catch {
+        setError("Internal Error: Failed to create your account");
+      }
+    } else {
+      alert("Please fill all fields!");
     }
     setLoading(false);
   }

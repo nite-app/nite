@@ -95,8 +95,21 @@ export function AuthProvider({ children }) {
     return () => setLog();
   });
 
+  useEffect(() => {
+    if (currentUser) {
+      const docRef = doc(db, "users", currentUser.uid);
+
+      getDoc(docRef).then((doc) => {
+        setName(doc.data().firstName + " " + doc.data().lastName);
+      });
+    } else {
+      setName("User");
+    }
+  }, [currentUser]);
+
   const value = {
     currentUser,
+    name,
     logged,
     signup,
     login,

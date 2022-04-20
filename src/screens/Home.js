@@ -25,10 +25,10 @@ function Home() {
   const [error, setError] = useState("");
   const { signout } = useAuth();
   const { currentUser } = useAuth();
+  const { name } = useAuth();
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [name, setName] = useState("");
 
   const db = getFirestore();
 
@@ -109,18 +109,6 @@ function Home() {
   useEffect(() => {
     fetchQuote();
   }, []);
-
-  useEffect(() => {
-    if (currentUser !== null) {
-      const docRef = doc(db, "users", currentUser.uid);
-
-      getDoc(docRef).then((doc) => {
-        setName(doc.data().firstName + " " + doc.data().lastName);
-      });
-    } else {
-      setName("User");
-    }
-  }, [currentUser]);
 
   return (
     <>
