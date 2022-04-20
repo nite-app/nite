@@ -103,7 +103,7 @@ export function AuthProvider({ children }) {
         setName(doc.data().firstName + " " + doc.data().lastName);
       });
     } else {
-      setName("User");
+      setName("User 1");
     }
   }, [currentUser]);
 

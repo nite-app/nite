@@ -31,6 +31,9 @@ function Home() {
   const [author, setAuthor] = useState("");
 
   const firstName = name.split(" ")[0];
+  const lastName = name.split(" ")[1];
+  const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
   const db = getFirestore();
 
   // component bar, props width
@@ -54,6 +57,17 @@ function Home() {
       },
     ],
   });
+
+  const pfpColors = [
+    "FFADAD",
+    "FFD6A5",
+    "FDFFB6",
+    "CAFFBF",
+    "98F6FF",
+    "A0C4FF",
+    "BDB2FF",
+    "FFC6FF",
+  ];
 
   const [userOptions, setUserOptions] = useState({
     plugins: {
@@ -117,7 +131,16 @@ function Home() {
         <div className="sidebar">
           <Link to="/register" style={linkStyle}>
             <div className="account">
-              <img src={temp} alt="" id="accImg" />
+              <div
+                id="accImg"
+                style={{
+                  backgroundColor:
+                    "#" +
+                    pfpColors[Math.floor(Math.random() * pfpColors.length)],
+                }}
+              >
+                <h3 className="accTxt">{pfpTxt}</h3>
+              </div>
               <h1 className="accountheader">{name}</h1>
               <img
                 src={signoutimg}

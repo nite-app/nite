@@ -222,6 +222,16 @@ p {
 #accImg {
   width: 64px;
   height: 64px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accTxt {
+  font-size: 26px;
+  color: white;
+  font-family: Articulat CF Bold;
 }
 
 #signoutimg {
