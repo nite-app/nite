@@ -112,15 +112,11 @@ function Home() {
 
   useEffect(() => {
     if (currentUser !== null) {
-      console.log(currentUser.uid);
       const docRef = doc(db, "users", currentUser.uid);
-      const docSnap = getDoc(docRef);
 
-      if (docSnap.exists) {
-        console.log("Document data:", docSnap.data());
-      } else {
-        console.log("No such document!");
-      }
+      getDoc(docRef).then((doc) => {
+        setName(doc.data().firstName + " " + doc.data().lastName);
+      });
     } else {
       setName("User");
     }

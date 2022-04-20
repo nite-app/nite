@@ -71,19 +71,6 @@ export function AuthProvider({ children }) {
     return firebase.auth().signOut();
   }
 
-  function namesetter() {
-    if (currentUser == null) {
-      setName("User");
-    } else {
-      let s = currentUser.email;
-      let n = s.indexOf("@");
-      s = s.substring(0, n != -1 ? n : s.length);
-      setName(s);
-    }
-
-    return name;
-  }
-
   function resetPassword(email) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
@@ -96,8 +83,6 @@ export function AuthProvider({ children }) {
     });
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
-
-  useEffect(namesetter);
 
   useEffect(() => {
     const setLog = firebase.auth().onAuthStateChanged(() => {
@@ -112,7 +97,6 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
-    name,
     logged,
     signup,
     login,
