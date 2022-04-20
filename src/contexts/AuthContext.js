@@ -24,25 +24,6 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
 
-  function docExists(currentUser) {
-    const docRef = doc(db, "users", currentUser.uid);
-    const docSnap = getDoc(docRef);
-
-    if (docSnap.exists) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  const addDocument = async (currentUser, email, first, last) => {
-    await setDoc(doc(db, "users", currentUser.uid), {
-      email: email,
-      firstName: first,
-      lastName: last,
-    });
-  };
-
   function signup(email, password) {
     firebase
       .auth()
@@ -115,8 +96,6 @@ export function AuthProvider({ children }) {
     login,
     signout,
     resetPassword,
-    addDocument,
-    docExists,
   };
 
   return (

@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from "../../components/Alert";
+import {
+  getFirestore,
+  doc,
+  collection,
+  getDoc,
+  setDoc,
+} from "firebase/firestore";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -16,13 +23,13 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   //Ctx exports
   const { signup } = useAuth();
-  const { addDocument } = useAuth();
-  const { docExists } = useAuth();
   const { currentUser } = useAuth();
 
   const [emailState, setEmailState] = useState("");
   const [firstState, setFirstState] = useState("");
   const [lastState, setLastState] = useState("");
+
+  const db = getFirestore();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -62,9 +69,20 @@ export default function Register() {
 
   useEffect(() => {
     if (currentUser !== null) {
-      if (docExists(currentUser.uid) === false) {
-        addDocument(currentUser, emailState, firstState, lastState);
-      }
+      const docRef = doc(db, "users", currentUser.uid);
+      const docSnap = getDoc(docRef);
+
+      getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
+        if (docSnap.exists()) {
+          console.log("Document already exists!");
+        } else {
+          setDoc(doc(db, "users", currentUser.uid), {
+            email: emailState,
+            firstName: firstState,
+            lastName: lastState,
+          });
+        }
+      });
     }
   }, [currentUser]);
 
