@@ -62,7 +62,7 @@ export default function Register() {
 
   useEffect(() => {
     if (currentUser !== null) {
-      if (docExists(currentUser) === false) {
+      if (docExists(currentUser.uid) === false) {
         addDocument(currentUser, emailState, firstState, lastState);
       }
     }
