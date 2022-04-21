@@ -129,7 +129,7 @@ function Home() {
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          <Link to="/register" style={linkStyle}>
+          <Link to="/login" style={linkStyle}>
             <div className="account">
               <div
                 id="accImg"

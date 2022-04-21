@@ -34,7 +34,7 @@ function Page2() {
     <>
       <div className="App" id="Home">
         <div className="sidebar">
-          <Link to="/register" style={linkStyle}>
+          <Link to="/login" style={linkStyle}>
             <div className="account">
               <img src={temp} alt="" id="accImg" />
               <h1 className="accountheader">{name}</h1>
