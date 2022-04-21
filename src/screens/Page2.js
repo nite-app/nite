@@ -14,9 +14,14 @@ import { useAuth } from "../contexts/AuthContext";
 function Page2() {
   const [error, setError] = useState("");
   const { name } = useAuth();
+  const { userColor } = useAuth();
   const { signout } = useAuth();
   const [switchState, setSwitchState] = useState(false);
   const [switchLabel, setSwitchLabel] = useState("No");
+
+  const firstName = name.split(" ")[0];
+  const lastName = name.split(" ")[1];
+  const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
 
   useEffect(() => {
     if (switchState === false) {
@@ -36,7 +41,14 @@ function Page2() {
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
-              <img src={temp} alt="" id="accImg" />
+              <div
+                id="accImg"
+                style={{
+                  backgroundColor: "#" + userColor,
+                }}
+              >
+                <h3 className="accTxt">{pfpTxt}</h3>
+              </div>
               <h1 className="accountheader">{name}</h1>
               <img src={signoutimg} alt="" id="signoutimg" onClick={signout} />
             </div>

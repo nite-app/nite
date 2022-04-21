@@ -26,6 +26,7 @@ function Home() {
   const { signout } = useAuth();
   const { currentUser } = useAuth();
   const { name } = useAuth();
+  const { userColor } = useAuth();
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -57,17 +58,6 @@ function Home() {
       },
     ],
   });
-
-  const pfpColors = [
-    "FFADAD",
-    "FFD6A5",
-    "FDFFB6",
-    "CAFFBF",
-    "98F6FF",
-    "A0C4FF",
-    "BDB2FF",
-    "FFC6FF",
-  ];
 
   const [userOptions, setUserOptions] = useState({
     plugins: {
@@ -134,9 +124,7 @@ function Home() {
               <div
                 id="accImg"
                 style={{
-                  backgroundColor:
-                    "#" +
-                    pfpColors[Math.floor(Math.random() * pfpColors.length)],
+                  backgroundColor: "#" + userColor,
                 }}
               >
                 <h3 className="accTxt">{pfpTxt}</h3>

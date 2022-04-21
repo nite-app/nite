@@ -21,6 +21,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [name, setName] = useState("User");
+  const [userColor, setUserColor] = useState("User");
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
 
@@ -77,23 +78,22 @@ export function AuthProvider({ children }) {
   });
 
   useEffect(() => {
-    const checkName = firebase.auth().onAuthStateChanged(() => {
-      if (currentUser) {
-        const docRef = doc(db, "users", currentUser.uid);
+    if (currentUser) {
+      const docRef = doc(db, "users", currentUser.uid);
 
-        getDoc(docRef).then((doc) => {
-          setName(doc.data().firstName + " " + doc.data().lastName);
-        });
-      } else {
-        setName("User 1");
-      }
-    });
-    return () => checkName();
+      getDoc(docRef).then((doc) => {
+        setName(doc.data().firstName + " " + doc.data().lastName);
+        setUserColor(doc.data().pfpColor);
+      });
+    } else {
+      setName("User 1");
+    }
   });
 
   const value = {
     currentUser,
     name,
+    userColor,
     logged,
     signup,
     login,

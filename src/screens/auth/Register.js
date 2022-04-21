@@ -29,6 +29,17 @@ export default function Register() {
   const [firstState, setFirstState] = useState("");
   const [lastState, setLastState] = useState("");
 
+  const pfpColors = [
+    "FFADAD",
+    "FFD6A5",
+    "FDFFB6",
+    "CAFFBF",
+    "98F6FF",
+    "A0C4FF",
+    "BDB2FF",
+    "FFC6FF",
+  ];
+
   const db = getFirestore();
 
   async function handleSubmit(e) {
@@ -80,6 +91,7 @@ export default function Register() {
             email: emailState,
             firstName: firstState,
             lastName: lastState,
+            pfpColor: pfpColors[Math.floor(Math.random() * pfpColors.length)],
           });
         }
       });
