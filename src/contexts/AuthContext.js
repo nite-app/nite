@@ -77,16 +77,19 @@ export function AuthProvider({ children }) {
   });
 
   useEffect(() => {
-    if (currentUser) {
-      const docRef = doc(db, "users", currentUser.uid);
+    const checkName = firebase.auth().onAuthStateChanged(() => {
+      if (currentUser) {
+        const docRef = doc(db, "users", currentUser.uid);
 
-      getDoc(docRef).then((doc) => {
-        setName(doc.data().firstName + " " + doc.data().lastName);
-      });
-    } else {
-      setName("User 1");
-    }
-  }, [currentUser]);
+        getDoc(docRef).then((doc) => {
+          setName(doc.data().firstName + " " + doc.data().lastName);
+        });
+      } else {
+        setName("User 1");
+      }
+    });
+    return () => checkName();
+  });
 
   const value = {
     currentUser,
