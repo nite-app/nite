@@ -20,6 +20,7 @@ import { HomeData } from "../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
+import Snackbar from "../components/Snackbar";
 
 function Home() {
   const [error, setError] = useState("");
@@ -238,7 +239,7 @@ function Home() {
                     </p>
                   </button>
                 </div>
-                <h3 className="mainpanel1header2">How did you sleep?</h3>
+                <h3 className="mainpanel1header2">How long did you sleep?</h3>
                 <div className="mainpanel1rightinput">
                   <TextField
                     id="filled-basic"

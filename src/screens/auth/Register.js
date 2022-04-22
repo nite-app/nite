@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import Alert from "../../components/Alert";
 import {
   getFirestore,
   doc,
@@ -9,6 +8,7 @@ import {
   getDoc,
   setDoc,
 } from "firebase/firestore";
+import Snackbar from "../../components/Snackbar";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -40,9 +40,11 @@ export default function Register() {
     "FFC6FF",
   ];
 
+  const snackbarRef = useRef(null);
   const db = getFirestore();
 
   async function handleSubmit(e) {
+    setError("");
     e.preventDefault();
 
     const password = pswref.current.value;
@@ -62,18 +64,19 @@ export default function Register() {
       pwrepeat !== ""
     ) {
       if (password !== pwrepeat) {
-        return alert("Password do not match");
-      }
-
-      try {
-        setError("");
-        setLoading(true);
-        signup(email, password);
-      } catch {
-        setError("Internal Error: Failed to create your account");
+        setError("Password do not match");
+      } else {
+        try {
+          setError("");
+          setLoading(true);
+          signup(email, password);
+        } catch {
+          setError("Internal Error: Failed to create your account");
+          setError("");
+        }
       }
     } else {
-      alert("Please fill all fields!");
+      setError("Please fill all fields!");
     }
     setLoading(false);
   }
@@ -98,10 +101,16 @@ export default function Register() {
     }
   }, [currentUser]);
 
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      snackbarRef.current.show();
+    }
+  }, [error]);
+
   return (
     <>
       <div className="fullpage">
-        {error && alert(error)}
         <div className="formcontainer">
           <div className="acont">
             <div className="back">
@@ -114,6 +123,11 @@ export default function Register() {
                 />
               </Link>
             </div>
+            <Snackbar
+              message="Action completed!"
+              type="success"
+              ref={snackbarRef}
+            />
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>
