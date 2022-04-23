@@ -93,10 +93,10 @@ function Home() {
   });
 
   function handleSignout() {
-    setError("");
-
     try {
       signout();
+      setError("Signed out successfully!");
+      setErrType("success");
       navigate("/login");
     } catch {
       setError("Failed to Sign Out");
@@ -133,6 +133,7 @@ function Home() {
   return (
     <>
       <div className="App" id="Home">
+        <Snackbar message={error} type={errType} ref={snackbarRef} />
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
@@ -222,7 +223,13 @@ function Home() {
               <div className="mainpanel1rightcontainer">
                 <h3 className="mainpanel1header">How did you sleep?</h3>
                 <div className="mainpanel1rightbuttons">
-                  <button className="mainpanel1rightbutton">
+                  <button
+                    className="mainpanel1rightbutton"
+                    onClick={() => {
+                      setError("Data sent successfully");
+                      setErrType("success");
+                    }}
+                  >
                     <img
                       src={require("../img/greencircle.png")}
                       alt=""

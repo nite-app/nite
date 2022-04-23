@@ -43,12 +43,14 @@ const Page3 = () => {
         setHabitListRight([...habitListRight, habitText]);
         setHabitText("");
       } else {
-        alert("Puoi inserire al masismo 8 Habits!");
+        setError("You can only insert a maximum of 8 Habits!");
+        setErrType("failure");
       }
 
       setCount(count + 1);
     } else {
-      alert("Write some text!");
+      setError("Write some text!");
+      setErrType("failure");
     }
   };
 
@@ -73,6 +75,7 @@ const Page3 = () => {
   return (
     <>
       <div className="App" id="Home">
+        <Snackbar message={error} type={errType} ref={snackbarRef} />
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">

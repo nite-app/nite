@@ -107,6 +107,7 @@ p {
   padding: 0 25px;
   font-family: Articulat CF Medium;
   font-size: 20px;
+  margin: 0 auto;
 }
 
 .symbol {
@@ -146,6 +147,7 @@ p {
   background-color: #17223b;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: "Articulat CF Regular";
 }
 

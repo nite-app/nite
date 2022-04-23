@@ -51,6 +51,7 @@ function Page2() {
   return (
     <>
       <div className="App" id="Home">
+        <Snackbar message={error} type={errType} ref={snackbarRef} />
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
@@ -162,7 +163,13 @@ function Page2() {
               <hr className="mainpanel2sep"></hr>
               <div className="mainpanel2right">
                 <div className="mainpanel2rightheader">How did you sleep?</div>
-                <button className="mainpanel2rightbutton">
+                <button
+                  className="mainpanel2rightbutton"
+                  onClick={() => {
+                    setError("Data sent successfully");
+                    setErrType("success");
+                  }}
+                >
                   <img
                     src={require("../img/greencircle.png")}
                     alt=""

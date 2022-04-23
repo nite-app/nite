@@ -58,6 +58,7 @@ function Login() {
           />
         </Link>
       </div>
+      <Snackbar message={error} type={errType} ref={snackbarRef} />
       <div className="ctsplit">
         <div className="formcontainer">
           <h1 className="formttl">Log into your account.</h1>
