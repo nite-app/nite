@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
@@ -9,9 +9,9 @@ import { useAuth } from "../contexts/AuthContext";
 import Input from "@mui/material/Input";
 import Habit from "../components/Habit";
 import { v4 as uuidv4 } from "uuid";
+import Snackbar from "../components/Snackbar";
 
 const Page3 = () => {
-  const [error, setError] = useState("");
   const { name } = useAuth();
   const { userColor } = useAuth();
   const { signout } = useAuth();
@@ -19,6 +19,10 @@ const Page3 = () => {
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const snackbarRef = useRef(null);
 
   //HABITS
   const [habitText, setHabitText] = useState("");
@@ -55,6 +59,16 @@ const Page3 = () => {
   const habitIconChange = (event) => {
     setHabitText(event.target.value);
   };
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
 
   return (
     <>

@@ -1,30 +1,50 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import Snackbar from "../../components/Snackbar";
 
 function Login() {
   const emailref = useRef();
   const pswref = useRef();
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const snackbarRef = useRef(null);
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    setError("");
     setLoading(true);
-    try {
-      login(emailref.current.value, pswref.current.value);
-      navigate("/");
-    } catch {
-      setError("Internal Error: Failed to login");
-      console.log(error);
+    if (emailref.current.value !== "" && pswref.current.value !== "") {
+      try {
+        login(emailref.current.value, pswref.current.value);
+        setError("Logged in successfully");
+        setErrType("success");
+        navigate("/");
+      } catch {
+        setError("Internal Error: Failed to login");
+        setErrType("failure");
+      }
+    } else {
+      setError("Fill all fields!");
+      setErrType("failure");
     }
 
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
 
   return (
     <div className="acont">

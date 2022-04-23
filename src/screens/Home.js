@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../App.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -23,7 +23,6 @@ import Habit from "../components/Habit";
 import Snackbar from "../components/Snackbar";
 
 function Home() {
-  const [error, setError] = useState("");
   const { signout } = useAuth();
   const { currentUser } = useAuth();
   const { name } = useAuth();
@@ -31,6 +30,10 @@ function Home() {
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
+
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const snackbarRef = useRef(null);
 
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
@@ -97,6 +100,7 @@ function Home() {
       navigate("/login");
     } catch {
       setError("Failed to Sign Out");
+      setErrType("failure");
     }
   }
 
@@ -115,6 +119,16 @@ function Home() {
   useEffect(() => {
     fetchQuote();
   }, []);
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState, useRef } from "react";
 import "../App.css";
 import { Link, Outlet } from "react-router-dom";
 import temp from "../img/temp.png";
@@ -10,14 +10,18 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import { useAuth } from "../contexts/AuthContext";
+import Snackbar from "../components/Snackbar";
 
 function Page2() {
-  const [error, setError] = useState("");
   const { name } = useAuth();
   const { userColor } = useAuth();
   const { signout } = useAuth();
   const [switchState, setSwitchState] = useState(false);
   const [switchLabel, setSwitchLabel] = useState("No");
+
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const snackbarRef = useRef(null);
 
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
@@ -34,6 +38,15 @@ function Page2() {
   function handleSwitchChange(event) {
     setSwitchState(event.target.checked);
   }
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
 
   return (
     <>

@@ -1,13 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import Snackbar from "../../components/Snackbar";
 
 function Reset() {
   const emailref = useRef();
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { resetPassword } = useAuth();
+
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const snackbarRef = useRef(null);
 
   const handleReset = async (e) => {
     e.preventDefault();
@@ -17,18 +21,29 @@ function Reset() {
     resetPassword(emailref.current.value);
     try {
       //   resetPassword(emailref.current.value);
-      alert(
+      setError(
         "Check your inbox at " +
           emailref.current.value +
           " for further informations"
       );
+      setErrType("success");
     } catch {
       setError("Internal Error: Failed to reset password");
-      console.log(error);
+      setErrType("failure");
     }
 
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
 
   return (
     <div className="acont">

@@ -34,7 +34,7 @@ export function AuthProvider({ children }) {
         login(email, password);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.message);
       });
   }
 

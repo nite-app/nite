@@ -20,6 +20,7 @@ export default function Register() {
   const lnameref = useRef();
   //System states
   const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
   const [loading, setLoading] = useState(false);
   //Ctx exports
   const { signup } = useAuth();
@@ -44,7 +45,6 @@ export default function Register() {
   const db = getFirestore();
 
   async function handleSubmit(e) {
-    setError("");
     e.preventDefault();
 
     const password = pswref.current.value;
@@ -65,18 +65,19 @@ export default function Register() {
     ) {
       if (password !== pwrepeat) {
         setError("Password do not match");
+        setErrType("failure");
       } else {
         try {
-          setError("");
           setLoading(true);
           signup(email, password);
-        } catch {
-          setError("Internal Error: Failed to create your account");
-          setError("");
+        } catch (err) {
+          setError(err.message);
+          setErrType("failure");
         }
       }
     } else {
       setError("Please fill all fields!");
+      setErrType("failure");
     }
     setLoading(false);
   }
@@ -105,6 +106,9 @@ export default function Register() {
     if (error !== "" && error !== null) {
       console.log(error);
       snackbarRef.current.show();
+      setTimeout(() => {
+        setError("");
+      }, 3000);
     }
   }, [error]);
 
@@ -123,11 +127,7 @@ export default function Register() {
                 />
               </Link>
             </div>
-            <Snackbar
-              message="Action completed!"
-              type="success"
-              ref={snackbarRef}
-            />
+            <Snackbar message={error} type={errType} ref={snackbarRef} />
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>
