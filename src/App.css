@@ -586,6 +586,13 @@ p {
   border: none;
 }
 
+.habitNumber {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+
 .habitscontainer {
   display: grid;
   height: 100%;
@@ -1400,6 +1407,65 @@ input::-webkit-inner-spin-button {
 
 .white {
   background-color: #ffffff;
+}
+
+.insightscontainer {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.insightstopleft {
+  padding-left: 50px;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.insightstopright {
+  padding-right: 50px;
+  padding-top: 20px;
+}
+
+.insightsbottomleft {
+  padding-left: 50px;
+}
+
+.insightsbottomright {
+  padding-right: 50px;
+}
+
+.insightHabit {
+  color: white;
+}
+
+.insightcircle {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: white;
+  margin-right: 25px;
+}
+
+.insightsCircles {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.insightsdone {
+  margin: 0;
+  font-size: 18px;
+}
+
+.insightday {
+  color: white;
+  margin: 0;
+  text-align: left;
+  font-size: 10px;
+  margin: 5px 0;
 }
 
 /* ####################### REGISTER AND LOGIN ########################## */

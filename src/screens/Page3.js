@@ -8,8 +8,10 @@ import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
 import Input from "@mui/material/Input";
 import Habit from "../components/Habit";
+import HabitReport from "../components/HabitReport";
 import { v4 as uuidv4 } from "uuid";
 import Snackbar from "../components/Snackbar";
+import InsightsCircles from "../components/InsightsCircles";
 
 const Page3 = () => {
   const { name } = useAuth();
@@ -29,6 +31,13 @@ const Page3 = () => {
   const [habitListLeft, setHabitListLeft] = useState([]);
   const [habitListRight, setHabitListRight] = useState([]);
   const [count, setCount] = useState(0);
+
+  //demo data
+  const habitData = {
+    name: "Eat Healthy",
+    done: [true, true, true, true, false, true, true],
+    days: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+  };
 
   useEffect(() => {
     setCount(habitListLeft.length + habitListRight.length);
@@ -211,8 +220,69 @@ const Page3 = () => {
             </div>
           </div>
           <div className="mainpanelscont">
-            <div className="bottompanel"></div>
-            <div className="bottompanel"></div>
+            <div className="bottompanel">
+              <h1 className="bottomh">Weekly report</h1>
+              <div className="habitscontainer">
+                <div className="left">
+                  <HabitReport
+                    icon={"appleicon.png"}
+                    text={"Eat healthy"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"readicon.png"}
+                    text={"Read a book"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"alcoolicon.png"}
+                    text={"Don't drink alcool"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"gamesicon.png"}
+                    text={"No games"}
+                    number={0}
+                  />
+                </div>
+                {/* SEP */}
+                <hr className="sep"></hr>
+                {/* SEP */}
+                <div className="right">
+                  <HabitReport
+                    icon={"handballicon.png"}
+                    text={"Play handball"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"meditate.png"}
+                    text={"Meditate"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"workouticon.png"}
+                    text={"Train yourself"}
+                    number={0}
+                  />
+                  <HabitReport
+                    icon={"runicon.png"}
+                    text={"Run 5 km"}
+                    number={0}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="bottompanel">
+              <h1 className="bottomh">Habit Insights</h1>
+              <div className="insightscontainer">
+                <div className="insightstopleft">
+                  <InsightsCircles habit={habitData} />
+                </div>
+                <div className="insightstopright"></div>
+                <div className="insightsbottomleft"></div>
+                <div className="insightsbottomright"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
