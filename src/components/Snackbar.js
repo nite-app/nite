@@ -9,7 +9,7 @@ const Snackbar = forwardRef((props, ref) => {
       setShowSnackbar(true);
       setTimeout(() => {
         setShowSnackbar(false);
-      }, 3000);
+      }, 2950);
     },
   }));
 
@@ -20,8 +20,8 @@ const Snackbar = forwardRef((props, ref) => {
       style={{
         background:
           props.type === "success"
-            ? "rgba(112, 224, 0, 0.75)"
-            : "rgba(255, 103, 104, 0.75)",
+            ? "rgba(82, 182, 82, 1)"
+            : "rgba(200, 94, 94, 1)",
         color: props.type === "success" ? "#000000" : "#FFFFFF",
       }}
     >
