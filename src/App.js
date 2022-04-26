@@ -6,6 +6,7 @@ import Home from "./screens/Home";
 import Register from "./screens/auth/Register";
 import Login from "./screens/auth/Login";
 import Reset from "./screens/auth/Reset";
+import Briefing from "./screens/auth/Briefing";
 import Page2 from "./screens/Page2.js";
 import Page3 from "./screens/Page3.js";
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
+          <Route exact path="/briefing" element={<Briefing />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

@@ -119,7 +119,7 @@ export default function Register() {
           <div className="acont">
             <div className="back">
               {/* Change to go to onboarding */}
-              <Link to="/">
+              <Link to="/briefing">
                 <img
                   src={require("../../img/chevron-left-solid.png")}
                   width="25px"

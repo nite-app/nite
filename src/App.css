@@ -59,6 +59,38 @@
   src: url(./fonts/ArticulatCF-NormalOblique.otf);
 }
 
+/* ALMARAI FONTS */
+
+@font-face {
+  font-family: "Almarai Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Almarai Regular"),
+    url("./fonts/Almarai-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Almarai Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Almarai Light"), url("./fonts/Almarai-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Almarai Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Almarai Bold"), url("./fonts/Almarai-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Almarai ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Almarai ExtraBold"),
+    url("./fonts/Almarai-ExtraBold.woff") format("woff");
+}
+
 /* SET DEFAULTS */
 
 * {
@@ -1610,4 +1642,48 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* BRIEFING PAGE */
+
+.briefContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #17223b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.briefingText {
+  margin-left: 130px;
+  margin-bottom: 100px;
+}
+
+.briefingLinks {
+  margin-left: 130px;
+}
+
+.briefingttl {
+  font-family: "Almarai Bold";
+  font-size: 64px;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+  line-height: 60px;
+}
+
+.briefingp {
+  font-family: "Almarai Bold";
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+}
+
+.briefingLink {
+  text-decoration: underline;
+  font-family: "Almarai Bold";
+  margin: 0;
+  line-height: 60px;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 1);
 }
