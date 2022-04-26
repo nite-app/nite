@@ -97,7 +97,7 @@ function Home() {
       signout();
       setError("Signed out successfully!");
       setErrType("success");
-      navigate("/login");
+      navigate("/briefing");
     } catch {
       setError("Failed to Sign Out");
       setErrType("failure");
