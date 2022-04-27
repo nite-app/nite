@@ -9,18 +9,17 @@ import {
   getDoc,
   setDoc,
 } from "firebase/firestore";
-import temp from "../img/temp.png";
 import seticon from "../img/setimg.png";
 import searchicon from "../img/searchimg.png";
 import signoutimg from "../img/signoutimg.png";
 import { useAuth } from "../contexts/AuthContext";
-import BarChart from "../components/Charts/BarChart";
 import LineChart from "../components/Charts/LineChart";
 import { HomeData } from "../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Snackbar from "../components/Snackbar";
+import Settings from "../components/Settings";
 
 function Home() {
   const { signout } = useAuth();
@@ -38,6 +37,8 @@ function Home() {
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const db = getFirestore();
 
@@ -134,6 +135,9 @@ function Home() {
     <>
       <div className="App" id="Home">
         <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
+          ciao
+        </Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
@@ -181,8 +185,15 @@ function Home() {
           <div className="break">.</div>
           <div className="sidemenu">
             <div className="menuitem">
-              <img src={seticon} alt="" className="sidemenuicon" />
-              <p className="sidemenup">Settings</p>
+              <button
+                className="menubtn"
+                onClick={() => {
+                  setSettingsOpen(true);
+                }}
+              >
+                <img src={seticon} alt="" className="sidemenuicon" />
+                <p className="sidemenup">Settings</p>
+              </button>
             </div>
             <div className="menuitem">
               <img src={searchicon} alt="" className="sidemenuicon" />
