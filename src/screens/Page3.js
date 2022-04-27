@@ -12,6 +12,7 @@ import HabitReport from "../components/HabitReport";
 import { v4 as uuidv4 } from "uuid";
 import Snackbar from "../components/Snackbar";
 import InsightsCircles from "../components/InsightsCircles";
+import Settings from "../components/Settings";
 
 const Page3 = () => {
   const { name } = useAuth();
@@ -21,6 +22,8 @@ const Page3 = () => {
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
@@ -85,6 +88,9 @@ const Page3 = () => {
     <>
       <div className="App" id="Home">
         <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
+          ciao
+        </Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
@@ -127,8 +133,15 @@ const Page3 = () => {
           <div className="break">.</div>
           <div className="sidemenu">
             <div className="menuitem">
-              <img src={seticon} alt="" className="sidemenuicon" />
-              <p className="sidemenup">Settings</p>
+              <button
+                className="menubtn"
+                onClick={() => {
+                  setSettingsOpen(true);
+                }}
+              >
+                <img src={seticon} alt="" className="sidemenuicon" />
+                <p className="sidemenup">Settings</p>
+              </button>
             </div>
             <div className="menuitem">
               <img src={searchicon} alt="" className="sidemenuicon" />

@@ -11,6 +11,7 @@ import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import { useAuth } from "../contexts/AuthContext";
 import Snackbar from "../components/Snackbar";
+import Settings from "../components/Settings";
 
 function Page2() {
   const { name } = useAuth();
@@ -26,6 +27,8 @@ function Page2() {
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
     if (switchState === false) {
@@ -52,6 +55,9 @@ function Page2() {
     <>
       <div className="App" id="Home">
         <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
+          ciao
+        </Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
@@ -94,8 +100,15 @@ function Page2() {
           <div className="break">.</div>
           <div className="sidemenu">
             <div className="menuitem">
-              <img src={seticon} alt="" className="sidemenuicon" />
-              <p className="sidemenup">Settings</p>
+              <button
+                className="menubtn"
+                onClick={() => {
+                  setSettingsOpen(true);
+                }}
+              >
+                <img src={seticon} alt="" className="sidemenuicon" />
+                <p className="sidemenup">Settings</p>
+              </button>
             </div>
             <div className="menuitem">
               <img src={searchicon} alt="" className="sidemenuicon" />
