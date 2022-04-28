@@ -5,10 +5,7 @@ function Settings({ open, children, onClose }) {
   return (
     <>
       <div className="settingsOverlay" onClick={onClose}></div>
-      <div className="settingsModal">
-        <button onClick={onClose}>&#x2613;</button>
-        {children}
-      </div>
+      <div className="settingsModal">{children}</div>
     </>
   );
 }

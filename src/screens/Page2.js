@@ -56,7 +56,19 @@ function Page2() {
       <div className="App" id="Home">
         <Snackbar message={error} type={errType} ref={snackbarRef} />
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
-          ciao
+          <div className="settingsContainer">
+            <div className="settingsSidebar"></div>
+            <div className="settingsSep"></div>
+            <div className="settingsContent">
+              <button
+                onClick={() => {
+                  setSettingsOpen(false);
+                }}
+              >
+                &#x2613;
+              </button>
+            </div>
+          </div>
         </Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>

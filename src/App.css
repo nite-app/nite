@@ -348,7 +348,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  background-color: #ffffff;
+  background-color: #202a3d;
   width: 1400px;
   height: 800px;
   border-radius: 25px;
@@ -360,8 +360,27 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 1000;
+}
+
+.settingsContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 25% 1% 74%;
+  border-radius: 25px;
+}
+
+.settingsSep {
+  width: 5px;
+  height: 90%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.settingsContent {
 }
 
 /* APP */
