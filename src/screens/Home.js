@@ -137,7 +137,19 @@ function Home() {
         <Snackbar message={error} type={errType} ref={snackbarRef} />
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
-            <div className="settingsSidebar"></div>
+            <div className="settingsSidebar">
+              <div className="settingsAccount">
+                <div
+                  id="setImg"
+                  style={{
+                    backgroundColor: "#" + userColor,
+                  }}
+                >
+                  <h3 className="setAccTxt">{pfpTxt}</h3>
+                </div>
+                <h1 className="accountheader">{name}</h1>
+              </div>
+            </div>
             <div className="settingsSep"></div>
             <div className="settingsContent">
               <button

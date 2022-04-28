@@ -383,6 +383,28 @@ p {
 .settingsContent {
 }
 
+.settingsAccount {
+  display: flex;
+  margin: 40px;
+  align-items: center;
+  position: relative;
+}
+
+#setImg {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setAccTxt {
+  font-size: 22px;
+  color: white;
+  font-family: Articulat CF Bold;
+}
+
 /* APP */
 
 .containerheader {
