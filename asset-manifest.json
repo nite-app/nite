@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.54cb8204.css",
-    "main.js": "/static/js/main.06513198.js",
+    "main.css": "/static/css/main.f8dfc551.css",
+    "main.js": "/static/js/main.7dbb2aec.js",
     "static/js/787.1185226e.chunk.js": "/static/js/787.1185226e.chunk.js",
     "static/media/temp.jpg": "/static/media/temp.a0108a44ac1f56714589.jpg",
+    "static/media/Almarai-ExtraBold.woff": "/static/media/Almarai-ExtraBold.9d64275ae47c5af4dc33.woff",
+    "static/media/Almarai-Bold.woff": "/static/media/Almarai-Bold.2802a7ab8ab3a233243c.woff",
+    "static/media/Almarai-Regular.woff": "/static/media/Almarai-Regular.657233a9d97a7ed3dd17.woff",
+    "static/media/Almarai-Light.woff": "/static/media/Almarai-Light.01e3122b1527cd1456ed.woff",
     "static/media/ArticulatCF-Heavy.otf": "/static/media/ArticulatCF-Heavy.1238237f2b46b41e330d.otf",
     "static/media/ArticulatCF-ExtraBold.otf": "/static/media/ArticulatCF-ExtraBold.842d2e5c22d50bcd724d.otf",
     "static/media/ArticulatCF-Bold.otf": "/static/media/ArticulatCF-Bold.a6363b4aa7f21a9af1ac.otf",
@@ -30,12 +34,12 @@
     "static/media/water.png": "/static/media/water.cfb5f88c86257fdf00f5.png",
     "static/media/runicon.png": "/static/media/runicon.668f7710317f477bb14d.png",
     "index.html": "/index.html",
-    "main.54cb8204.css.map": "/static/css/main.54cb8204.css.map",
-    "main.06513198.js.map": "/static/js/main.06513198.js.map",
+    "main.f8dfc551.css.map": "/static/css/main.f8dfc551.css.map",
+    "main.7dbb2aec.js.map": "/static/js/main.7dbb2aec.js.map",
     "787.1185226e.chunk.js.map": "/static/js/787.1185226e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54cb8204.css",
-    "static/js/main.06513198.js"
+    "static/css/main.f8dfc551.css",
+    "static/js/main.7dbb2aec.js"
   ]
 }
