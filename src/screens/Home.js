@@ -129,7 +129,7 @@ function Home() {
       setTimeout(() => {
         setErrorExists(false);
         setError("");
-      }, 30000);
+      }, 3000);
     }
   }, [error]);
 
@@ -139,7 +139,7 @@ function Home() {
         <div className="alertBox">
           <Snackbar
             open={errorExists}
-            autoHideDuration={30000}
+            autoHideDuration={3000}
             TransitionComponent={Fade}
             transitionDuration={{ enter: 500, exit: 500 }}
             TransitionProps={{ enter: true, exit: false }}
@@ -152,6 +152,7 @@ function Home() {
                   width: "100%",
                   "& .MuiAlert-message": {
                     fontSize: 20,
+                    paddingHorizontal: 3,
                   },
                   "& .MuiAlert-icon": {
                     fontSize: 30,
