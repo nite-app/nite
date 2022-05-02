@@ -19,7 +19,7 @@ import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Settings from "../components/Settings";
-import { Alert } from "@mui/material";
+import { Alert, Fade, Snackbar } from "@mui/material";
 
 function Home() {
   const { signout } = useAuth();
@@ -131,7 +131,24 @@ function Home() {
     <>
       <div className="App" id="Home">
         <div className="alertBox">
-          {error ? <Alert severity={errType}>{error}</Alert> : <></>}
+          <Snackbar
+            open={error}
+            autoHideDuration={3000}
+            onClose={() => {
+              setError("");
+            }}
+            TransitionComponent={Fade}
+            transitionDuration={{ enter: 1000, exit: 2000 }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            {error ? (
+              <Alert severity={errType} sx={{ width: "100%" }}>
+                {error}
+              </Alert>
+            ) : (
+              <></>
+            )}
+          </Snackbar>
         </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
