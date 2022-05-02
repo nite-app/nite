@@ -25,6 +25,7 @@ function Home() {
   const { signout } = useAuth();
   const { currentUser } = useAuth();
   const { name } = useAuth();
+  const { mail } = useAuth();
   const { userColor } = useAuth();
   const navigate = useNavigate();
   const [quote, setQuote] = useState("");
@@ -180,7 +181,7 @@ function Home() {
                 </div>
                 <div className="settingsAccountText">
                   <h1 className="settingsAccountHeader">{name}</h1>
-                  <h1 className="settingsUserEmail">{currentUser.email}</h1>
+                  <h1 className="settingsUserEmail">{mail}</h1>
                 </div>
               </div>
               <h1 className="settingsTxt">PREFERENCES</h1>

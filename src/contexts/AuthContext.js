@@ -21,6 +21,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [name, setName] = useState("User");
+  const [mail, setMail] = useState("user@nite.com");
   const [userColor, setUserColor] = useState("User");
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
@@ -84,15 +85,18 @@ export function AuthProvider({ children }) {
       getDoc(docRef).then((doc) => {
         setName(doc.data().firstName + " " + doc.data().lastName);
         setUserColor(doc.data().pfpColor);
+        setMail(doc.data().email);
       });
     } else {
       setName("User 1");
+      setMail("user@nite.com");
     }
   });
 
   const value = {
     currentUser,
     name,
+    mail,
     userColor,
     logged,
     signup,
