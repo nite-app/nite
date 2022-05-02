@@ -381,18 +381,41 @@ p {
 }
 
 .settingsContent {
+  position: relative;
 }
 
 .settingsAccount {
   display: flex;
-  margin: 40px;
+  margin: 40px 0 0 40px;
   align-items: center;
   position: relative;
 }
 
+.settingsAccountHeader {
+  color: white;
+  font-family: Articulat CF Regular;
+  font-weight: 400;
+  justify-self: start;
+  font-size: 20px;
+  max-width: 250px;
+  text-align: left;
+  margin: 0 0 0 15px;
+}
+
+.settingsUserEmail {
+  color: #ffffff85;
+  font-family: Articulat CF Regular;
+  font-weight: 300;
+  justify-self: start;
+  text-align: left;
+  font-size: 14px;
+  max-width: 250px;
+  margin: 5px 0 0 15px;
+}
+
 #setImg {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: 32px;
   display: flex;
   justify-content: center;
@@ -400,9 +423,30 @@ p {
 }
 
 .setAccTxt {
-  font-size: 22px;
+  font-size: 24px;
   color: white;
   font-family: Articulat CF Bold;
+}
+
+.settingsCloseBtn {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  outline: none;
+  border: none;
+  background: none;
+  margin: none;
+  color: white;
+  font-size: 25px;
+}
+
+.settingsTxt {
+  font-size: 12px;
+  font-family: Articulat CF Thin;
+  text-align: left;
+  color: white;
+  margin: 30px 0 0 40px;
+  letter-spacing: 1.5px;
 }
 
 /* APP */

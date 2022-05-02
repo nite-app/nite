@@ -147,12 +147,17 @@ function Home() {
                 >
                   <h3 className="setAccTxt">{pfpTxt}</h3>
                 </div>
-                <h1 className="accountheader">{name}</h1>
+                <div className="settingsAccountText">
+                  <h1 className="settingsAccountHeader">{name}</h1>
+                  <h1 className="settingsUserEmail">{currentUser.email}</h1>
+                </div>
               </div>
+              <h1 className="settingsTxt">PREFERENCES</h1>
             </div>
             <div className="settingsSep"></div>
             <div className="settingsContent">
               <button
+                className="settingsCloseBtn"
                 onClick={() => {
                   setSettingsOpen(false);
                 }}
