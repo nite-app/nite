@@ -170,6 +170,11 @@ p {
   }
 }
 
+.alertBox {
+  position: fixed;
+  position: absolute;
+}
+
 /* APP CODE */
 
 .App {

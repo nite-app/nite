@@ -18,8 +18,8 @@ import { HomeData } from "../Charts Data/HomeData";
 import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
-import Snackbar from "../components/Snackbar";
 import Settings from "../components/Settings";
+import { Alert } from "@mui/material";
 
 function Home() {
   const { signout } = useAuth();
@@ -32,7 +32,7 @@ function Home() {
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
-  const snackbarRef = useRef(null);
+  // error, info, warning, success
 
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
@@ -101,7 +101,7 @@ function Home() {
       navigate("/briefing");
     } catch {
       setError("Failed to Sign Out");
-      setErrType("failure");
+      setErrType("error");
     }
   }
 
@@ -124,17 +124,15 @@ function Home() {
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
-      snackbarRef.current.show();
-      setTimeout(() => {
-        setError("");
-      }, 3000);
     }
   }, [error]);
 
   return (
     <>
       <div className="App" id="Home">
-        <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <div className="alertBox">
+          {error ? <Alert severity={errType}>{error}</Alert> : <></>}
+        </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
             <div className="settingsSidebar">
