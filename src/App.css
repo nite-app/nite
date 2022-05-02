@@ -173,6 +173,7 @@ p {
 .alertBox {
   position: fixed;
   position: absolute;
+  bottom: 5%;
 }
 
 /* APP CODE */

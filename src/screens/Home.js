@@ -19,7 +19,7 @@ import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Settings from "../components/Settings";
-import { Alert, Fade, Snackbar } from "@mui/material";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 function Home() {
   const { signout } = useAuth();
@@ -32,6 +32,7 @@ function Home() {
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
+  const [errorExists, setErrorExists] = useState(false);
   // error, info, warning, success
 
   const firstName = name.split(" ")[0];
@@ -124,6 +125,11 @@ function Home() {
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
+      setErrorExists(true);
+      setTimeout(() => {
+        setErrorExists(false);
+        setError("");
+      }, 30000);
     }
   }, [error]);
 
@@ -132,17 +138,26 @@ function Home() {
       <div className="App" id="Home">
         <div className="alertBox">
           <Snackbar
-            open={error}
-            autoHideDuration={3000}
-            onClose={() => {
-              setError("");
-            }}
+            open={errorExists}
+            autoHideDuration={30000}
             TransitionComponent={Fade}
-            transitionDuration={{ enter: 1000, exit: 2000 }}
+            transitionDuration={{ enter: 500, exit: 500 }}
+            TransitionProps={{ enter: true, exit: false }}
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
           >
             {error ? (
-              <Alert severity={errType} sx={{ width: "100%" }}>
+              <Alert
+                severity={errType}
+                sx={{
+                  width: "100%",
+                  "& .MuiAlert-message": {
+                    fontSize: 20,
+                  },
+                  "& .MuiAlert-icon": {
+                    fontSize: 30,
+                  },
+                }}
+              >
                 {error}
               </Alert>
             ) : (
@@ -294,7 +309,13 @@ function Home() {
                       Pretty good, i feel great and energic
                     </p>
                   </button>
-                  <button className="mainpanel1rightbutton">
+                  <button
+                    className="mainpanel1rightbutton"
+                    onClick={() => {
+                      setError("Data sent successfully");
+                      setErrType("warning");
+                    }}
+                  >
                     <img
                       src={require("../img/yellowcircle.png")}
                       alt=""
@@ -304,7 +325,13 @@ function Home() {
                       It could have been better, but still ok
                     </p>
                   </button>
-                  <button className="mainpanel1rightbutton">
+                  <button
+                    className="mainpanel1rightbutton"
+                    onClick={() => {
+                      setError("Data sent successfully");
+                      setErrType("error");
+                    }}
+                  >
                     <img
                       src={require("../img/redcircle.png")}
                       alt=""
