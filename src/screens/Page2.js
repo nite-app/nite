@@ -15,6 +15,7 @@ import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 function Page2() {
   const { name } = useAuth();
+  const { mail } = useAuth();
   const { userColor } = useAuth();
   const { signout } = useAuth();
   const [switchState, setSwitchState] = useState(false);
@@ -89,10 +90,27 @@ function Page2() {
         </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
-            <div className="settingsSidebar"></div>
+            <div className="settingsSidebar">
+              <div className="settingsAccount">
+                <div
+                  id="setImg"
+                  style={{
+                    backgroundColor: "#" + userColor,
+                  }}
+                >
+                  <h3 className="setAccTxt">{pfpTxt}</h3>
+                </div>
+                <div className="settingsAccountText">
+                  <h1 className="settingsAccountHeader">{name}</h1>
+                  <h1 className="settingsUserEmail">{mail}</h1>
+                </div>
+              </div>
+              <h1 className="settingsTxt">PREFERENCES</h1>
+            </div>
             <div className="settingsSep"></div>
             <div className="settingsContent">
               <button
+                className="settingsCloseBtn"
                 onClick={() => {
                   setSettingsOpen(false);
                 }}
