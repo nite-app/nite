@@ -10,9 +10,9 @@ import Input from "@mui/material/Input";
 import Habit from "../components/Habit";
 import HabitReport from "../components/HabitReport";
 import { v4 as uuidv4 } from "uuid";
-import Snackbar from "../components/Snackbar";
 import InsightsCircles from "../components/InsightsCircles";
 import Settings from "../components/Settings";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 const Page3 = () => {
   const { name } = useAuth();
@@ -27,7 +27,8 @@ const Page3 = () => {
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
-  const snackbarRef = useRef(null);
+  const [errorExists, setErrorExists] = useState(false);
+  // error, info, warning, success
 
   //HABITS
   const [habitText, setHabitText] = useState("");
@@ -56,13 +57,13 @@ const Page3 = () => {
         setHabitText("");
       } else {
         setError("You can only insert a maximum of 8 Habits!");
-        setErrType("failure");
+        setErrType("error");
       }
 
       setCount(count + 1);
     } else {
       setError("Write some text!");
-      setErrType("failure");
+      setErrType("error");
     }
   };
 
@@ -77,8 +78,9 @@ const Page3 = () => {
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
-      snackbarRef.current.show();
+      setErrorExists(true);
       setTimeout(() => {
+        setErrorExists(false);
         setError("");
       }, 3000);
     }
@@ -87,7 +89,36 @@ const Page3 = () => {
   return (
     <>
       <div className="App" id="Home">
-        <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <div className="alertBox">
+          <Snackbar
+            open={errorExists}
+            autoHideDuration={3000}
+            TransitionComponent={Fade}
+            transitionDuration={{ enter: 500, exit: 500 }}
+            TransitionProps={{ enter: true, exit: false }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            {error ? (
+              <Alert
+                severity={errType}
+                sx={{
+                  width: "100%",
+                  "& .MuiAlert-message": {
+                    fontSize: 20,
+                    paddingHorizontal: 3,
+                  },
+                  "& .MuiAlert-icon": {
+                    fontSize: 30,
+                  },
+                }}
+              >
+                {error}
+              </Alert>
+            ) : (
+              <></>
+            )}
+          </Snackbar>
+        </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
             <div className="settingsSidebar"></div>

@@ -10,8 +10,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import { useAuth } from "../contexts/AuthContext";
-import Snackbar from "../components/Snackbar";
 import Settings from "../components/Settings";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 function Page2() {
   const { name } = useAuth();
@@ -22,7 +22,8 @@ function Page2() {
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
-  const snackbarRef = useRef(null);
+  const [errorExists, setErrorExists] = useState(false);
+  // error, info, warning, success
 
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
@@ -44,8 +45,10 @@ function Page2() {
 
   useEffect(() => {
     if (error !== "" && error !== null) {
-      snackbarRef.current.show();
+      console.log(error);
+      setErrorExists(true);
       setTimeout(() => {
+        setErrorExists(false);
         setError("");
       }, 3000);
     }
@@ -54,7 +57,36 @@ function Page2() {
   return (
     <>
       <div className="App" id="Home">
-        <Snackbar message={error} type={errType} ref={snackbarRef} />
+        <div className="alertBox">
+          <Snackbar
+            open={errorExists}
+            autoHideDuration={3000}
+            TransitionComponent={Fade}
+            transitionDuration={{ enter: 500, exit: 500 }}
+            TransitionProps={{ enter: true, exit: false }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            {error ? (
+              <Alert
+                severity={errType}
+                sx={{
+                  width: "100%",
+                  "& .MuiAlert-message": {
+                    fontSize: 20,
+                    paddingHorizontal: 3,
+                  },
+                  "& .MuiAlert-icon": {
+                    fontSize: 30,
+                  },
+                }}
+              >
+                {error}
+              </Alert>
+            ) : (
+              <></>
+            )}
+          </Snackbar>
+        </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
           <div className="settingsContainer">
             <div className="settingsSidebar"></div>
