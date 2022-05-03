@@ -8,7 +8,7 @@ import {
   getDoc,
   setDoc,
 } from "firebase/firestore";
-import Snackbar from "../../components/Snackbar";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -21,6 +21,9 @@ export default function Register() {
   //System states
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
+  const [errorExists, setErrorExists] = useState(false);
+  // error, info, warning, success
+
   const [loading, setLoading] = useState(false);
   //Ctx exports
   const { signup } = useAuth();
@@ -41,7 +44,6 @@ export default function Register() {
     "FFC6FF",
   ];
 
-  const snackbarRef = useRef(null);
   const db = getFirestore();
 
   async function handleSubmit(e) {
@@ -65,19 +67,19 @@ export default function Register() {
     ) {
       if (password !== pwrepeat) {
         setError("Password do not match");
-        setErrType("failure");
+        setErrType("error");
       } else {
         try {
           setLoading(true);
           signup(email, password);
         } catch (err) {
           setError(err.message);
-          setErrType("failure");
+          setErrType("error");
         }
       }
     } else {
       setError("Please fill all fields!");
-      setErrType("failure");
+      setErrType("error");
     }
     setLoading(false);
   }
@@ -105,8 +107,9 @@ export default function Register() {
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
-      snackbarRef.current.show();
+      setErrorExists(true);
       setTimeout(() => {
+        setErrorExists(false);
         setError("");
       }, 3000);
     }
@@ -127,7 +130,36 @@ export default function Register() {
                 />
               </Link>
             </div>
-            <Snackbar message={error} type={errType} ref={snackbarRef} />
+            <div className="alertBox">
+              <Snackbar
+                open={errorExists}
+                autoHideDuration={3000}
+                TransitionComponent={Fade}
+                transitionDuration={{ enter: 500, exit: 500 }}
+                TransitionProps={{ enter: true, exit: false }}
+                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              >
+                {error ? (
+                  <Alert
+                    severity={errType}
+                    sx={{
+                      width: "100%",
+                      "& .MuiAlert-message": {
+                        fontSize: 20,
+                        paddingHorizontal: 3,
+                      },
+                      "& .MuiAlert-icon": {
+                        fontSize: 30,
+                      },
+                    }}
+                  >
+                    {error}
+                  </Alert>
+                ) : (
+                  <></>
+                )}
+              </Snackbar>
+            </div>
             <div className="ctsplit">
               <div className="formcontainer">
                 <h1 className="formttl">Create your account.</h1>

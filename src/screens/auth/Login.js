@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import Snackbar from "../../components/Snackbar";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 function Login() {
   const emailref = useRef();
@@ -12,7 +12,8 @@ function Login() {
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
-  const snackbarRef = useRef(null);
+  const [errorExists, setErrorExists] = useState(false);
+  // error, info, warning, success
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -39,8 +40,9 @@ function Login() {
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
-      snackbarRef.current.show();
+      setErrorExists(true);
       setTimeout(() => {
+        setErrorExists(false);
         setError("");
       }, 3000);
     }
@@ -57,7 +59,36 @@ function Login() {
           />
         </Link>
       </div>
-      <Snackbar message={error} type={errType} ref={snackbarRef} />
+      <div className="alertBox">
+        <Snackbar
+          open={errorExists}
+          autoHideDuration={3000}
+          TransitionComponent={Fade}
+          transitionDuration={{ enter: 500, exit: 500 }}
+          TransitionProps={{ enter: true, exit: false }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          {error ? (
+            <Alert
+              severity={errType}
+              sx={{
+                width: "100%",
+                "& .MuiAlert-message": {
+                  fontSize: 20,
+                  paddingHorizontal: 3,
+                },
+                "& .MuiAlert-icon": {
+                  fontSize: 30,
+                },
+              }}
+            >
+              {error}
+            </Alert>
+          ) : (
+            <></>
+          )}
+        </Snackbar>
+      </div>
       <div className="ctsplit">
         <div className="formcontainer">
           <h1 className="formttl">Log into your account.</h1>
