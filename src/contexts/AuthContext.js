@@ -26,16 +26,23 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
 
+  const [AuthError, setAuthError] = useState("");
+  const [AuthErrType, setAuthErrType] = useState("error");
+
   function signup(email, password) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log("Created user with email: " + email);
+        setAuthErrType("success");
+        setAuthError("Created user with email: " + email);
         login(email, password);
       })
       .catch(function (error) {
         console.log(error.message);
+        setAuthError(error.message);
+        setAuthErrType("error");
       });
   }
 
@@ -45,12 +52,18 @@ export function AuthProvider({ children }) {
       .signInWithEmailAndPassword(email, password)
       .catch(function (error) {
         console.log(error);
+        setAuthError(error.message);
+        setAuthErrType("error");
       });
     console.log("Logged in as: " + email);
+    setAuthError("Logged in as: " + email);
+    setAuthErrType("success");
   }
 
   function signout() {
     console.log("Signed out successfully");
+    setAuthError("Signed out successfully");
+    setAuthErrType("success");
     return firebase.auth().signOut();
   }
 
@@ -99,6 +112,8 @@ export function AuthProvider({ children }) {
     mail,
     userColor,
     logged,
+    AuthError,
+    AuthErrType,
     signup,
     login,
     signout,
