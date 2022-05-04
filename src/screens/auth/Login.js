@@ -51,13 +51,16 @@ function Login() {
   return (
     <div className="acont">
       <div className="back">
-        <Link to="/briefing">
-          <img
-            src={require("../../img/chevron-left-solid.png")}
-            alt=""
-            width="25px"
-          />
-        </Link>
+        {/* Ternary operator home/briefing */}
+        <div>
+          <Link to="/briefing">
+            <img
+              src={require("../../img/chevron-left-solid.png")}
+              alt=""
+              width="25px"
+            />
+          </Link>
+        </div>
       </div>
       <div className="alertBox">
         <Snackbar

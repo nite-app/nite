@@ -197,6 +197,7 @@ function Home() {
                 &#x2613;
               </button>
             </div>
+            <div className="settingsContent"></div>
           </div>
         </Settings>
         <div className="sidebar">
