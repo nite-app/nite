@@ -23,6 +23,8 @@ export default function Register() {
   const [errType, setErrType] = useState("success");
   const [errorExists, setErrorExists] = useState(false);
   // error, info, warning, success
+  const AuthError = useAuth();
+  const AuthErrType = useAuth();
 
   const [loading, setLoading] = useState(false);
   //Ctx exports
@@ -114,6 +116,21 @@ export default function Register() {
       }, 3000);
     }
   }, [error]);
+
+  useEffect(() => {
+    if (AuthError !== "" && AuthError !== null) {
+      console.log(AuthError);
+      setErrorExists(true);
+      setTimeout(() => {
+        setErrorExists(false);
+        setError(AuthError);
+      }, 3000);
+    }
+  }, [AuthError]);
+
+  useEffect(() => {
+    setErrType(AuthErrType);
+  }, [AuthErrType]);
 
   return (
     <>

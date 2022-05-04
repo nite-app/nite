@@ -43,6 +43,7 @@ export function AuthProvider({ children }) {
         console.log(error.message);
         setAuthError(error.message);
         setAuthErrType("error");
+        console.log("AuthError: " + AuthError);
       });
   }
 
