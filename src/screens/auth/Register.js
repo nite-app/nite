@@ -22,9 +22,7 @@ export default function Register() {
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
   const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
-  const AuthError = useAuth();
-  const AuthErrType = useAuth();
+  // error, info, warning, successS
 
   const [loading, setLoading] = useState(false);
   //Ctx exports
@@ -71,11 +69,16 @@ export default function Register() {
         setError("Password do not match");
         setErrType("error");
       } else {
-        try {
-          setLoading(true);
-          signup(email, password);
-        } catch (err) {
-          setError(err.message);
+        if (password.length > 6) {
+          try {
+            setLoading(true);
+            signup(email, password);
+          } catch (err) {
+            setError(err.message);
+            setErrType("error");
+          }
+        } else {
+          setError("Password should be at least 6 characters!");
           setErrType("error");
         }
       }
@@ -116,21 +119,6 @@ export default function Register() {
       }, 3000);
     }
   }, [error]);
-
-  useEffect(() => {
-    if (AuthError !== "" && AuthError !== null) {
-      console.log(AuthError);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError(AuthError);
-      }, 3000);
-    }
-  }, [AuthError]);
-
-  useEffect(() => {
-    setErrType(AuthErrType);
-  }, [AuthErrType]);
 
   return (
     <>
