@@ -20,6 +20,11 @@ import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Settings from "../components/Settings";
 import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 function Home() {
   const { signout } = useAuth();
@@ -94,6 +99,13 @@ function Home() {
       },
     },
   });
+
+  // Settings Tab
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   function handleSignout() {
     try {
@@ -185,6 +197,26 @@ function Home() {
                 </div>
               </div>
               <h1 className="settingsTxt">PREFERENCES</h1>
+              <div>
+                <Box sx={{ width: "100%", typography: "body1" }}>
+                  <TabContext value={value}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                      <TabList
+                        onChange={handleChange}
+                        aria-label="lab API tabs example"
+                        orientation="vertical"
+                      >
+                        <Tab label="Item One" value="1" />
+                        <Tab label="Item Two" value="2" />
+                        <Tab label="Item Three" value="3" />
+                      </TabList>
+                    </Box>
+                    <TabPanel value="1">Item One</TabPanel>
+                    <TabPanel value="2">Item Two</TabPanel>
+                    <TabPanel value="3">Item Three</TabPanel>
+                  </TabContext>
+                </Box>
+              </div>
             </div>
             <div className="settingsSep"></div>
             <div className="settingsContent">
@@ -197,7 +229,6 @@ function Home() {
                 &#x2613;
               </button>
             </div>
-            <div className="settingsContent"></div>
           </div>
         </Settings>
         <div className="sidebar">
