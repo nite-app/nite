@@ -25,6 +25,8 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import { createStyles, Theme } from "@material-ui/core/styles";
+import { appleTabsStylesHook } from "@mui-treasury/styles/tabs";
 
 function Home() {
   const { signout } = useAuth();
@@ -180,56 +182,59 @@ function Home() {
           </Snackbar>
         </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
-          <div className="settingsContainer">
-            <div className="settingsSidebar">
-              <div className="settingsAccount">
-                <div
-                  id="setImg"
-                  style={{
-                    backgroundColor: "#" + userColor,
-                  }}
-                >
-                  <h3 className="setAccTxt">{pfpTxt}</h3>
-                </div>
-                <div className="settingsAccountText">
-                  <h1 className="settingsAccountHeader">{name}</h1>
-                  <h1 className="settingsUserEmail">{mail}</h1>
-                </div>
-              </div>
-              <h1 className="settingsTxt">PREFERENCES</h1>
-              <div>
-                <Box sx={{ width: "100%", typography: "body1" }}>
-                  <TabContext value={value}>
+          <Box sx={{ width: "100%", typography: "body1" }}>
+            <TabContext value={value}>
+              <div className="settingsContainer">
+                <div className="settingsSidebar">
+                  <div className="settingsAccount">
+                    <div
+                      id="setImg"
+                      style={{
+                        backgroundColor: "#" + userColor,
+                      }}
+                    >
+                      <h3 className="setAccTxt">{pfpTxt}</h3>
+                    </div>
+                    <div className="settingsAccountText">
+                      <h1 className="settingsAccountHeader">{name}</h1>
+                      <h1 className="settingsUserEmail">{mail}</h1>
+                    </div>
+                  </div>
+                  <h1 className="settingsTxt">PREFERENCES</h1>
+                  <div className="tablistContainer">
                     <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                       <TabList
                         onChange={handleChange}
                         aria-label="lab API tabs example"
                         orientation="vertical"
+                        sx={{
+                          color: "#FFFFFF",
+                        }}
                       >
                         <Tab label="Item One" value="1" />
                         <Tab label="Item Two" value="2" />
                         <Tab label="Item Three" value="3" />
                       </TabList>
                     </Box>
-                    <TabPanel value="1">Item One</TabPanel>
-                    <TabPanel value="2">Item Two</TabPanel>
-                    <TabPanel value="3">Item Three</TabPanel>
-                  </TabContext>
-                </Box>
+                  </div>
+                </div>
+                <div className="settingsSep"></div>
+                <div className="settingsContent">
+                  <button
+                    className="settingsCloseBtn"
+                    onClick={() => {
+                      setSettingsOpen(false);
+                    }}
+                  >
+                    &#x2613;
+                  </button>
+                  <TabPanel value="1">Item One</TabPanel>
+                  <TabPanel value="2">Item Two</TabPanel>
+                  <TabPanel value="3">Item Three</TabPanel>
+                </div>
               </div>
-            </div>
-            <div className="settingsSep"></div>
-            <div className="settingsContent">
-              <button
-                className="settingsCloseBtn"
-                onClick={() => {
-                  setSettingsOpen(false);
-                }}
-              >
-                &#x2613;
-              </button>
-            </div>
-          </div>
+            </TabContext>
+          </Box>
         </Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>

@@ -455,6 +455,10 @@ p {
   letter-spacing: 1.5px;
 }
 
+.tablistContainer {
+  padding-top: 25px;
+}
+
 /* APP */
 
 .containerheader {
