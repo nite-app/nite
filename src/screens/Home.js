@@ -182,7 +182,15 @@ function Home() {
           </Snackbar>
         </div>
         <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
-          <Box sx={{ width: "100%", typography: "body1" }}>
+          <Box
+            sx={{
+              width: "100%",
+              typography: "body1",
+              "& .MuiBox-root": {
+                height: 610,
+              },
+            }}
+          >
             <TabContext value={value}>
               <div className="settingsContainer">
                 <div className="settingsSidebar">
@@ -202,7 +210,12 @@ function Home() {
                   </div>
                   <h1 className="settingsTxt">PREFERENCES</h1>
                   <div className="tablistContainer">
-                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                    <Box
+                      sx={{
+                        borderBottom: 1,
+                        borderColor: "divider",
+                      }}
+                    >
                       <TabList
                         onChange={handleChange}
                         aria-label="lab API tabs example"
@@ -216,7 +229,7 @@ function Home() {
                           },
                           "& .Mui-selected": {
                             color: "#FFF",
-                            backgroundColor: "#141d33",
+                            backgroundColor: "#0e1629",
                           },
                           "& .MuiTabs-indicator": {
                             backgroundColor: "#AFAFAF",
@@ -224,8 +237,8 @@ function Home() {
                           },
                         }}
                       >
-                        <Tab label="Item One" value="1" />
-                        <Tab label="Item Two" value="2" />
+                        <Tab label="Account" value="1" />
+                        <Tab label="About" value="2" />
                         <Tab label="Item Three" value="3" />
                       </TabList>
                     </Box>
@@ -241,9 +254,15 @@ function Home() {
                   >
                     &#x2613;
                   </button>
-                  <TabPanel value="1">Item One</TabPanel>
-                  <TabPanel value="2">Item Two</TabPanel>
-                  <TabPanel value="3">Item Three</TabPanel>
+                  <TabPanel value="1" className="tabPanel">
+                    Item One
+                  </TabPanel>
+                  <TabPanel value="2" className="tabPanel">
+                    Item Two
+                  </TabPanel>
+                  <TabPanel value="3" className="tabPanel">
+                    Item Three
+                  </TabPanel>
                 </div>
               </div>
             </TabContext>

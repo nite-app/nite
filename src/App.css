@@ -457,7 +457,12 @@ p {
 
 .tablistContainer {
   padding-top: 25px;
-  padding: 25px 30px 25px 40px;
+  padding: 15px 30px 25px 40px;
+}
+
+.tabPanel {
+  width: 100%;
+  height: 100%;
 }
 
 /* APP */
