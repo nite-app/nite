@@ -208,7 +208,20 @@ function Home() {
                         aria-label="lab API tabs example"
                         orientation="vertical"
                         sx={{
-                          color: "#FFFFFF",
+                          "& .MuiButtonBase-root": {
+                            backgroundColor: "#17223b",
+                            marginTop: 1,
+                            borderRadius: 2,
+                            color: "#FFF",
+                          },
+                          "& .Mui-selected": {
+                            color: "#FFF",
+                            backgroundColor: "#141d33",
+                          },
+                          "& .MuiTabs-indicator": {
+                            backgroundColor: "#AFAFAF",
+                            display: "none",
+                          },
                         }}
                       >
                         <Tab label="Item One" value="1" />
