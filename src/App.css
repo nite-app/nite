@@ -463,6 +463,40 @@ p {
 .tabPanel {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40px;
+  text-align: left;
+}
+
+.setAccCtx {
+  width: 100%;
+}
+
+.settingsTabTitle {
+  color: white;
+}
+
+.settingsTabLabel {
+  color: white;
+  margin: 20px 0 0 0;
+}
+
+.settingsfield {
+  height: 60px;
+  border-radius: 15px;
+  margin: 10px 0 10px 0;
+  padding: 0 0 0 25px;
+  background-color: #0e1629;
+  border: none;
+  width: 80%;
+  font-size: 20px;
+  color: white;
+}
+
+.settingsfield:focus {
+  outline: none;
 }
 
 /* APP */

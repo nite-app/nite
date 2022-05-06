@@ -255,7 +255,20 @@ function Home() {
                     &#x2613;
                   </button>
                   <TabPanel value="1" className="tabPanel">
-                    Item One
+                    <h1 className="settingsTabTitle">My Account</h1>
+                    <div className="setAccCtx">
+                      <h3 className="settingsTabLabel">Name</h3>
+                      <input
+                        type="text"
+                        placeholder="Email"
+                        name="email"
+                        id="logemail"
+                        className="settingsfield"
+                        // ref={SettingsNameRef}
+                        required
+                        value={name}
+                      />
+                    </div>
                   </TabPanel>
                   <TabPanel value="2" className="tabPanel">
                     Item Two
