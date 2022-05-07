@@ -14,6 +14,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import logo from "../img/logo.png";
+import { width } from "@mui/system";
 
 function Settings({ open, children, onClose }) {
   const { currentUser } = useAuth();
@@ -141,7 +142,11 @@ function Settings({ open, children, onClose }) {
                 >
                   &#x2613;
                 </button>
-                <TabPanel value="1" className="tabPanel">
+                <TabPanel
+                  value="1"
+                  className="tabPanel"
+                  sx={{ "& .MuiTabPanel-root": { width: "80%" } }}
+                >
                   <h1 className="settingsTabTitle">My Account</h1>
                   <div className="setAccCtx">
                     <h3 className="settingsTabLabel">Name</h3>
@@ -175,7 +180,9 @@ function Settings({ open, children, onClose }) {
                     "&.MuiTabPanel-root": {
                       position: "absolute",
                       top: 0,
+                      zIndex: -10,
                     },
+                    "& .MuiTabPanel-root": { width: "80%" },
                   }}
                 >
                   <img src={logo} alt="" className="settingslogo" />

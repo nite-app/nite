@@ -448,7 +448,6 @@ p {
   margin: none;
   color: white;
   font-size: 25px;
-  z-index: 1000;
 }
 
 .settingsTxt {
@@ -476,7 +475,7 @@ p {
 }
 
 .setAccCtx {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
@@ -488,6 +487,7 @@ p {
 .settingsTabLabel {
   color: white;
   margin: 20px 0 0 0;
+  width: 50%;
 }
 
 .settingsfield {
@@ -497,7 +497,7 @@ p {
   padding: 0 0 0 25px;
   background-color: #0e1629;
   border: none;
-  width: 80%;
+  width: 100%;
   font-size: 20px;
   color: white;
 }
