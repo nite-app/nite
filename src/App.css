@@ -506,13 +506,18 @@ p {
   background-color: #17223b;
   height: 60px;
   padding: 0 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
   font-size: 18px;
   font-family: Articulat CF Regular;
   outline: none;
   border: none;
   align-self: flex-start;
+}
+
+.settingsButton:hover {
+  cursor: pointer;
+  background-color: #222e4b;
 }
 
 /* APP */
