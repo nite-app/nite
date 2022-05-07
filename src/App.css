@@ -328,6 +328,10 @@ p {
   padding: 0;
 }
 
+.menubtn:hover {
+  cursor: pointer;
+}
+
 .sidemenuicon {
   width: 15px;
   height: 15px;
@@ -518,6 +522,10 @@ p {
 .settingsButton:hover {
   cursor: pointer;
   background-color: #222e4b;
+}
+
+.settingslogo {
+  width: 64px;
 }
 
 /* APP */

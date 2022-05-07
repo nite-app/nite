@@ -13,6 +13,7 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
+import logo from "../img/logo.png";
 
 function Settings({ open, children, onClose }) {
   const { currentUser } = useAuth();
@@ -165,8 +166,17 @@ function Settings({ open, children, onClose }) {
                     </button>
                   </div>
                 </TabPanel>
-                <TabPanel value="2" className="tabPanel">
-                  Item Two
+                <TabPanel
+                  value="2"
+                  className="tabPanel"
+                  sx={{
+                    "&.MuiTabPanel-root": {
+                      position: "absolute",
+                      top: 0,
+                    },
+                  }}
+                >
+                  <img src={logo} alt="" className="settingslogo" />
                 </TabPanel>
               </div>
             </div>
