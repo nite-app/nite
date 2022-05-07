@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { useAuth } from "../contexts/AuthContext";
+import {
+  getFirestore,
+  doc,
+  collection,
+  getDoc,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 function Settings({ open, children, onClose }) {
   const { currentUser } = useAuth();
@@ -12,7 +20,12 @@ function Settings({ open, children, onClose }) {
   const { mail } = useAuth();
   const { userColor } = useAuth();
 
+  const [nameState, setNameState] = useState(name);
+  const settingsNameRef = useRef();
+
   const [value, setValue] = useState("1");
+
+  const db = getFirestore();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -21,6 +34,17 @@ function Settings({ open, children, onClose }) {
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
+
+  function handleNameChange() {
+    if (nameState !== "") {
+      if (currentUser !== null) {
+        updateDoc(doc(db, "users", currentUser.uid), {
+          firstName: nameState.split(" ")[0],
+          lastName: nameState.split(" ")[1],
+        }).then(console.log("Changed name to " + nameState));
+      }
+    }
+  }
 
   if (!open) return null;
   return (
@@ -73,6 +97,12 @@ function Settings({ open, children, onClose }) {
                           borderRadius: 2,
                           color: "#FFF",
                         },
+                        "& .MuiButtonBase-root:hover": {
+                          backgroundColor: "#222e4b",
+                          marginTop: 1,
+                          borderRadius: 2,
+                          color: "#FFF",
+                        },
                         "& .Mui-selected": {
                           color: "#FFF",
                           backgroundColor: "#0e1629",
@@ -107,14 +137,25 @@ function Settings({ open, children, onClose }) {
                     <h3 className="settingsTabLabel">Name</h3>
                     <input
                       type="text"
-                      placeholder="Email"
+                      placeholder="Name"
                       name="email"
                       id="logemail"
                       className="settingsfield"
-                      // ref={SettingsNameRef}
+                      ref={settingsNameRef}
                       required
-                      value={name}
+                      value={nameState}
+                      onChange={(e) => {
+                        setNameState(settingsNameRef.current.value);
+                      }}
                     />
+                    <button
+                      className="settingsButton"
+                      onClick={() => {
+                        handleNameChange();
+                      }}
+                    >
+                      Change Name
+                    </button>
                   </div>
                 </TabPanel>
                 <TabPanel value="2" className="tabPanel">
