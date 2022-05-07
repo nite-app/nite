@@ -120,38 +120,10 @@ const Page3 = () => {
             )}
           </Snackbar>
         </div>
-        <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
-          <div className="settingsContainer">
-            <div className="settingsSidebar">
-              <div className="settingsAccount">
-                <div
-                  id="setImg"
-                  style={{
-                    backgroundColor: "#" + userColor,
-                  }}
-                >
-                  <h3 className="setAccTxt">{pfpTxt}</h3>
-                </div>
-                <div className="settingsAccountText">
-                  <h1 className="settingsAccountHeader">{name}</h1>
-                  <h1 className="settingsUserEmail">{mail}</h1>
-                </div>
-              </div>
-              <h1 className="settingsTxt">PREFERENCES</h1>
-            </div>
-            <div className="settingsSep"></div>
-            <div className="settingsContent">
-              <button
-                className="settingsCloseBtn"
-                onClick={() => {
-                  setSettingsOpen(false);
-                }}
-              >
-                &#x2613;
-              </button>
-            </div>
-          </div>
-        </Settings>
+        <Settings
+          open={settingsOpen}
+          onClose={() => setSettingsOpen(false)}
+        ></Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
