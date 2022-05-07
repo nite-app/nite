@@ -48,12 +48,14 @@ function Settings({ open, children, onClose }) {
   }
 
   useEffect(() => {
-    const docRef = doc(db, "users", currentUser.uid);
+    if (currentUser !== null) {
+      const docRef = doc(db, "users", currentUser.uid);
 
-    getDoc(docRef).then((doc) => {
-      setNameState(doc.data().firstName + " " + doc.data().lastName);
-    });
-  }, []);
+      getDoc(docRef).then((doc) => {
+        setNameState(doc.data().firstName + " " + doc.data().lastName);
+      });
+    }
+  }, [currentUser]);
 
   if (!open) return null;
   return (

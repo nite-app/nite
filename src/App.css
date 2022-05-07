@@ -448,6 +448,7 @@ p {
   margin: none;
   color: white;
   font-size: 25px;
+  z-index: 1000;
 }
 
 .settingsTxt {
