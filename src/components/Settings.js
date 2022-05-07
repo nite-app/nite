@@ -116,7 +116,6 @@ function Settings({ open, children, onClose }) {
                     >
                       <Tab label="Account" value="1" />
                       <Tab label="About" value="2" />
-                      <Tab label="Item Three" value="3" />
                     </TabList>
                   </Box>
                 </div>
@@ -160,9 +159,6 @@ function Settings({ open, children, onClose }) {
                 </TabPanel>
                 <TabPanel value="2" className="tabPanel">
                   Item Two
-                </TabPanel>
-                <TabPanel value="3" className="tabPanel">
-                  Item Three
                 </TabPanel>
               </div>
             </div>
