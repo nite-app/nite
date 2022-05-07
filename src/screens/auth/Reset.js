@@ -8,6 +8,7 @@ function Reset() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { resetPassword } = useAuth();
+  const { currentUser } = useAuth();
 
   const [error, setError] = useState("");
   const [errType, setErrType] = useState("success");
@@ -47,11 +48,19 @@ function Reset() {
     }
   }, [error]);
 
+  const [backlink, setBacklink] = useState("/briefing");
+  useEffect(() => {
+    if (currentUser) {
+      setBacklink("/");
+    } else {
+      setBacklink("/briefing");
+    }
+  }, []);
+
   return (
     <div className="acont">
       <div className="back">
-        {/* Change to go to onboarding */}
-        <Link to="/register">
+        <Link to={backlink}>
           <img
             src={require("../../img/chevron-left-solid.png")}
             alt=""
