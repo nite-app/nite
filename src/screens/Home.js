@@ -102,13 +102,6 @@ function Home() {
     },
   });
 
-  // Settings Tab
-  const [value, setValue] = useState("1");
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   function handleSignout() {
     try {
       signout();
@@ -181,106 +174,10 @@ function Home() {
             )}
           </Snackbar>
         </div>
-        <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)}>
-          <Box
-            sx={{
-              width: "100%",
-              typography: "body1",
-              "& .MuiBox-root": {
-                height: 610,
-              },
-            }}
-          >
-            <TabContext value={value}>
-              <div className="settingsContainer">
-                <div className="settingsSidebar">
-                  <div className="settingsAccount">
-                    <div
-                      id="setImg"
-                      style={{
-                        backgroundColor: "#" + userColor,
-                      }}
-                    >
-                      <h3 className="setAccTxt">{pfpTxt}</h3>
-                    </div>
-                    <div className="settingsAccountText">
-                      <h1 className="settingsAccountHeader">{name}</h1>
-                      <h1 className="settingsUserEmail">{mail}</h1>
-                    </div>
-                  </div>
-                  <h1 className="settingsTxt">PREFERENCES</h1>
-                  <div className="tablistContainer">
-                    <Box
-                      sx={{
-                        borderBottom: 1,
-                        borderColor: "divider",
-                      }}
-                    >
-                      <TabList
-                        onChange={handleChange}
-                        aria-label="lab API tabs example"
-                        orientation="vertical"
-                        sx={{
-                          "& .MuiButtonBase-root": {
-                            backgroundColor: "#17223b",
-                            marginTop: 1,
-                            borderRadius: 2,
-                            color: "#FFF",
-                          },
-                          "& .Mui-selected": {
-                            color: "#FFF",
-                            backgroundColor: "#0e1629",
-                          },
-                          "& .MuiTabs-indicator": {
-                            backgroundColor: "#AFAFAF",
-                            display: "none",
-                          },
-                        }}
-                      >
-                        <Tab label="Account" value="1" />
-                        <Tab label="About" value="2" />
-                        <Tab label="Item Three" value="3" />
-                      </TabList>
-                    </Box>
-                  </div>
-                </div>
-                <div className="settingsSep"></div>
-                <div className="settingsContent">
-                  <button
-                    className="settingsCloseBtn"
-                    onClick={() => {
-                      setSettingsOpen(false);
-                    }}
-                  >
-                    &#x2613;
-                  </button>
-                  <TabPanel value="1" className="tabPanel">
-                    <h1 className="settingsTabTitle">My Account</h1>
-                    <div className="setAccCtx">
-                      <h3 className="settingsTabLabel">Name</h3>
-                      <input
-                        type="text"
-                        placeholder="Email"
-                        name="email"
-                        id="logemail"
-                        className="settingsfield"
-                        // ref={SettingsNameRef}
-                        required
-                        value={name}
-                      />
-                    </div>
-                  </TabPanel>
-                  <TabPanel value="2" className="tabPanel">
-                    Item Two
-                  </TabPanel>
-                  <TabPanel value="3" className="tabPanel">
-                    Item Three
-                  </TabPanel>
-                </div>
-              </div>
-            </TabContext>
-          </Box>
-        </Settings>
+        <Settings
+          open={settingsOpen}
+          onClose={() => setSettingsOpen(false)}
+        ></Settings>
         <div className="sidebar">
           <Link to="/login" style={linkStyle}>
             <div className="account">
