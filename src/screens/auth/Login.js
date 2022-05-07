@@ -8,6 +8,7 @@ function Login() {
   const pswref = useRef();
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  const { currentUser } = useAuth();
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
@@ -37,6 +38,15 @@ function Login() {
     setLoading(false);
   };
 
+  const [backlink, setBacklink] = useState("/briefing");
+  useEffect(() => {
+    if (currentUser) {
+      setBacklink("/");
+    } else {
+      setBacklink("/briefing");
+    }
+  }, []);
+
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
@@ -51,9 +61,8 @@ function Login() {
   return (
     <div className="acont">
       <div className="back">
-        {/* Ternary operator home/briefing */}
         <div>
-          <Link to="/briefing">
+          <Link to={backlink}>
             <img
               src={require("../../img/chevron-left-solid.png")}
               alt=""

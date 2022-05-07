@@ -109,6 +109,15 @@ export default function Register() {
     }
   }, [currentUser]);
 
+  const [backlink, setBacklink] = useState("/briefing");
+  useEffect(() => {
+    if (currentUser) {
+      setBacklink("/");
+    } else {
+      setBacklink("/briefing");
+    }
+  }, []);
+
   useEffect(() => {
     if (error !== "" && error !== null) {
       console.log(error);
@@ -126,8 +135,7 @@ export default function Register() {
         <div className="formcontainer">
           <div className="acont">
             <div className="back">
-              {/* Change to go to onboarding */}
-              <Link to="/briefing">
+              <Link to={backlink}>
                 <img
                   src={require("../../img/chevron-left-solid.png")}
                   width="25px"
