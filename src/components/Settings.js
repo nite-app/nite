@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
@@ -45,6 +45,14 @@ function Settings({ open, children, onClose }) {
       }
     }
   }
+
+  useEffect(() => {
+    const docRef = doc(db, "users", currentUser.uid);
+
+    getDoc(docRef).then((doc) => {
+      setNameState(doc.data().firstName + " " + doc.data().lastName);
+    });
+  }, []);
 
   if (!open) return null;
   return (
