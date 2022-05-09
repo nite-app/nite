@@ -26,6 +26,9 @@ function Settings({ open, children, onClose }) {
   const [nameState, setNameState] = useState(name);
   const settingsNameRef = useRef();
 
+  const [emailState, setEmailState] = useState(mail);
+  const settingsEmailRef = useRef();
+
   const [value, setValue] = useState("1");
 
   const db = getFirestore();
@@ -46,6 +49,11 @@ function Settings({ open, children, onClose }) {
           lastName: nameState.split(" ")[1],
         }).then(console.log("Changed name to " + nameState));
       }
+    }
+  }
+
+  function handleEmailChange() {
+    if (emailState !== "") {
     }
   }
 
@@ -154,8 +162,7 @@ function Settings({ open, children, onClose }) {
                     <input
                       type="text"
                       placeholder="Name"
-                      name="email"
-                      id="logemail"
+                      name="name"
                       className="settingsfield"
                       ref={settingsNameRef}
                       required
@@ -171,6 +178,27 @@ function Settings({ open, children, onClose }) {
                       }}
                     >
                       Change Name
+                    </button>
+                    <h3 className="settingsTabLabel">Email</h3>
+                    <input
+                      type="text"
+                      placeholder="email"
+                      name="email"
+                      className="settingsfield"
+                      ref={settingsEmailRef}
+                      required
+                      value={emailState}
+                      onChange={(e) => {
+                        setEmailState(settingsEmailRef.current.value);
+                      }}
+                    />
+                    <button
+                      className="settingsButton"
+                      onClick={() => {
+                        handleEmailChange();
+                      }}
+                    >
+                      Change Email
                     </button>
                     <h3 className="settingsTabLabel">Account Deletion</h3>
                     <p className="settingswarning">
