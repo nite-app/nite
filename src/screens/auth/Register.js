@@ -73,6 +73,7 @@ export default function Register() {
           try {
             setLoading(true);
             signup(email, password);
+            navigate("/");
           } catch (err) {
             setError(err.message);
             setErrType("error");
