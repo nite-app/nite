@@ -22,6 +22,7 @@ function Settings({ open, children, onClose }) {
   const { mail } = useAuth();
   const { userColor } = useAuth();
   const { deleteAccount } = useAuth();
+  const { updateEmail } = useAuth();
 
   const [nameState, setNameState] = useState(name);
   const settingsNameRef = useRef();
@@ -54,6 +55,7 @@ function Settings({ open, children, onClose }) {
 
   function handleEmailChange() {
     if (emailState !== "") {
+      updateEmail(emailState);
     }
   }
 
@@ -63,6 +65,7 @@ function Settings({ open, children, onClose }) {
 
       getDoc(docRef).then((doc) => {
         setNameState(doc.data().firstName + " " + doc.data().lastName);
+        setEmailState(doc.data().email);
       });
     }
   }, [currentUser]);

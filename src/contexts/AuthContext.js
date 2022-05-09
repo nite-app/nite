@@ -68,6 +68,13 @@ export function AuthProvider({ children }) {
     }
   }
 
+  function updateEmail(email) {
+    if (currentUser) {
+      firebase.auth().currentUser.updateEmail(email);
+      console.log("Changed email to " + email);
+    }
+  }
+
   React.useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       console.log("Checking auth status...");
@@ -114,6 +121,7 @@ export function AuthProvider({ children }) {
     signout,
     resetPassword,
     deleteAccount,
+    updateEmail,
   };
 
   return (
