@@ -59,9 +59,12 @@ export function AuthProvider({ children }) {
     return firebase.auth().sendPasswordResetEmail(email);
   }
 
-  function deleteAccount(email) {
+  function deleteAccount() {
+    const user = auth().currentUser;
+
     firebase
-      .deleteUser(currentUser)
+      .auth()
+      .deleteUser(user)
       .then(console.log("User deleted successfully!"))
       .catch((error) => console.log(error.message));
   }

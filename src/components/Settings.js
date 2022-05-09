@@ -21,6 +21,7 @@ function Settings({ open, children, onClose }) {
   const { name } = useAuth();
   const { mail } = useAuth();
   const { userColor } = useAuth();
+  const { deleteAccount } = useAuth();
 
   const [nameState, setNameState] = useState(name);
   const settingsNameRef = useRef();
@@ -170,6 +171,21 @@ function Settings({ open, children, onClose }) {
                       }}
                     >
                       Change Name
+                    </button>
+                    <h3 className="settingsTabLabel">Account Deletion</h3>
+                    <p className="settingswarning">
+                      <span style={{ color: "red" }}>Warning: </span>
+                      Deleting your account will permanently delete all your
+                      data, this action can't be undone
+                    </p>
+                    <button
+                      className="settingsButton"
+                      onClick={() => {
+                        deleteAccount();
+                        console.log("Account deleted");
+                      }}
+                    >
+                      <span style={{ color: "red" }}>Delete Account</span>
                     </button>
                   </div>
                 </TabPanel>

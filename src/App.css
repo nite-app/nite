@@ -518,11 +518,18 @@ p {
   outline: none;
   border: none;
   align-self: flex-start;
+  margin-bottom: 20px;
 }
 
 .settingsButton:hover {
   cursor: pointer;
   background-color: #222e4b;
+}
+
+.settingswarning {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .settingslogo {
