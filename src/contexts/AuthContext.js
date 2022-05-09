@@ -8,6 +8,7 @@ import {
   collection,
   getDoc,
   setDoc,
+  deleteDoc,
 } from "firebase/firestore";
 
 const AuthContext = React.createContext();
@@ -51,7 +52,6 @@ export function AuthProvider({ children }) {
 
   function signout() {
     console.log("Signed out successfully");
-
     return firebase.auth().signOut();
   }
 
@@ -60,13 +60,12 @@ export function AuthProvider({ children }) {
   }
 
   function deleteAccount() {
-    const user = auth().currentUser;
-
-    firebase
-      .auth()
-      .deleteUser(user)
-      .then(console.log("User deleted successfully!"))
-      .catch((error) => console.log(error.message));
+    if (currentUser) {
+      deleteDoc(doc(db, "users", currentUser.uid));
+      firebase.auth().currentUser.delete();
+    } else {
+      console.log("Internal error: no user logged in, can't delete any");
+    }
   }
 
   React.useEffect(() => {
