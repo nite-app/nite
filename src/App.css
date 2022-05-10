@@ -533,7 +533,33 @@ p {
 }
 
 .settingslogo {
-  width: 64px;
+  width: 60px;
+  height: 60px;
+}
+
+.settingsalert {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0px 0 10px 0;
+}
+
+.abtlogocont {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.abtlogotxt {
+  color: white;
+  font-size: 24px;
+  margin: 0px 15px;
+}
+
+.abtversion {
+  color: #ffffff73;
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 /* APP */
