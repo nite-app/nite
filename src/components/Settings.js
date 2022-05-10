@@ -174,6 +174,11 @@ function Settings({ open, children, onClose }) {
                         setNameState(settingsNameRef.current.value);
                       }}
                     />
+                    <p className="settingsalert">
+                      <span style={{ color: "yellow" }}>Alert: </span>
+                      This feature requires recent authentication, re-login in
+                      this session to edit your profile.
+                    </p>
                     <button
                       className="settingsButton"
                       onClick={() => {
@@ -195,6 +200,11 @@ function Settings({ open, children, onClose }) {
                         setEmailState(settingsEmailRef.current.value);
                       }}
                     />
+                    <p className="settingsalert">
+                      <span style={{ color: "yellow" }}>Alert: </span>
+                      This feature requires recent authentication, re-login in
+                      this session to edit your profile.
+                    </p>
                     <button
                       className="settingsButton"
                       onClick={() => {
@@ -232,7 +242,12 @@ function Settings({ open, children, onClose }) {
                     "& .MuiTabPanel-root": { width: "80%" },
                   }}
                 >
-                  <img src={logo} alt="" className="settingslogo" />
+                  <h1 className="settingsTabTitle">About</h1>
+                  <div className="abtlogocont">
+                    <img src={logo} alt="" className="settingslogo" />
+                    <h3 className="abtlogotxt">nite</h3>
+                  </div>
+                  <p className="abtversion">Alpha Version</p>
                 </TabPanel>
               </div>
             </div>
