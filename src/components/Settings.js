@@ -56,7 +56,12 @@ function Settings({ open, children, onClose }) {
 
   function handleEmailChange() {
     if (emailState !== "") {
-      updateEmail(emailState);
+      if (currentUser !== null) {
+        updateEmail(emailState);
+        updateDoc(doc(db, "users", currentUser.uid), {
+          email: emailState,
+        });
+      }
     }
   }
 
