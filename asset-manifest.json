@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.04dcc68f.css",
-    "main.js": "/static/js/main.94d30763.js",
+    "main.css": "/static/css/main.80827306.css",
+    "main.js": "/static/js/main.5a64b264.js",
     "static/js/787.1185226e.chunk.js": "/static/js/787.1185226e.chunk.js",
+    "static/media/logo.png": "/static/media/logo.e6253facdb9e69b1a531.png",
     "static/media/temp.jpg": "/static/media/temp.a0108a44ac1f56714589.jpg",
     "static/media/Almarai-ExtraBold.woff": "/static/media/Almarai-ExtraBold.9d64275ae47c5af4dc33.woff",
     "static/media/Almarai-Bold.woff": "/static/media/Almarai-Bold.2802a7ab8ab3a233243c.woff",
@@ -34,12 +35,12 @@
     "static/media/water.png": "/static/media/water.cfb5f88c86257fdf00f5.png",
     "static/media/runicon.png": "/static/media/runicon.668f7710317f477bb14d.png",
     "index.html": "/index.html",
-    "main.04dcc68f.css.map": "/static/css/main.04dcc68f.css.map",
-    "main.94d30763.js.map": "/static/js/main.94d30763.js.map",
+    "main.80827306.css.map": "/static/css/main.80827306.css.map",
+    "main.5a64b264.js.map": "/static/js/main.5a64b264.js.map",
     "787.1185226e.chunk.js.map": "/static/js/787.1185226e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04dcc68f.css",
-    "static/js/main.94d30763.js"
+    "static/css/main.80827306.css",
+    "static/js/main.5a64b264.js"
   ]
 }
