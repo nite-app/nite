@@ -20,13 +20,6 @@ import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Settings from "../components/Settings";
 import { Alert, Fade, Grow, Snackbar } from "@mui/material";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
-import { createStyles, Theme } from "@material-ui/core/styles";
-import { appleTabsStylesHook } from "@mui-treasury/styles/tabs";
 
 function Home() {
   const { signout } = useAuth();

@@ -16,6 +16,7 @@ import {
 import logo from "../img/logo.png";
 import { width } from "@mui/system";
 import { Link } from "react-router-dom";
+import { Alert, Fade, Grow, Snackbar } from "@mui/material";
 
 function Settings({ open, children, onClose }) {
   const { currentUser } = useAuth();
@@ -35,6 +36,22 @@ function Settings({ open, children, onClose }) {
 
   const db = getFirestore();
 
+  const [error, setError] = useState("");
+  const [errType, setErrType] = useState("success");
+  const [errorExists, setErrorExists] = useState(false);
+  // error, info, warning, success
+
+  useEffect(() => {
+    if (error !== "" && error !== null) {
+      console.log(error);
+      setErrorExists(true);
+      setTimeout(() => {
+        setErrorExists(false);
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -49,7 +66,10 @@ function Settings({ open, children, onClose }) {
         updateDoc(doc(db, "users", currentUser.uid), {
           firstName: nameState.split(" ")[0],
           lastName: nameState.split(" ")[1],
-        }).then(console.log("Changed name to " + nameState));
+        }).then(() => {
+          setError("Name changed successfully!");
+          setErrType("success");
+        });
       }
     }
   }
@@ -60,6 +80,9 @@ function Settings({ open, children, onClose }) {
         updateEmail(emailState);
         updateDoc(doc(db, "users", currentUser.uid), {
           email: emailState,
+        }).then(() => {
+          setError("Name changed successfully!");
+          setErrType("success");
         });
       }
     }
@@ -79,6 +102,36 @@ function Settings({ open, children, onClose }) {
   if (!open) return null;
   return (
     <>
+      <div className="alertBox">
+        <Snackbar
+          open={errorExists}
+          autoHideDuration={3000}
+          TransitionComponent={Fade}
+          transitionDuration={{ enter: 500, exit: 500 }}
+          TransitionProps={{ enter: true, exit: false }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          {error ? (
+            <Alert
+              severity={errType}
+              sx={{
+                width: "100%",
+                "& .MuiAlert-message": {
+                  fontSize: 20,
+                  paddingHorizontal: 3,
+                },
+                "& .MuiAlert-icon": {
+                  fontSize: 30,
+                },
+              }}
+            >
+              {error}
+            </Alert>
+          ) : (
+            <></>
+          )}
+        </Snackbar>
+      </div>
       <div className="settingsOverlay" onClick={onClose}></div>
       <div className="settingsModal">
         {children}
