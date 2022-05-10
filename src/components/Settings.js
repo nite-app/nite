@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import logo from "../img/logo.png";
 import { width } from "@mui/system";
+import { Link } from "react-router-dom";
 
 function Settings({ open, children, onClose }) {
   const { currentUser } = useAuth();
@@ -154,11 +155,7 @@ function Settings({ open, children, onClose }) {
                 >
                   &#x2613;
                 </button>
-                <TabPanel
-                  value="1"
-                  className="tabPanel"
-                  sx={{ "& .MuiTabPanel-root": { width: "80%" } }}
-                >
+                <TabPanel value="1" className="tabPanel" sx={{}}>
                   <h1 className="settingsTabTitle">My Account</h1>
                   <div className="setAccCtx">
                     <h3 className="settingsTabLabel">Name</h3>
@@ -237,9 +234,9 @@ function Settings({ open, children, onClose }) {
                     "&.MuiTabPanel-root": {
                       position: "absolute",
                       top: 0,
-                      zIndex: -10,
+                      zIndex: 0,
                     },
-                    "& .MuiTabPanel-root": { width: "80%" },
+                    // "& .MuiTabPanel-root": { width: "80%" },
                   }}
                 >
                   <h1 className="settingsTabTitle">About</h1>
@@ -248,6 +245,17 @@ function Settings({ open, children, onClose }) {
                     <h3 className="abtlogotxt">nite</h3>
                   </div>
                   <p className="abtversion">Alpha Version</p>
+                  <h3 className="settingsTabLabel">Socials</h3>
+                  <a
+                    href="https://niteapp.cf"
+                    className="abtlink"
+                    style={{ marginTop: "10px" }}
+                  >
+                    Presentation Website
+                  </a>
+                  <a href="https://niteapp.cf" className="abtlink">
+                    Twitter
+                  </a>
                 </TabPanel>
               </div>
             </div>
