@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../../hooks/useAlert";
 
 function Reset() {
   const emailref = useRef();
@@ -9,44 +9,30 @@ function Reset() {
   const navigate = useNavigate();
   const { resetPassword } = useAuth();
   const { currentUser } = useAuth();
-
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
+  const { setAlert } = useAlert();
 
   const handleReset = async (e) => {
     e.preventDefault();
 
-    setError("");
-    setLoading(true);
-    resetPassword(emailref.current.value);
-    try {
-      //   resetPassword(emailref.current.value);
-      setError(
-        "Check your inbox at " +
-          emailref.current.value +
-          " for further informations"
-      );
-      setErrType("success");
-    } catch {
-      setError("Internal Error: Failed to reset password");
-      setErrType("failure");
-    }
+    if (emailref.current.value !== "") {
+      setLoading(true);
+      try {
+        resetPassword(emailref.current.value);
+        setAlert(
+          "Check your inbox at " +
+            emailref.current.value +
+            " for further informations",
+          "success"
+        );
+      } catch {
+        setAlert("Internal Error: Failed to reset password", "error");
+      }
 
-    setLoading(false);
+      setLoading(false);
+    } else {
+      setAlert("Please fill all fields!", "error");
+    }
   };
-
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
 
   const [backlink, setBacklink] = useState("/briefing");
   useEffect(() => {
@@ -67,36 +53,6 @@ function Reset() {
             width="25px"
           />
         </Link>
-      </div>
-      <div className="alertBox">
-        <Snackbar
-          open={errorExists}
-          autoHideDuration={3000}
-          TransitionComponent={Fade}
-          transitionDuration={{ enter: 500, exit: 500 }}
-          TransitionProps={{ enter: true, exit: false }}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
-          {error ? (
-            <Alert
-              severity={errType}
-              sx={{
-                width: "100%",
-                "& .MuiAlert-message": {
-                  fontSize: 20,
-                  paddingHorizontal: 3,
-                },
-                "& .MuiAlert-icon": {
-                  fontSize: 30,
-                },
-              }}
-            >
-              {error}
-            </Alert>
-          ) : (
-            <></>
-          )}
-        </Snackbar>
       </div>
       <div className="ctsplit">
         <div className="formcontainer">

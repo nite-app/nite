@@ -229,11 +229,6 @@ function Settings({ open, children, onClose }) {
                         setNameState(settingsNameRef.current.value);
                       }}
                     />
-                    <p className="settingsalert">
-                      <span style={{ color: "yellow" }}>Alert: </span>
-                      This feature requires recent authentication, re-login in
-                      this session to edit your profile.
-                    </p>
                     <button
                       className="settingsButton"
                       onClick={() => {

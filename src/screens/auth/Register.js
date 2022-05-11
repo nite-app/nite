@@ -8,7 +8,7 @@ import {
   getDoc,
   setDoc,
 } from "firebase/firestore";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../../hooks/useAlert";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -18,11 +18,8 @@ export default function Register() {
   const repeatref = useRef();
   const fnameref = useRef();
   const lnameref = useRef();
-  //System states
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, successS
+
+  const { setAlert } = useAlert();
 
   const [loading, setLoading] = useState(false);
   //Ctx exports
@@ -66,26 +63,23 @@ export default function Register() {
       pwrepeat !== ""
     ) {
       if (password !== pwrepeat) {
-        setError("Password do not match");
-        setErrType("error");
+        setAlert("Password do not match", "error");
       } else {
-        if (password.length > 6) {
+        if (password.length > 5) {
           try {
             setLoading(true);
             signup(email, password);
+            setAlert("Account created successfully", "success");
             navigate("/login");
           } catch (err) {
-            setError(err.message);
-            setErrType("error");
+            setAlert(err.message, "error");
           }
         } else {
-          setError("Password should be at least 6 characters!");
-          setErrType("error");
+          setAlert("Password should be at least 6 characters!", "error");
         }
       }
     } else {
-      setError("Please fill all fields!");
-      setErrType("error");
+      setAlert("Please fill all fields!", "error");
     }
     setLoading(false);
   }
@@ -119,17 +113,6 @@ export default function Register() {
     }
   }, []);
 
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
   return (
     <>
       <div className="fullpage">
@@ -143,36 +126,6 @@ export default function Register() {
                   alt=""
                 />
               </Link>
-            </div>
-            <div className="alertBox">
-              <Snackbar
-                open={errorExists}
-                autoHideDuration={3000}
-                TransitionComponent={Fade}
-                transitionDuration={{ enter: 500, exit: 500 }}
-                TransitionProps={{ enter: true, exit: false }}
-                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-              >
-                {error ? (
-                  <Alert
-                    severity={errType}
-                    sx={{
-                      width: "100%",
-                      "& .MuiAlert-message": {
-                        fontSize: 20,
-                        paddingHorizontal: 3,
-                      },
-                      "& .MuiAlert-icon": {
-                        fontSize: 30,
-                      },
-                    }}
-                  >
-                    {error}
-                  </Alert>
-                ) : (
-                  <></>
-                )}
-              </Snackbar>
             </div>
             <div className="ctsplit">
               <div className="formcontainer">

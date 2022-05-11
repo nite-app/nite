@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../../hooks/useAlert";
 
 function Login() {
   const emailref = useRef();
@@ -10,11 +10,7 @@ function Login() {
   const { login } = useAuth();
   const { currentUser } = useAuth();
   const navigate = useNavigate();
-
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
+  const { setAlert } = useAlert();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,16 +19,13 @@ function Login() {
     if (emailref.current.value !== "" && pswref.current.value !== "") {
       try {
         login(emailref.current.value, pswref.current.value);
-        setError("Logged in successfully");
-        setErrType("success");
+        setAlert("Logged in successfully", "success");
         navigate("/");
       } catch {
-        setError("Internal Error: Failed to login");
-        setErrType("failure");
+        setAlert("Internal Error: Failed to login", "error");
       }
     } else {
-      setError("Fill all fields!");
-      setErrType("failure");
+      setAlert("Fill all fields!", "error");
     }
 
     setLoading(false);
@@ -47,17 +40,6 @@ function Login() {
     }
   }, []);
 
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
   return (
     <div className="acont">
       <div className="back">
@@ -70,36 +52,6 @@ function Login() {
             />
           </Link>
         </div>
-      </div>
-      <div className="alertBox">
-        <Snackbar
-          open={errorExists}
-          autoHideDuration={3000}
-          TransitionComponent={Fade}
-          transitionDuration={{ enter: 500, exit: 500 }}
-          TransitionProps={{ enter: true, exit: false }}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
-          {error ? (
-            <Alert
-              severity={errType}
-              sx={{
-                width: "100%",
-                "& .MuiAlert-message": {
-                  fontSize: 20,
-                  paddingHorizontal: 3,
-                },
-                "& .MuiAlert-icon": {
-                  fontSize: 30,
-                },
-              }}
-            >
-              {error}
-            </Alert>
-          ) : (
-            <></>
-          )}
-        </Snackbar>
       </div>
       <div className="ctsplit">
         <div className="formcontainer">
