@@ -12,7 +12,7 @@ import HabitReport from "../components/HabitReport";
 import { v4 as uuidv4 } from "uuid";
 import InsightsCircles from "../components/InsightsCircles";
 import Settings from "../components/Settings";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../hooks/useAlert";
 
 const Page3 = () => {
   const { name } = useAuth();
@@ -26,10 +26,7 @@ const Page3 = () => {
 
   const [settingsOpen, setSettingsOpen] = useState(false);
 
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
+  const { setAlert } = useAlert();
 
   //HABITS
   const [habitText, setHabitText] = useState("");
@@ -57,14 +54,12 @@ const Page3 = () => {
         setHabitListRight([...habitListRight, habitText]);
         setHabitText("");
       } else {
-        setError("You can only insert a maximum of 8 Habits!");
-        setErrType("error");
+        setAlert("You can only insert a maximum of 8 Habits!", "error");
       }
 
       setCount(count + 1);
     } else {
-      setError("Write some text!");
-      setErrType("error");
+      setAlert("Write some text!", "error");
     }
   };
 
@@ -76,50 +71,9 @@ const Page3 = () => {
     setHabitText(event.target.value);
   };
 
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
   return (
     <>
       <div className="App" id="Home">
-        <div className="alertBox">
-          <Snackbar
-            open={errorExists}
-            autoHideDuration={3000}
-            TransitionComponent={Fade}
-            transitionDuration={{ enter: 500, exit: 500 }}
-            TransitionProps={{ enter: true, exit: false }}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            {error ? (
-              <Alert
-                severity={errType}
-                sx={{
-                  width: "100%",
-                  "& .MuiAlert-message": {
-                    fontSize: 20,
-                    paddingHorizontal: 3,
-                  },
-                  "& .MuiAlert-icon": {
-                    fontSize: 30,
-                  },
-                }}
-              >
-                {error}
-              </Alert>
-            ) : (
-              <></>
-            )}
-          </Snackbar>
-        </div>
         <Settings
           open={settingsOpen}
           onClose={() => setSettingsOpen(false)}

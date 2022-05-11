@@ -10,7 +10,6 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
-import useAlert from "../hooks/useAlert";
 
 const AuthContext = React.createContext();
 
@@ -27,7 +26,6 @@ export function AuthProvider({ children }) {
   const [userColor, setUserColor] = useState("User");
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
-  const { setAlert } = useAlert();
 
   function signup(email, password) {
     firebase
@@ -66,7 +64,7 @@ export function AuthProvider({ children }) {
           console.log(error);
         });
     } catch (error) {
-      setAlert(error.message, "error");
+      console.log(error.message);
     }
   }
 

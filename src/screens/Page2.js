@@ -11,7 +11,7 @@ import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import { useAuth } from "../contexts/AuthContext";
 import Settings from "../components/Settings";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../hooks/useAlert";
 
 function Page2() {
   const { name } = useAuth();
@@ -21,10 +21,7 @@ function Page2() {
   const [switchState, setSwitchState] = useState(false);
   const [switchLabel, setSwitchLabel] = useState("No");
 
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
+  const { setAlert } = useAlert();
 
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
@@ -44,50 +41,9 @@ function Page2() {
     setSwitchState(event.target.checked);
   }
 
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
   return (
     <>
       <div className="App" id="Home">
-        <div className="alertBox">
-          <Snackbar
-            open={errorExists}
-            autoHideDuration={3000}
-            TransitionComponent={Fade}
-            transitionDuration={{ enter: 500, exit: 500 }}
-            TransitionProps={{ enter: true, exit: false }}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            {error ? (
-              <Alert
-                severity={errType}
-                sx={{
-                  width: "100%",
-                  "& .MuiAlert-message": {
-                    fontSize: 20,
-                    paddingHorizontal: 3,
-                  },
-                  "& .MuiAlert-icon": {
-                    fontSize: 30,
-                  },
-                }}
-              >
-                {error}
-              </Alert>
-            ) : (
-              <></>
-            )}
-          </Snackbar>
-        </div>
         <Settings
           open={settingsOpen}
           onClose={() => setSettingsOpen(false)}
@@ -213,8 +169,7 @@ function Page2() {
                 <button
                   className="mainpanel2rightbutton"
                   onClick={() => {
-                    setError("Data sent successfully");
-                    setErrType("success");
+                    setAlert("Data sent successfully", "success");
                   }}
                 >
                   <img
