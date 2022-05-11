@@ -10,6 +10,7 @@ import Reset from "./screens/auth/Reset";
 import Briefing from "./screens/auth/Briefing";
 import Page2 from "./screens/Page2.js";
 import Page3 from "./screens/Page3.js";
+import AlertPopup from "./components/AlertPopup";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -20,14 +21,77 @@ function App() {
         <AlertProvider>
           <Routes>
             <Route element={<PrivateRoute />}>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/page2" element={<Page2 />} />
-              <Route exact path="/page3" element={<Page3 />} />
+              <Route
+                exact
+                path="/"
+                element={
+                  <>
+                    <AlertPopup />
+                    <Home />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/page2"
+                element={
+                  <>
+                    <AlertPopup />
+                    <Page2 />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/page3"
+                element={
+                  <>
+                    <AlertPopup />
+                    <Page3 />
+                  </>
+                }
+              />
             </Route>
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/register" element={<Register />} />
-            <Route exact path="/reset" element={<Reset />} />
-            <Route exact path="/briefing" element={<Briefing />} />
+            <Route
+              exact
+              path="/login"
+              element={
+                <>
+                  <AlertPopup />
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/register"
+              element={
+                <>
+                  <AlertPopup />
+                  <Register />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/reset"
+              element={
+                <>
+                  <AlertPopup />
+                  <Reset />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/briefing"
+              element={
+                <>
+                  <AlertPopup />
+                  <Briefing />
+                </>
+              }
+            />
           </Routes>
         </AlertProvider>
       </AuthProvider>

@@ -170,6 +170,13 @@ p {
   }
 }
 
+.alertContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
 .alertBox {
   position: fixed;
   position: absolute;

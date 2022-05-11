@@ -19,7 +19,7 @@ import TextField from "@mui/material/TextField";
 import HomeDay from "../components/HomeDay";
 import Habit from "../components/Habit";
 import Settings from "../components/Settings";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import useAlert from "../hooks/useAlert";
 
 function Home() {
   const { signout } = useAuth();
@@ -31,16 +31,12 @@ function Home() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 
-  const [error, setError] = useState("");
-  const [errType, setErrType] = useState("success");
-  const [errorExists, setErrorExists] = useState(false);
-  // error, info, warning, success
-
   const firstName = name.split(" ")[0];
   const lastName = name.split(" ")[1];
   const pfpTxt = "" + firstName.split("")[0] + lastName.split("")[0];
 
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const { setAlert } = useAlert();
 
   const db = getFirestore();
 
@@ -98,12 +94,10 @@ function Home() {
   function handleSignout() {
     try {
       signout();
-      setError("Signed out successfully!");
-      setErrType("success");
+      setAlert("Signed out successfully!", "success");
       navigate("/briefing");
     } catch {
-      setError("Failed to Sign Out");
-      setErrType("error");
+      setAlert("Failed to Sign Out", "error");
     }
   }
 
@@ -123,50 +117,9 @@ function Home() {
     fetchQuote();
   }, []);
 
-  useEffect(() => {
-    if (error !== "" && error !== null) {
-      console.log(error);
-      setErrorExists(true);
-      setTimeout(() => {
-        setErrorExists(false);
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
   return (
     <>
       <div className="App" id="Home">
-        <div className="alertBox">
-          <Snackbar
-            open={errorExists}
-            autoHideDuration={3000}
-            TransitionComponent={Fade}
-            transitionDuration={{ enter: 500, exit: 500 }}
-            TransitionProps={{ enter: true, exit: false }}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            {error ? (
-              <Alert
-                severity={errType}
-                sx={{
-                  width: "100%",
-                  "& .MuiAlert-message": {
-                    fontSize: 20,
-                    paddingHorizontal: 3,
-                  },
-                  "& .MuiAlert-icon": {
-                    fontSize: 30,
-                  },
-                }}
-              >
-                {error}
-              </Alert>
-            ) : (
-              <></>
-            )}
-          </Snackbar>
-        </div>
         <Settings
           open={settingsOpen}
           onClose={() => setSettingsOpen(false)}
@@ -270,8 +223,7 @@ function Home() {
                   <button
                     className="mainpanel1rightbutton"
                     onClick={() => {
-                      setError("Data sent successfully");
-                      setErrType("success");
+                      setAlert("Data sent successfully", "success");
                     }}
                   >
                     <img
@@ -286,8 +238,7 @@ function Home() {
                   <button
                     className="mainpanel1rightbutton"
                     onClick={() => {
-                      setError("Data sent successfully");
-                      setErrType("warning");
+                      setAlert("Data sent successfully", "warning");
                     }}
                   >
                     <img
@@ -302,8 +253,7 @@ function Home() {
                   <button
                     className="mainpanel1rightbutton"
                     onClick={() => {
-                      setError("Data sent successfully");
-                      setErrType("error");
+                      setAlert("Data sent successfully", "error");
                     }}
                   >
                     <img

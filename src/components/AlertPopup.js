@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Alert, Fade, Grow, Snackbar } from "@mui/material";
+import {
+  Alert,
+  bottomNavigationActionClasses,
+  Fade,
+  Grow,
+  Snackbar,
+} from "@mui/material";
 import useAlert from "../hooks/useAlert";
 
 function AlertPopup() {
@@ -7,13 +13,8 @@ function AlertPopup() {
 
   if (text && type) {
     return (
-      <div className="alertBox">
-        <Snackbar
-          TransitionComponent={Fade}
-          transitionDuration={{ enter: 500, exit: 500 }}
-          TransitionProps={{ enter: true, exit: false }}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
+      <div className="alertContainer">
+        <div className="alertBox">
           <Alert
             severity={type}
             sx={{
@@ -29,10 +30,11 @@ function AlertPopup() {
           >
             {text}
           </Alert>
-          ) : (<></>)
-        </Snackbar>
+        </div>
       </div>
     );
+  } else {
+    return <></>;
   }
 }
 

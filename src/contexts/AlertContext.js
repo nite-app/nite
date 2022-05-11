@@ -2,8 +2,8 @@ import React, { createContext, useState, useEffect } from "react";
 
 const alert_time = 5000;
 const initialstate = {
-  type: "",
   message: "",
+  type: "",
 };
 
 const AlertContext = createContext({
