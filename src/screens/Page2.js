@@ -29,6 +29,11 @@ function Page2() {
 
   const [settingsOpen, setSettingsOpen] = useState(false);
 
+  // sleep advice
+  const [time1, setTime1] = useState("22.25");
+  const [time2, setTime2] = useState("23.55");
+  const [time3, setTime3] = useState("01.25");
+
   useEffect(() => {
     if (switchState === false) {
       setSwitchLabel("No");
@@ -39,6 +44,13 @@ function Page2() {
 
   function handleSwitchChange(event) {
     setSwitchState(event.target.checked);
+  }
+
+  function generateSleep() {
+    const current = new Date();
+    const date = current.getHours() + ":" + current.getMinutes();
+
+    console.log(date);
   }
 
   return (
@@ -226,7 +238,12 @@ function Page2() {
                       min="00"
                       max="59"
                     />
-                    <button className="goalscontainertopleftbutton"></button>
+                    <button
+                      className="goalscontainertopleftbutton"
+                      onClick={() => {
+                        generateSleep();
+                      }}
+                    ></button>
                   </div>
                 </div>
                 <hr className="goalscontainertopsep"></hr>
@@ -235,7 +252,9 @@ function Page2() {
                     You should try to fall asleep at one of the following times:
                   </p>
                   <div className="goalscontainergridtoprighttext">
-                    <p className="goalscontainerp">22:25 - 23:55 - 01:25</p>
+                    <p className="goalscontainerp">
+                      {time1} - {time2} - {time3}
+                    </p>
                   </div>
                 </div>
                 <div className="goalscontainerbottom">
