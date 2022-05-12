@@ -56,7 +56,37 @@ function Page2() {
     setSwitchState(event.target.checked);
   }
 
-  function generateSleep1() {}
+  function generateSleep1() {
+    if (inhours !== "" && inminutes !== "") {
+      if (inhours < 24 && inminutes < 60) {
+        let date1 = new Date();
+        date1.setHours(parseInt(inhours));
+        date1.setMinutes(parseInt(inminutes));
+        let date2 = new Date();
+        date2.setHours(parseInt(inhours));
+        date2.setMinutes(parseInt(inminutes));
+        let date3 = new Date();
+        date3.setHours(parseInt(inhours));
+        date3.setMinutes(parseInt(inminutes));
+
+        date1.setHours(date1.getHours() - 6);
+        setTime11(date1.getHours() + ":" + date1.getMinutes());
+
+        date2.setHours(date2.getHours() - 7);
+        date2.setMinutes(date2.getMinutes() - 30);
+        setTime12(date2.getHours() + ":" + date2.getMinutes());
+
+        date3.setHours(date3.getHours() - 9);
+        setTime13(date3.getHours() + ":" + date3.getMinutes());
+      } else {
+        setAlert("Please insert a valid input!", "error");
+        setInhours("");
+        setInminutes("");
+      }
+    } else {
+      setAlert("Please fill the fields!", "error");
+    }
+  }
 
   function generateSleep2() {
     let dt1 = new Date();
