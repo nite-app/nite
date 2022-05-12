@@ -69,14 +69,14 @@ function Page2() {
         date3.setHours(parseInt(inhours));
         date3.setMinutes(parseInt(inminutes));
 
-        date1.setHours(date1.getHours() - 6);
+        date1.setHours(date1.getHours() - 9);
         setTime11(date1.getHours() + ":" + date1.getMinutes());
 
         date2.setHours(date2.getHours() - 7);
         date2.setMinutes(date2.getMinutes() - 30);
         setTime12(date2.getHours() + ":" + date2.getMinutes());
 
-        date3.setHours(date3.getHours() - 9);
+        date3.setHours(date3.getHours() - 6);
         setTime13(date3.getHours() + ":" + date3.getMinutes());
       } else {
         setAlert("Please insert a valid input!", "error");
