@@ -30,9 +30,13 @@ function Page2() {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   // sleep advice
-  const [time1, setTime1] = useState("22.25");
-  const [time2, setTime2] = useState("23.55");
-  const [time3, setTime3] = useState("01.25");
+  const [time11, setTime11] = useState("22.25");
+  const [time12, setTime12] = useState("23.55");
+  const [time13, setTime13] = useState("01.25");
+
+  const [time21, setTime21] = useState("3.15");
+  const [time22, setTime22] = useState("4.45");
+  const [time23, setTime23] = useState("6.15");
 
   useEffect(() => {
     if (switchState === false) {
@@ -47,11 +51,26 @@ function Page2() {
   }
 
   function generateSleep() {
-    const current = new Date();
-    const date = current.getHours() + ":" + current.getMinutes();
+    let dt1 = new Date();
+    dt1.setHours(dt1.getHours() + 6);
 
-    console.log(date);
+    setTime21(dt1.getHours() + ":" + dt1.getMinutes());
+
+    let dt2 = new Date();
+    dt2.setHours(dt2.getHours() + 7);
+    dt2.setMinutes(dt2.getMinutes() + 30);
+
+    setTime22(dt2.getHours() + ":" + dt2.getMinutes());
+
+    let dt3 = new Date();
+    dt3.setHours(dt3.getHours() + 9);
+
+    setTime23(dt3.getHours() + ":" + dt3.getMinutes());
   }
+
+  useEffect(() => {
+    generateSleep();
+  }, []);
 
   return (
     <>
@@ -253,7 +272,7 @@ function Page2() {
                   </p>
                   <div className="goalscontainergridtoprighttext">
                     <p className="goalscontainerp">
-                      {time1} - {time2} - {time3}
+                      {time11} - {time12} - {time13}
                     </p>
                   </div>
                 </div>
@@ -261,8 +280,11 @@ function Page2() {
                   <p className="goalscontainerbottomtitle">
                     If you got to bed now, you should wake up at:
                   </p>
+
                   <div className="goalscontainerbottomtext">
-                    <p className="goalscontainerp">3:15 - 4:45 - 6:15</p>
+                    <p className="goalscontainerp">
+                      {time21} - {time22} - {time23}
+                    </p>
                     <p className="goalscontainerbottomfooter">
                       Please keep in mind that you should be falling asleep at
                       these times. The average human takes fourteen minutes to
