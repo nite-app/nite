@@ -30,6 +30,12 @@ function Page2() {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   // sleep advice
+  const inminutesRef = useRef();
+  const inhoursRef = useRef();
+
+  const [inhours, setInhours] = useState("");
+  const [inminutes, setInminutes] = useState("");
+
   const [time11, setTime11] = useState("22.25");
   const [time12, setTime12] = useState("23.55");
   const [time13, setTime13] = useState("01.25");
@@ -50,7 +56,9 @@ function Page2() {
     setSwitchState(event.target.checked);
   }
 
-  function generateSleep() {
+  function generateSleep1() {}
+
+  function generateSleep2() {
     let dt1 = new Date();
     dt1.setHours(dt1.getHours() + 6);
 
@@ -69,7 +77,7 @@ function Page2() {
   }
 
   useEffect(() => {
-    generateSleep();
+    generateSleep2();
   }, []);
 
   return (
@@ -247,20 +255,36 @@ function Page2() {
                     <input
                       type="number"
                       className="goalscontainergridtopleftinput"
-                      min="00"
-                      max="23"
+                      onInput={(e) => {
+                        e.target.value = Math.max(0, parseInt(e.target.value))
+                          .toString()
+                          .slice(0, 2);
+                      }}
+                      ref={inhoursRef}
+                      value={inhours}
+                      onChange={(e) => {
+                        setInhours(inhoursRef.current.value);
+                      }}
                     />
                     <p className="goalscontainerinputp">:</p>
                     <input
                       type="number"
                       className="goalscontainergridtopleftinput"
-                      min="00"
-                      max="59"
+                      onInput={(e) => {
+                        e.target.value = Math.max(0, parseInt(e.target.value))
+                          .toString()
+                          .slice(0, 2);
+                      }}
+                      ref={inminutesRef}
+                      value={inminutes}
+                      onChange={(e) => {
+                        setInminutes(inminutesRef.current.value);
+                      }}
                     />
                     <button
                       className="goalscontainertopleftbutton"
                       onClick={() => {
-                        generateSleep();
+                        generateSleep1();
                       }}
                     ></button>
                   </div>
