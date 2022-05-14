@@ -45,15 +45,13 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(firstState);
 
     const password = pswref.current.value;
     const pwrepeat = repeatref.current.value;
-    const email = emailref.current.value;
-    const fname = fnameref.current.value;
-    const lname = lnameref.current.value;
-    setEmailState(email);
-    setFirstState(fname);
-    setLastState(lname);
+    const email = emailState;
+    const fname = firstState;
+    const lname = lastState;
 
     if (
       email !== "" &&
@@ -70,7 +68,6 @@ export default function Register() {
             setLoading(true);
             signup(email, password);
             setAlert("Account created successfully", "success");
-            navigate("/login");
           } catch (err) {
             setAlert(err.message, "error");
           }
@@ -147,6 +144,10 @@ export default function Register() {
                     className="field"
                     ref={fnameref}
                     required
+                    value={firstState}
+                    onChange={() => {
+                      setFirstState(fnameref.current.value);
+                    }}
                   />
                   <input
                     type="text"
@@ -156,6 +157,10 @@ export default function Register() {
                     className="field"
                     ref={lnameref}
                     required
+                    value={lastState}
+                    onChange={() => {
+                      setLastState(lnameref.current.value);
+                    }}
                   />
                 </div>
 
@@ -167,6 +172,10 @@ export default function Register() {
                   className="field"
                   ref={emailref}
                   required
+                  value={emailState}
+                  onChange={() => {
+                    setEmailState(emailref.current.value);
+                  }}
                 />
 
                 <input
