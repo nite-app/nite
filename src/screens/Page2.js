@@ -140,7 +140,6 @@ function Page2() {
     scales: {
       x: {
         grid: {
-          display: false,
           color: "#FFFFFF",
         },
         ticks: {
@@ -149,12 +148,12 @@ function Page2() {
       },
       y: {
         ticks: {
-          display: false,
           fontSize: 8,
+          color: "#FFFFFF",
         },
         grid: {
-          display: false,
           lineWidth: 0,
+          color: "#FFFFFF",
         },
       },
     },
