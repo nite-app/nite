@@ -1025,6 +1025,14 @@ p {
 
 .pg2mainbottom {
 }
+
+.bottompanel2container {
+  padding-left: 50px;
+  padding-top: 20px;
+  height: 65%;
+  width: 70%;
+}
+
 .pg2mainheader {
   color: white;
   margin: 50px 0 10px 50px;
