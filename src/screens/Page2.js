@@ -12,6 +12,8 @@ import TextField from "@mui/material/TextField";
 import { useAuth } from "../contexts/AuthContext";
 import Settings from "../components/Settings";
 import useAlert from "../hooks/useAlert";
+import BarChart from "../components/Charts/BarChart";
+import { HomeData } from "../Charts Data/HomeData";
 
 function Page2() {
   const { name } = useAuth();
@@ -109,6 +111,54 @@ function Page2() {
   useEffect(() => {
     generateSleep2();
   }, []);
+
+  const [userData, setUserData] = useState({
+    labels: HomeData.map((data) => data.day),
+    datasets: [
+      {
+        label: "",
+        data: HomeData.map((data) => data.sleep),
+        backgroundColor: ["#C2FAF1"],
+        foregroundColor: ["#C2FAF1"],
+        borderColor: ["#C2FAF1"],
+        borderRadius: 10,
+        borderWidth: 5,
+        pointHitRadius: 100,
+        pointHoverRadius: 7,
+        pointHoverBackgroundColor: "#C2FAF1",
+        pointHoverBorderColor: "#C2FAF1",
+      },
+    ],
+  });
+
+  const [userOptions, setUserOptions] = useState({
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+          color: "#FFFFFF",
+        },
+        ticks: {
+          color: "#FFFFFF",
+        },
+      },
+      y: {
+        ticks: {
+          display: false,
+          fontSize: 8,
+        },
+        grid: {
+          display: false,
+          lineWidth: 0,
+        },
+      },
+    },
+  });
 
   return (
     <>
@@ -350,6 +400,12 @@ function Page2() {
             </div>
             <div className="bottompanel">
               <div className="bottompanel2header">Weekly report</div>
+              <div className="bottompanel2container">
+                <BarChart
+                  chartData={userData}
+                  chartOptions={userOptions}
+                ></BarChart>
+              </div>
             </div>
           </div>
         </div>
