@@ -181,6 +181,7 @@ p {
   position: fixed;
   position: absolute;
   bottom: 5%;
+  z-index: 1000;
 }
 
 /* APP CODE */
