@@ -81,7 +81,12 @@ export function AuthProvider({ children }) {
 
   function updateEmail(email) {
     if (currentUser) {
-      firebase.auth().currentUser.updateEmail(email);
+      firebase
+        .auth()
+        .currentUser.updateEmail(email)
+        .catch((e) => {
+          setAlert(e.message, "error");
+        });
       console.log("Changed email to " + email);
     }
   }
