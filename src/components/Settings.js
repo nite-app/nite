@@ -81,7 +81,7 @@ function Settings({ open, children, onClose }) {
         updateDoc(doc(db, "users", currentUser.uid), {
           email: emailState,
         }).then(() => {
-          setError("Name changed successfully!");
+          setError("Email changed successfully!");
           setErrType("success");
         });
       }

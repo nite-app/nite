@@ -102,8 +102,8 @@ export function AuthProvider({ children }) {
         .catch((e) => {
           console.log(e);
           setAlert(e.message, "error");
-        });
-      console.log("Changed email to " + email);
+        })
+        .then(console.log("Changed email to " + email));
     }
   }
 
