@@ -37,8 +37,9 @@ export function AuthProvider({ children }) {
         console.log("Created user with email: " + email);
         login(email, password);
       })
-      .catch(function (error) {
-        console.log(error.message);
+      .catch((error) => {
+        console.log(error);
+        setAlert(error.message, "error");
       });
   }
 
@@ -46,15 +47,22 @@ export function AuthProvider({ children }) {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
+        setAlert(error.message, "error");
       });
     console.log("Logged in as: " + email);
   }
 
   function signout() {
     console.log("Signed out successfully");
-    return firebase.auth().signOut();
+    return firebase
+      .auth()
+      .signOut()
+      .catch((error) => {
+        console.log(error);
+        setAlert(error.message, "error");
+      });
   }
 
   function resetPassword(email) {
@@ -64,6 +72,7 @@ export function AuthProvider({ children }) {
         .sendPasswordResetEmail(email)
         .catch((error) => {
           console.log(error);
+          setAlert(error.message, "error");
         });
     } catch (error) {
       console.log(error.message);
@@ -73,7 +82,13 @@ export function AuthProvider({ children }) {
   function deleteAccount() {
     if (currentUser) {
       deleteDoc(doc(db, "users", currentUser.uid));
-      firebase.auth().currentUser.delete();
+      firebase
+        .auth()
+        .currentUser.delete()
+        .catch((e) => {
+          console.log(e);
+          setAlert(e.message, "error");
+        });
     } else {
       console.log("Internal error: no user logged in, can't delete any");
     }
@@ -85,6 +100,7 @@ export function AuthProvider({ children }) {
         .auth()
         .currentUser.updateEmail(email)
         .catch((e) => {
+          console.log(e);
           setAlert(e.message, "error");
         });
       console.log("Changed email to " + email);
