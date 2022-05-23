@@ -58,6 +58,7 @@ function Page2() {
     setSwitchState(event.target.checked);
   }
 
+  //Calcolo cicli di sonno iversi
   function generateSleep1() {
     if (inhours !== "" && inminutes !== "") {
       if (inhours < 24 && inminutes < 60) {

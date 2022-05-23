@@ -43,6 +43,7 @@ function Home() {
   // component bar, props width
   const [barWidth, setBarWidth] = useState();
 
+  //Graph settings
   const [userData, setUserData] = useState({
     labels: HomeData.map((data) => data.day),
     datasets: [
@@ -62,6 +63,7 @@ function Home() {
     ],
   });
 
+  //graph styling
   const [userOptions, setUserOptions] = useState({
     plugins: {
       legend: {
@@ -101,6 +103,7 @@ function Home() {
     }
   }
 
+  //retrieve from axios API a random quote
   function fetchQuote() {
     axios
       .get("https://api.quotable.io/random")
@@ -279,6 +282,7 @@ function Home() {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
                         .slice(0, 2);
+                      //Max 2 digits
                     }}
                     min={0}
                   />

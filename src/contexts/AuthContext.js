@@ -13,6 +13,7 @@ import {
 import useAlert from "../hooks/useAlert";
 
 const AuthContext = React.createContext();
+//Every item wrapped inside <AuthContext.Provider> can access value (see bottom page)
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -28,6 +29,10 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
   const { setAlert } = useAlert();
+  //useState = state variable
+  //First array element = variable to use
+  //Second element = function used to change the first one's value
+  //Parenthesis after useState = default value of variable
 
   function signup(email, password) {
     firebase
@@ -115,6 +120,9 @@ export function AuthProvider({ children }) {
     });
     return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
   }, []);
+  //useEffect() = Event listener on the item inside square brackets
+  //if brackets are empty listen to the page render
+  //once the listener is triggered run the function inside the body
 
   useEffect(() => {
     const setLog = firebase.auth().onAuthStateChanged(() => {
@@ -142,6 +150,7 @@ export function AuthProvider({ children }) {
     }
   });
 
+  //valori da rendere accessibili ad item contenuti in AuthContext.Provider
   const value = {
     currentUser,
     name,
