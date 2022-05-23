@@ -1,4 +1,4 @@
-![image]({https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white})
+![image]({https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white})
 
 # Nite
 ###### Alpha version
