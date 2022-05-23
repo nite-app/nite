@@ -17,13 +17,9 @@ import PrivateRoute from "./components/PrivateRoute";
 function App() {
   return (
     <BrowserRouter>
-      //Every page can access AuthContext variables without calling them every
-      time
       <AuthProvider>
         <AlertProvider>
           <Routes>
-            //user can access pages inside PrivateRoute only if they are logged
-            in, otherwise redirect them to the login page
             <Route element={<PrivateRoute />}>
               <Route
                 exact
