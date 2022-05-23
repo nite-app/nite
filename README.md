@@ -22,11 +22,11 @@ Many teenagers want to sleep better, but at the same time they don't know how to
   <li>And much more</li>
 </ul>
 
+## Bug report or Feature request
+
+If you encounter a bug or have a feature request, [send us an email](mailto:info@niteapp.cf)
+
 ## Credits
 
 Everyone who provided and is still providing valuable feedback on this and older versions of nite.</br>
 All of the [contributors](https://github.com/nite-app/nite/graphs/contributors) that have helped with implementing various features, fixing bugs, and more.
-
-## Bug report or Feature request
-
-If you encounter a bug or have a feature request, [send us an email](mailto:info@niteapp.cf)
