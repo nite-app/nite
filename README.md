@@ -24,5 +24,5 @@ Many teenagers want to sleep better, but at the same time they don't know how to
 
 ## Credits
 
-Everyone who provided and is still providing valuable feedback on this and older versions of nite.
-All of the contributors that have helped with implementing various features, fixing bugs, and more.
+Everyone who provided and is still providing valuable feedback on this and older versions of nite.</br>
+All of the [contributors](https://github.com/nite-app/nite/graphs/contributors) that have helped with implementing various features, fixing bugs, and more.
