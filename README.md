@@ -19,4 +19,11 @@ Many teenagers want to sleep better, but at the same time they don't know how to
   <li>Daily quotes and advices</li>
   <li>Account system</li>
   <li>Secure data</li>
+  <li>And much more</li>
 </ul>
+
+## Credits
+
+Everyone who provided and is still providing valuable feedback on this and older versions of nite.
+
+All of the contributors that have helped with implementing various features, fixing bugs, and more.
