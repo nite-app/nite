@@ -25,6 +25,7 @@ export default function Register() {
   //Ctx exports
   const { signup } = useAuth();
   const { currentUser } = useAuth();
+  const { authError } = useAuth();
 
   const [emailState, setEmailState] = useState("");
   const [firstState, setFirstState] = useState("");
@@ -67,7 +68,6 @@ export default function Register() {
           try {
             setLoading(true);
             signup(email, password);
-            setAlert("Account created successfully", "success");
           } catch (err) {
             setAlert(err.message, "error");
           }
@@ -109,6 +109,14 @@ export default function Register() {
       setBacklink("/briefing");
     }
   }, []);
+
+  useEffect(() => {
+    if (authError.shown === true) {
+      setAlert(authError.message, authError.type);
+    }
+
+    return () => {};
+  }, [authError]);
 
   return (
     <>

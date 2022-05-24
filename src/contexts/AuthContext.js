@@ -29,6 +29,11 @@ export function AuthProvider({ children }) {
   const [logged, setLogged] = useState(false);
   const db = getFirestore();
   const { setAlert } = useAlert();
+  const [authError, setAuthError] = useState({
+    shown: false,
+    message: "",
+    type: "",
+  });
   //useState = state variable
   //First array element = variable to use
   //Second element = function used to change the first one's value
@@ -40,11 +45,20 @@ export function AuthProvider({ children }) {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log("Created user with email: " + email);
+        setAuthError({
+          shown: true,
+          message: "Created user with email: " + email,
+          type: "success",
+        });
         login(email, password);
       })
       .catch((error) => {
         console.log(error);
-        setAlert(error.message, "error");
+        setAuthError({
+          shown: true,
+          message: error.message,
+          type: "error",
+        });
       });
   }
 
@@ -54,7 +68,11 @@ export function AuthProvider({ children }) {
       .signInWithEmailAndPassword(email, password)
       .catch((error) => {
         console.log(error);
-        setAlert(error.message, "error");
+        setAuthError({
+          shown: true,
+          message: error.message,
+          type: "error",
+        });
       });
     console.log("Logged in as: " + email);
   }
@@ -77,7 +95,11 @@ export function AuthProvider({ children }) {
         .sendPasswordResetEmail(email)
         .catch((error) => {
           console.log(error);
-          setAlert(error.message, "error");
+          setAuthError({
+            shown: true,
+            message: error.message,
+            type: "error",
+          });
         });
     } catch (error) {
       console.log(error.message);
@@ -157,6 +179,7 @@ export function AuthProvider({ children }) {
     mail,
     userColor,
     logged,
+    authError,
     signup,
     login,
     signout,
