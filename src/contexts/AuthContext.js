@@ -66,6 +66,14 @@ export function AuthProvider({ children }) {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log("Logged in successfully");
+        setAuthError({
+          shown: true,
+          message: "Logged in successfully",
+          type: "success",
+        });
+      })
       .catch((error) => {
         console.log(error);
         setAuthError({

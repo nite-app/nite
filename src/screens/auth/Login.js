@@ -11,6 +11,7 @@ function Login() {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const { setAlert } = useAlert();
+  const { authError } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +20,6 @@ function Login() {
     if (emailref.current.value !== "" && pswref.current.value !== "") {
       try {
         login(emailref.current.value, pswref.current.value);
-        setAlert("Logged in successfully", "success");
         navigate("/");
       } catch {
         setAlert("Internal Error: Failed to login", "error");
@@ -39,6 +39,12 @@ function Login() {
       setBacklink("/briefing");
     }
   }, []);
+
+  useEffect(() => {
+    if (authError.shown === true) {
+      setAlert(authError.message, authError.type);
+    }
+  }, [authError]);
 
   return (
     <div className="acont">
