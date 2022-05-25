@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import useAlert from "../../hooks/useAlert";
+import Mobile from "../../mobile";
 
 function Login() {
   const emailref = useRef();
@@ -47,17 +48,7 @@ function Login() {
   }, [authError]);
 
   if (window.matchMedia("only screen and (max-width: 760px)").matches) {
-    return (
-      <>
-        <div className="mobilediv">
-          <img src={require("../../img/logo.png")} className="mobilelogo" />
-          <h1 className="mobilettl">
-            We are sorry, nite is currently available only on desktop devices
-          </h1>
-          <h2 className="mobilesub">Stay tuned for more news</h2>
-        </div>
-      </>
-    );
+    return <Mobile />;
   }
   return (
     <div className="acont">

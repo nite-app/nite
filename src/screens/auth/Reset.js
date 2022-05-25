@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import useAlert from "../../hooks/useAlert";
+import Mobile from "../../mobile";
 
 function Reset() {
   const emailref = useRef();
@@ -43,6 +44,9 @@ function Reset() {
     }
   }, []);
 
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    return <Mobile />;
+  }
   return (
     <div className="acont">
       <div className="back">

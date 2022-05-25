@@ -9,6 +9,7 @@ import {
   setDoc,
 } from "firebase/firestore";
 import useAlert from "../../hooks/useAlert";
+import Mobile from "../../mobile";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -118,6 +119,9 @@ export default function Register() {
     return () => {};
   }, [authError]);
 
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    return <Mobile />;
+  }
   return (
     <>
       <div className="fullpage">

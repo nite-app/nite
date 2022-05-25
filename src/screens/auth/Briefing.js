@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Mobile from "../../mobile";
 
 function Briefing() {
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    return <Mobile />;
+  }
   return (
     <div className="briefContainer">
       <div className="briefingText">
