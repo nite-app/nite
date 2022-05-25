@@ -46,8 +46,11 @@ function Login() {
     }
   }, [authError]);
 
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    return <div>Sorry, this website is only available on desktop devices.</div>
+  }
   return (
-    <div className="acont">
+    < div className="acont" >
       <div className="back">
         <div>
           <Link to={backlink}>
@@ -108,7 +111,7 @@ function Login() {
         </div>
         <div className="asc2"></div>
       </div>
-    </div>
+    </div >
   );
 }
 
