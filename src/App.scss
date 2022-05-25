@@ -1939,3 +1939,31 @@ input::-webkit-inner-spin-button {
   font-size: 52px;
   color: rgba(255, 255, 255, 1);
 }
+
+// MOBILE BLOKKA
+
+.mobilediv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mobilelogo {
+  width: 50vw;
+  height: 50vw;
+}
+
+.mobilettl {
+  font-size: 20px;
+  font-family: Articulat CF Medium;
+  padding: 0 7vw;
+}
+
+.mobilesub {
+  font-size: 16px;
+  font-family: Articulat CF Medium;
+}

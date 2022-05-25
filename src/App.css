@@ -2391,4 +2391,39 @@ input::-webkit-inner-spin-button {
   font-size: 52px;
   color: white;
 }
+
+.mobilediv {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.mobilelogo {
+  width: 50vw;
+  height: 50vw;
+}
+
+.mobilettl {
+  font-size: 20px;
+  font-family: Articulat CF Medium;
+  padding: 0 7vw;
+}
+
+.mobilesub {
+  font-size: 16px;
+  font-family: Articulat CF Medium;
+}
 /*# sourceMappingURL=App.css.map */
