@@ -14,6 +14,13 @@ function Login() {
   const { setAlert } = useAlert();
   const { authError } = useAuth();
 
+  const [refresh, setRefresh] = useState();
+
+  useEffect(() => {
+    console.log("AuthError changed");
+    setAlert(authError.message, authError.type);
+  }, [authError]);
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -40,12 +47,6 @@ function Login() {
       setBacklink("/briefing");
     }
   }, []);
-
-  useEffect(() => {
-    if (authError.shown === true) {
-      setAlert(authError.message, authError.type);
-    }
-  }, [authError]);
 
   if (window.matchMedia("only screen and (max-width: 760px)").matches) {
     return <Mobile />;

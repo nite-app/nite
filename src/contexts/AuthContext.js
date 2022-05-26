@@ -32,7 +32,7 @@ export function AuthProvider({ children }) {
   const [authError, setAuthError] = useState({
     shown: false,
     message: "",
-    type: "",
+    type: "warning",
   });
   //useState = state variable
   //First array element = variable to use
