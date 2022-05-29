@@ -185,8 +185,15 @@ function Home() {
               </button>
             </div>
             <div className="menuitem">
-              <img src={searchicon} alt="" className="sidemenuicon" />
-              <p className="sidemenup">Find</p>
+              <button
+                className="menubtn"
+                onClick={() => {
+                  setSettingsOpen(true);
+                }}
+              >
+                <img src={searchicon} alt="" className="sidemenuicon" />
+                <p className="sidemenup">Find</p>
+              </button>
             </div>
           </div>
         </div>

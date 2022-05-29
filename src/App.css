@@ -252,7 +252,7 @@ p {
 }
 
 .sidebar {
-  width: 21vw;
+  width: 15vw;
   height: 96.5vh;
   background-color: #263859;
   border-radius: 25px;
@@ -333,7 +333,7 @@ p {
 }
 
 .break {
-  width: 17vw;
+  width: 12vw;
   height: 5px;
   background-color: white;
   border-radius: 2.5px;
@@ -360,7 +360,7 @@ p {
 }
 
 .panel {
-  width: 18vw;
+  width: 13vw;
   height: 20vh;
   background-color: #dfeff0;
   border-radius: 25px;
@@ -428,7 +428,7 @@ p {
           align-items: center;
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 0 25px;
 }
 
 .menubtn:hover {
