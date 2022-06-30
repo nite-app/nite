@@ -24,7 +24,7 @@ Many teenagers want to sleep better, but at the same time they don't know how to
 
 ## Bug report or Feature request
 
-If you encounter a bug or have a feature request, [send us an email](mailto:info@niteapp.cf)
+If you encounter a bug or have a feature request, [send us an email](mailto:info@nite.is)
 
 ## Credits
 
